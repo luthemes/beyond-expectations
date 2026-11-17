@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
+  base: './',                // asset URLs in the CSS are relative to the CSS file, not the site root
   publicDir: false,
   build: {
     outDir: 'public/assets',   // Vite only manages this folder
