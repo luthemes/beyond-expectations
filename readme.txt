@@ -56,6 +56,7 @@ Changelog
 ================================================================================================
 Version: 0.3.0
 - Rebuilt on the Backdrop framework 2.0 (Composer); functions moved to the app folder
+- Entries and sidebars load through the Backdrop view package (resources/views)
 - Targets ClassicPress, with PHP 7.4 or later required
 - Updated the theme and author URIs to luthemes.com
 - Fixed the header navigation aria attribute and the footer markup

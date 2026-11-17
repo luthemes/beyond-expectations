@@ -13,10 +13,10 @@
     <div id="content-area" class="content-area">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/content', 'page'); ?>
+                <?php Backdrop\View\display( 'entry', 'page' ); ?>
         <?php endwhile; ?>
         <?php else : ?>
         <?php endif; ?>
     </div>
-<?php get_sidebar('page'); ?>
+<?php Backdrop\View\display( 'sidebar', 'secondary' ); ?>
 <?php get_footer(); ?>

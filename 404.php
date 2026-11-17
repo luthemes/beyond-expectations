@@ -11,7 +11,7 @@
 ?>
 <?php get_header(); ?>
     <div id="content-area" class="content-area">
-        <?php get_template_part('template-parts/content', 'none'); ?>
+        <?php Backdrop\View\display( 'entry', 'none' ); ?>
     </div>
-<?php get_sidebar(); ?>
+<?php Backdrop\View\display( 'sidebar', 'primary' ); ?>
 <?php get_footer(); ?>

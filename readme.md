@@ -13,12 +13,15 @@ Install the theme's dependencies from the theme folder before activating it.
 composer install --no-dev
 </pre>
 
+`backdrop-dev/tools` and `backdrop-dev/template-helpers` don't have releases yet, so `composer.json` requires them as `dev-develop` and sets `minimum-stability` to `dev`.
+
 If the Backdrop framework can't be found, administrators see a notice in the dashboard instead of a fatal error.
 
 ## Structure
 - `functions.php` loads Composer's autoloader and boots the Backdrop application.
 - `app/` holds the service provider (`Provider.php`) and the functions files for setup, assets, the custom header, the customizer and template tags (in the `BeyondExpectations` namespace).
-- Template files (`index.php`, `single.php`, ...), `template-parts/` and `custom-templates/` are standard theme templates.
+- Root template files (`index.php`, `single.php`, ...) and `custom-templates/` are standard theme templates. They load entries and sidebars with `Backdrop\View\display()` from the [view](https://github.com/backdrop-dev/view) package.
+- `resources/views/entry/` and `resources/views/sidebar/` hold the view templates. A post format falls back to `entry/default.php`.
 
 ## Copyright and License
 This project is licensed under the GNU General Public License, version 2 or later.
