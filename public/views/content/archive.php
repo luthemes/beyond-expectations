@@ -20,7 +20,10 @@
                 <?php Backdrop\View\display( 'entry', 'archive' ); ?>
         <?php endwhile; ?>
                 <div class="paging-navigation">
-                    <?php the_posts_pagination(); ?>
+                    <?php Backdrop\Pagination\display( 'posts', [
+                        'prev_text' => esc_html__( 'Previous', 'beyond-expectations' ),
+                        'next_text' => esc_html__( 'Next', 'beyond-expectations' )
+                    ] ); ?>
                 </div>
         <?php else : ?>
                 <?php Backdrop\View\display( 'entry', 'none' ); ?>
