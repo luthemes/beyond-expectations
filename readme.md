@@ -26,6 +26,7 @@ If the Backdrop framework can't be found, administrators see a notice in the das
 - `resources/` holds the source styles (`scss/screen.scss` loads one partial per section), scripts and the header image. `style.css` only holds the theme header.
 - `public/svg/` holds the inline SVG icons; the social icons in `public/svg/social` are added to the social menu by link. No icon font is loaded.
 - `index.php` is the only template ClassicPress loads. The [template hierarchy](https://github.com/backdrop-dev/template-hierarchy) package picks the header, content and footer views, which `Backdrop\View\display()` from the [view](https://github.com/backdrop-dev/view) package loads from `public/views`.
+- The [template manager](https://github.com/backdrop-dev/template-manager) package registers the Full Width and Custom Sidebar page templates (`app/functions-setup.php`).
 - `public/views/header`, `content` and `footer` hold the page views (`content/single.php`, `content/page.php`, `content/archive.php`, ...). `content/default.php` is the blog index and the fallback. The page templates are in `content/custom-templates` and are registered in `app/functions-setup.php`.
 - `public/views/comments/default.php` is the comments template, found by the [theme](https://github.com/backdrop-dev/theme) package's comments filter.
 - `public/views/entry/` and `public/views/sidebar/` hold the entry and sidebar views. A post format falls back to `entry/default.php`.

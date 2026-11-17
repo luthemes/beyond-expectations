@@ -61,7 +61,7 @@ Version: 0.3.0
 - Pagination uses the Backdrop pagination package (new pagination__ class names in style.css)
 - Markup uses BEM class names (entry__title, site-header__branding, primary-navigation__toggle and so on) and the Backdrop attr package builds the body, html, entry and layout attributes
 - Uses the Backdrop theme package (body classes, archive titles, pingback and generator tags); the comments template moved to public/views/comments/default.php; only index.php is left in the theme root
-- Page templates (Full Width, Custom Sidebar) are registered by the theme and keep their saved names
+- Page templates (Full Width, Custom Sidebar) are registered with the Backdrop template manager package and keep their saved names
 - Targets ClassicPress, with PHP 7.4 or later required
 - Updated the theme and author URIs to luthemes.com
 - Fixed the header navigation aria attribute and the footer markup

@@ -106,20 +106,26 @@ add_action( 'widgets_init', function() {
 } );
 
 /**
- * Registers the page templates. They are views in `public/views/content/custom-templates`,
- * and the keys match the file names that earlier versions of the theme saved for pages.
+ * Registers the page templates with Backdrop Template Manager. They are views in
+ * `public/views/content/custom-templates`, and the keys match the file names that earlier
+ * versions of the theme saved for pages.
  *
  * @since  0.3.0
  * @access public
- * @param  array  $templates
- * @return array
+ * @param  \Backdrop\Template\Manager\Templates  $templates
+ * @return void
  */
-add_filter( 'theme_page_templates', function( $templates ) {
+add_action( 'backdrop/templates/register', function( $templates ) {
 
-	$templates['custom-templates/full-width.php']      = esc_html__( 'Full Width Template', 'beyond-expectations' );
-	$templates['custom-templates/custom-sidebar.php']  = esc_html__( 'Custom Sidebar Template', 'beyond-expectations' );
+	$templates->add( 'custom-templates/full-width.php', [
+		'label'      => esc_html__( 'Full Width Template', 'beyond-expectations' ),
+		'post_types' => [ 'page' ]
+	] );
 
-	return $templates;
+	$templates->add( 'custom-templates/custom-sidebar.php', [
+		'label'      => esc_html__( 'Custom Sidebar Template', 'beyond-expectations' ),
+		'post_types' => [ 'page' ]
+	] );
 } );
 
 /**
