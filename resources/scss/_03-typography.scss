@@ -4,12 +4,13 @@
 ================================================================================================
 */
 body {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Merriweather', serif;
+    /* The Fira Sans files in the Backdrop fonts package (used for the title, headings and
+       menus) are missing their ligature glyphs, so "fi", "fl" and "ffi" disappear unless
+       ligatures are turned off. Set here so every element inherits it. */
+    font-variant-ligatures: no-common-ligatures;
     line-height: 1.6;
-    word-spacing: 0.12em;
 }
-
-/* Merriweather Sans has narrow word spaces (0.18em), so words run together at body sizes. */
 
 h1,
 h2,
@@ -17,7 +18,7 @@ h3,
 h4, 
 h5, 
 h6 {
-    font-family: 'Sanchez', serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 p {

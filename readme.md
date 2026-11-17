@@ -38,6 +38,6 @@ The `app/` and `config/` folders follow the same layout as [Amicable](https://gi
 ## Copyright and License
 This project is licensed under the GNU General Public License, version 2 or later.
 
-The screenshot is licensed CC0, by Greg Rakozy (https://unsplash.com/photos/oMpAz-DN-9I). Merriweather Sans (Sorkin Type) and Sanchez (Latinotype) are licensed under SIL OFL 1.1 and load from the [Backdrop fonts](https://github.com/backdrop-dev/fonts) package. Icons are [Iconoir](https://iconoir.com) (MIT) through the Backdrop icons package, and the brand icons in `public/icons` are [Font Awesome Free](https://fontawesome.com) 5 brand icons, licensed CC BY 4.0, used as inline SVG.
+The screenshot is licensed CC0, by Greg Rakozy (https://unsplash.com/photos/oMpAz-DN-9I). Merriweather (Sorkin Type) and Fira Sans (Carrois Apostrophe, Mozilla) are licensed under SIL OFL 1.1 and load from the [Backdrop fonts](https://github.com/backdrop-dev/fonts) package. Icons are [Iconoir](https://iconoir.com) (MIT) through the Backdrop icons package, and the brand icons in `public/svg/social-icons` are [Font Awesome Free](https://fontawesome.com) 5 brand icons, licensed CC BY 4.0, used as inline SVG.
 
 Copyright © 2016–2026 Benjamin Lu

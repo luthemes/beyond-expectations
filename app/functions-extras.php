@@ -40,7 +40,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	array_map( function( $file ) {
 		enqueue( $file );
 	}, [
-		'merriweather-sans',
-		'sanchez'
+		'fira-sans',
+		'merriweather'
 	] );
 } );
