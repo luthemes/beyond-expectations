@@ -24,6 +24,7 @@ $theme = Backdrop\booted() ? Backdrop\app() : new Backdrop\Core\Application();
  * -------------------------------------------------------------------------------------------
  */
 $theme->provider( Backdrop\Attr\Provider::class );
+$theme->provider( Backdrop\Fonts\Provider::class );
 $theme->provider( Backdrop\Pagination\Provider::class );
 $theme->provider( Backdrop\Theme\Provider::class );
 $theme->provider( Backdrop\Template\Hierarchy\Provider::class );

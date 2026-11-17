@@ -11,6 +11,8 @@
 
 namespace BeyondExpectations;
 
+use Backdrop\Fonts;
+
 /**
  * Enqueue scripts and styles.
  *
@@ -25,9 +27,12 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	$version = wp_get_theme()->get( 'Version' );
 
-	// Main stylesheet, local fonts and Font Awesome.
+	// Local fonts from the Backdrop fonts package.
+	Fonts\enqueue( 'merriweather-sans' );
+	Fonts\enqueue( 'sanchez' );
+
+	// Main stylesheet and Font Awesome.
 	wp_enqueue_style( 'beyond-expectations-style', get_stylesheet_uri(), [], $version );
-	wp_enqueue_style( 'beyond-expectations-fonts', get_parent_theme_file_uri( 'extras/fonts/custom-fonts.css' ), [], $version );
 	wp_enqueue_style( 'font-awesome', get_parent_theme_file_uri( 'extras/font-awesome/css/font-awesome.css' ), [], '4.7.0' );
 
 	// Search toggle and navigation scripts.
