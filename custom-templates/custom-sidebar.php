@@ -15,14 +15,14 @@
     <div id="content-area" class="content-area">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/content', 'custom-sidebar'); ?>
+                <?php Backdrop\View\display( 'entry', 'custom-sidebar' ); ?>
         <?php endwhile; ?>
                 <div class="paging-navigation">
                     <?php the_posts_pagination(); ?>
                 </div>
         <?php else : ?>
-                    <?php get_template_part('template-parts/content', 'none'); ?>
+                    <?php Backdrop\View\display( 'entry', 'none' ); ?>
         <?php endif; ?>
     </div>
-<?php get_sidebar('custom'); ?>
+<?php Backdrop\View\display( 'sidebar', 'custom' ); ?>
 <?php get_footer(); ?>
