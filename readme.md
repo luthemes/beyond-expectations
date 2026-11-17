@@ -13,7 +13,7 @@ Install the theme's dependencies from the theme folder before activating it.
 composer install --no-dev
 </pre>
 
-`backdrop-dev/tools` and `backdrop-dev/template-helpers` don't have releases yet, so `composer.json` requires them as `dev-develop` and sets `minimum-stability` to `dev`.
+`backdrop-dev/tools` doesn't have a release yet, so `composer.json` requires it as `dev-develop` and sets `minimum-stability` to `dev`.
 
 If the Backdrop framework can't be found, administrators see a notice in the dashboard instead of a fatal error.
 
