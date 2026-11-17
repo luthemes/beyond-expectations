@@ -1,5 +1,9 @@
 node_modules
 vendor
+
+# Built by Vite and exported by `npm run build`.
+public/assets
+/beyond-expectations/
 beyond-expectations-*.zip
 
 # Composer writes this on install. The framework is pinned in composer.json instead.

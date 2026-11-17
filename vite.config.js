@@ -1,0 +1,28 @@
+import { defineConfig } from 'vite';
+import path from 'path';
+
+export default defineConfig({
+  base: './',                // asset URLs in the CSS are relative to the CSS file, not the site root
+  publicDir: false,
+  build: {
+    outDir: 'public/assets',   // Vite only manages this folder
+    assetsDir: '',             // no extra nesting
+    manifest: 'manifest.json', // lives at public/assets/manifest.json
+    emptyOutDir: true,         // cleans old CSS/JS on each build
+    rollupOptions: {
+      input: {
+        screen: path.resolve(__dirname, 'resources/scss/screen.scss'),
+        navigation: path.resolve(__dirname, 'resources/js/navigation.js'),
+        'hide-search': path.resolve(__dirname, 'resources/js/hide-search.js'),
+      },
+      output: {
+        entryFileNames: 'js/[name]-[hash].js',
+        chunkFileNames: 'js/[name]-[hash].js',
+        assetFileNames: ({ name }) =>
+          name && name.endsWith('.css')
+            ? 'css/[name]-[hash][extname]'
+            : 'media/[name]-[hash][extname]',
+      },
+    },
+  },
+});

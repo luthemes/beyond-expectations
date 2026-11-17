@@ -1,0 +1,130 @@
+/*
+================================================================================================
+11.0 - Navigation (Social Navigation)
+================================================================================================
+*/
+.top-bar {
+    background: #000000;
+}
+
+.top-bar__inner {
+    margin: 0 auto;
+    padding: 0 0.938em;
+    max-width: 74.375em;
+}
+
+.social-navigation {
+    background: #000000;
+    clear: both;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.social-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.social-navigation li {
+    float: right;
+    position: relative;
+}
+
+.social-navigation a {
+    color: #ffffff;
+    display: block;
+    padding: 9px 15px;
+    text-decoration: none;
+}
+
+.social-navigation ul ul {
+    background: #1c1c1c;
+    display: none;
+    float: left;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 99999;
+}
+
+.social-navigation ul ul ul {
+    left: 100%;
+    top: 0;
+}
+
+.social-navigation ul ul a { width: 200px; }
+
+.social-navigation ul ul li { }
+
+.social-navigation li:hover > a,
+.social-navigation li > a:focus {
+    background: #1c1c1c;
+    color: #fff;
+}
+
+.social-navigation ul ul :hover > a {
+
+}
+
+.social-navigation ul ul a:hover,
+.social-navigation ul ul a:focus {
+    background: #313131;
+    background: hsl(0, 0%, 19%);
+}
+
+.social-navigation ul li:hover > ul { display: block; }
+
+.social-navigation .current_page_item > a,
+.social-navigation .current-menu-item > a,
+.social-navigation .current_page_item > a:hover,
+.social-navigation .current-menu-item > a:hover,
+.social-navigation .current_page_item > a:focus,
+.social-navigation .current-menu-item > a:focus {
+    color: #ffffff;
+    background: #4d4d4d;
+}
+
+.social-navigation .current_page_ancestor {
+    background: #4d4d4d;
+    background: hsl(0, 0%, 30%);
+}
+
+.social-navigation ul ul .current_page_parent,
+.social-navigation .current_page_parent .current_page_item > a {
+    color: #fff;
+    color: hsl(0, 0%, 100%);
+    background: #313131;
+    background: hsl(0, 0%, 19%);
+}
+
+
+.primary-navigation__toggle {
+    display: none;
+}
+
+.social-navigation__menu {
+    float: right;
+    list-style: none;
+    text-decoration: none;
+}
+
+.social-navigation__menu ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.social-navigation__menu li a .icon {
+    color: #ffffff;
+    display: inline-block;
+    fill: currentColor;
+    height: 16px;
+    padding: 2px 0;
+    vertical-align: top;
+    width: 16px;
+}
+
+.social-navigation__menu .screen-reader-text {
+    display: none;
+}

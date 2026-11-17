@@ -1,0 +1,68 @@
+/*
+================================================================================================
+29.0 - Media Queries (Tablet Small 768px)
+================================================================================================
+*/
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .site-content {
+        padding: 0.625em;
+    }
+    
+    .site-header {
+        padding: 3em;
+    }
+    
+    .site-breanding {
+        padding: 3em;
+    }
+    
+    .primary-navigation__toggle,
+    .primary-navigation--toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation--toggled {
+        padding: 0.1em;
+    }
+    
+    .primary-navigation__menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .primary-navigation__menu {
+        display: none;
+    }
+    
+    .primary-navigation--toggled .primary-navigation__menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+    }
+    
+    .content-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .widget-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .entry__metadata {
+        background: #eeeeee;
+        float: none;
+        padding: 1em 0;
+        width: 100%;
+    }
+    
+    .entry__content {
+        float: none;
+        width: 100%;
+    }
+    
+
+}

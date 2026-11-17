@@ -16,7 +16,7 @@ Beyond Expectations is a standard design with responsive capability.
 
 Installation
 ================================================================================================
-0. When installing from the repository instead of a release zip, run `composer install --no-dev` in the theme folder first.
+0. When installing from the repository instead of a release zip, run `composer install --no-dev`, `npm install` and `npm run prod` in the theme folder first.
 1. In your admin panel, go to Appearance -> Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's ZIP file. Click Install Now.
 3. Click Activate to use your new theme right away.
@@ -56,6 +56,7 @@ Changelog
 ================================================================================================
 Version: 0.3.0
 - Rebuilt on the Backdrop framework 2.0 (Composer); functions moved to the app folder
+- Styles and scripts are built with Vite (Sass); Font Awesome's icon font is replaced by inline SVG icons
 - Templates load through the Backdrop view and template hierarchy packages (public/views)
 - Pagination uses the Backdrop pagination package (new pagination__ class names in style.css)
 - Markup uses BEM class names (entry__title, site-header__branding, primary-navigation__toggle and so on) and the Backdrop attr package builds the body, html, entry and layout attributes
@@ -149,6 +150,5 @@ Merriweather Sans by Sorkin Type - https://github.com/SorkinType/Merriweather-Sa
 Sanchez by Latinotype - https://www.latinotype.com
 Both licensed under SIL OFL 1.1 and loaded from the Backdrop fonts package (https://github.com/backdrop-dev/fonts)
 
-Font Awesome by Dave Gandy - http://fontawesome.io
-Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License
-Source: http://fortawesome.github.io/Font-Awesome/
+Social icons: Font Awesome Free 5 brand icons by Fonticons, Inc. - https://fontawesome.com
+Licensed under CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/ (used as inline SVG, no icon font is loaded)
