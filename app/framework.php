@@ -23,6 +23,7 @@ $theme = Backdrop\booted() ? Backdrop\app() : new Backdrop\Core\Application();
  * Register service providers with the application.
  * -------------------------------------------------------------------------------------------
  */
+$theme->provider( Backdrop\Theme\Provider::class );
 $theme->provider( Backdrop\Template\Hierarchy\Provider::class );
 $theme->provider( Backdrop\View\Provider::class );
 $theme->provider( BeyondExpectations\Provider::class );

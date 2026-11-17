@@ -56,7 +56,8 @@ Changelog
 ================================================================================================
 Version: 0.3.0
 - Rebuilt on the Backdrop framework 2.0 (Composer); functions moved to the app folder
-- Templates load through the Backdrop view and template hierarchy packages (public/views); only index.php is left in the theme root
+- Templates load through the Backdrop view and template hierarchy packages (public/views)
+- Uses the Backdrop theme package (body classes, archive titles, pingback and generator tags); the comments template moved to public/views/comments/default.php; only index.php is left in the theme root
 - Page templates (Full Width, Custom Sidebar) are registered by the theme and keep their saved names
 - Targets ClassicPress, with PHP 7.4 or later required
 - Updated the theme and author URIs to luthemes.com
