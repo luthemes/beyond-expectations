@@ -1,0 +1,39 @@
+/*
+================================================================================================
+15.0 - Header Area
+================================================================================================
+*/
+.site-header {
+    background: url('../images/header-image.jpg') no-repeat;
+    background-size: cover!important;
+    padding: 3.5em 0;
+}
+
+.site-header__branding {
+    padding: 3.5em 0;
+    text-align: center;
+}
+
+.site-header__title,
+.site-header__description {
+    margin: 0;
+    padding: 0;
+}
+
+.site-header__title::after {
+    border-bottom: 1px solid #cccccc;
+    content: "";
+    display: block;
+    margin: 0.5em auto;
+    width: 1.5em;
+}
+
+.site-header__title a {
+    color: #ffffff;
+    font-size: 1.4em;
+    text-decoration: none;
+}
+
+.site-header__description {
+    color: #ffffff;
+}

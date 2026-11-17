@@ -25,19 +25,23 @@ use Backdrop\Fonts;
  */
 add_action( 'wp_enqueue_scripts', function() {
 
-	$version = wp_get_theme()->get( 'Version' );
-
 	// Local fonts from the Backdrop fonts package.
 	Fonts\enqueue( 'merriweather-sans' );
 	Fonts\enqueue( 'sanchez' );
 
-	// Main stylesheet and Font Awesome.
-	wp_enqueue_style( 'beyond-expectations-style', get_stylesheet_uri(), [], $version );
-	wp_enqueue_style( 'font-awesome', get_parent_theme_file_uri( 'extras/font-awesome/css/font-awesome.css' ), [], '4.7.0' );
+	// The built stylesheet. The theme's style.css only holds the theme header.
+	if ( asset( 'resources/scss/screen.scss' ) ) {
+		wp_enqueue_style( 'beyond-expectations-screen', asset( 'resources/scss/screen.scss' ), [], null );
+	}
 
 	// Search toggle and navigation scripts.
-	wp_enqueue_script( 'beyond-expectations-hide-search', get_parent_theme_file_uri( 'js/hide-search.js' ), [ 'jquery' ], $version, true );
-	wp_enqueue_script( 'beyond-expectations-navigation', get_parent_theme_file_uri( 'js/navigation.js' ), [ 'jquery' ], $version, true );
+	if ( asset( 'resources/js/hide-search.js' ) ) {
+		wp_enqueue_script( 'beyond-expectations-hide-search', asset( 'resources/js/hide-search.js' ), [ 'jquery' ], null, true );
+	}
+
+	if ( asset( 'resources/js/navigation.js' ) ) {
+		wp_enqueue_script( 'beyond-expectations-navigation', asset( 'resources/js/navigation.js' ), [ 'jquery' ], null, true );
+	}
 
 	// Screen reader text for the child menu toggles.
 	wp_localize_script( 'beyond-expectations-navigation', 'screenReaderText', [

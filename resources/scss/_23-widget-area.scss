@@ -1,0 +1,110 @@
+/*
+================================================================================================
+23.0 - Widget Area
+================================================================================================
+*/
+.widget-area {
+    float: right;
+    width: 25.43103448275862%;
+    word-break: break-all;
+}
+
+.widget-area .search-submit,
+.widget-area .screen-reader-text {
+    display: none;
+}
+
+input[type = "search"] {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.widget-area .search-field {
+    color: #000000;
+    margin: 10px 0;
+    padding: 8px 5px;
+}
+
+.widget {
+    margin: 0 0 30px 0;
+    
+}
+
+.widget ul,
+.widget ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.widget li {
+    margin: 5px 0 0 0;
+}
+
+.widget li li {
+    margin-left: 18px;
+}
+
+.widget select {
+    margin: 10px 0;
+    padding: 5px 5px;
+    max-width: 100%;
+}
+
+.widget__title {
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.rsswidget {
+    display: block;
+}
+
+.rss-date {
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.rssSummary {
+
+}
+
+#wp-calendar {
+    border: 1px solid #cccccc;
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+#wp-calendar a {
+    color: #0000ff;
+    font-style: italic;
+    font-weight: 400;
+}
+
+#wp-calendar caption {
+    font-weight: 400;
+    margin: 5px 0;
+    text-align: center;
+}
+
+#wp-calendar #today {
+    font-weight: 400;
+}
+
+#wp-calendar th {
+    font-weight: 400;
+}
+
+#wp-calendar td {
+    font-weight: 300;
+    padding: 6px 0;
+}
+
+.textwidget {
+    margin: 10px 0;
+}

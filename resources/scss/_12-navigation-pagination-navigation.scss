@@ -1,0 +1,28 @@
+/*
+================================================================================================
+12.0 - Navigation (Pagination Navigation)
+================================================================================================
+*/
+.paging-navigation {
+    padding: 2em;
+    text-align: center;
+}
+
+.pagination__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.pagination__item { display: inline; }
+
+a.pagination__anchor,
+span.pagination__anchor {
+    border: 1px solid #000000;
+    padding: 0.5em 1.2em;
+}
+
+.pagination__anchor--current {
+    font-weight: bold;
+}

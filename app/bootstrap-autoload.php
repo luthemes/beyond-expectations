@@ -19,6 +19,8 @@ array_map( function( $file ) {
 	'functions-assets',
 	'functions-customize',
 	'functions-header',
+	'functions-icons',
 	'functions-setup',
-	'functions-template'
+	'functions-template',
+	'functions-vite'
 ] );

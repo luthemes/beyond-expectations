@@ -23,7 +23,7 @@
     <nav class="top-bar__inner">
         <div class="social-navigation cf">
         <div class="search-toggle cf">
-            <i class="fa fa-search cf"> </i>
+            <?php BeyondExpectations\the_svg( 'search' ); ?>
             <a href ="#search-container" class="screen-reader-text cf"><?php _e('Search', 'beyond-expectations'); ?></a>
         </div>
             <?php BeyondExpectations\social_navigation(); ?>

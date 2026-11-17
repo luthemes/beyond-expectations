@@ -67,17 +67,19 @@ function entry_taxonomies() {
 
 	if ( $cat_list ) {
 		printf(
-			'<div class="entry__categories"><i class="fa fa-folder-open-o"></i> %1$s <span class="entry__category-list"><b><i>%2$s</i></b></span></div>',
+			'<div class="entry__categories">%3$s %1$s <span class="entry__category-list"><b><i>%2$s</i></b></span></div>',
 			esc_html__( 'Posted In', 'beyond-expectations' ),
-			$cat_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			$cat_list, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			svg( 'folder' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		);
 	}
 
 	if ( $tag_list ) {
 		printf(
-			'<div class="entry__tags"><i class="fa fa-tags"></i> %1$s <span class="entry__tag-list"><b><i>%2$s</i></b></span></div>',
+			'<div class="entry__tags">%3$s %1$s <span class="entry__tag-list"><b><i>%2$s</i></b></span></div>',
 			esc_html__( 'Tagged', 'beyond-expectations' ),
-			$tag_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			$tag_list, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			svg( 'tag' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		);
 	}
 }

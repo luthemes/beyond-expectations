@@ -1,0 +1,111 @@
+/*
+================================================================================================
+16.0 - Content Area (Posts and Pages)
+================================================================================================
+*/
+.content-area {
+    float: left;
+    width: 72.41379310344828%;
+}
+
+.entry__content--full-width,
+.content-area--full-width {
+    float: none;
+    width: 100%;
+}
+
+.post {
+    margin: 0 0 5em 0;
+}
+
+.entry__header {
+    display: block;
+    text-align: center;
+}
+
+.entry__title {
+    margin: 0;
+    padding: 0;
+}
+
+.entry__body {
+    margin: 1em 0;
+}
+
+.entry__metadata {
+    float: left;
+    text-align: center;
+    width: 19.04761904761905%;
+}
+
+.entry__metadata {
+    text-align: center;
+}
+
+.entry__metadata .avatar {
+    border: 0.500em solid #cccccc;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 0.5em auto;
+}
+
+.entry__metadata .entry__author {
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 1em;
+}
+
+.entry__metadata .entry__published a {
+    display: block;
+    margin: 0.5em 0;
+    font-size: 0.875em;
+    font-weight: normal;
+}
+
+.entry__metadata .entry__comments-link a {
+    display: block;
+    font-weight: normal;
+    font-size: 0.875em;
+    margin: 0.5em 0;
+}
+
+.entry__content {
+    float: right;
+    width: 78.95238095238095%;
+}
+
+.entry__categories,
+.entry__tags {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.entry__categories .icon,
+.entry__tags .icon {
+    margin: 0 0.25em 0 0;
+}
+
+.entry__tag-list,
+.entry__category-list {
+    font-size: 12px;
+}
+
+.entry__footer {
+    padding: 0;
+    text-align: left;
+}
+
+.sticky::before {
+    content: "Featured";
+    display: block;
+}
+
+.recent-posts,
+.recent-posts__title {
+    margin-top: 1em;
+}
+
+dt {
+    margin: 1em 0 0.5em 0;
+}
