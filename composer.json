@@ -1,0 +1,25 @@
+{
+	"name": "luthemes/beyond-expectations",
+	"type": "classicpress-theme",
+	"description": "Beyond Expectations is a responsive theme with a custom header image, primary and social menus, and a full width page template, built on the Backdrop framework 2.0.",
+	"keywords": [ "classicpress", "theme" ],
+	"homepage": "https://luthemes.com/portfolio/beyond-expectations",
+	"license": "GPL-2.0-or-later",
+	"version": "0.3.0",
+	"authors": [
+		{
+			"name": "Benjamin Lu",
+			"email": "benlumia007@gmail.com",
+			"homepage": "https://luthemes.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"BeyondExpectations\\": "app"
+		}
+	},
+	"require": {
+		"php": ">=7.4",
+		"backdrop-dev/framework": "^2.0"
+	}
+}

@@ -1,0 +1,22 @@
+<?php
+/**
+ * Beyond Expectations - page.php
+ *
+ * @package   Beyond Expectations
+ * @author    Benjamin Lu <benlumia007@gmail.com>
+ * @copyright 2016-2026 Benjamin Lu
+ * @license   https://www.gnu.org/licenses/gpl-2.0.html
+ * @link      https://luthemes.com/portfolio/beyond-expectations
+ */
+?>
+<?php get_header(); ?>
+    <div id="content-area" class="content-area">
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
+                <?php get_template_part('template-parts/content', 'page'); ?>
+        <?php endwhile; ?>
+        <?php else : ?>
+        <?php endif; ?>
+    </div>
+<?php get_sidebar('page'); ?>
+<?php get_footer(); ?>
