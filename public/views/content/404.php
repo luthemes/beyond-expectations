@@ -10,6 +10,6 @@
  */
 ?>
     <div <?php Backdrop\Attr\display( 'content-area', '', [ 'id' => 'content-area' ] ); ?>>
-        <?php Backdrop\View\display( 'entry', 'none' ); ?>
+        <?php Backdrop\View\display( 'entry', 'none', [ 'error' => $error ] ); ?>
     </div>
 <?php Backdrop\View\display( 'sidebar', 'primary' ); ?>

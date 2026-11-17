@@ -30,8 +30,8 @@ Customizer
    - Theme: Global > Layout: content with a sidebar (default) or full width with no sidebar
    - Theme: Header > Branding and Header Image
    - Theme: Content > Feature Image: the size of the featured image at the top of a page (banner, large or full size)
-   - Theme: Footer > Credit: show the "Proudly powered by" credit, or your own footer text
-   - Appearance -> Beyond Expectations Settings: choose a page to show on a 404 error, and turn off emoji scripts, the toolbar and embeds on the front end
+   - Theme: Footer > Credit: a random "powered by" line, or your own footer text (by default a copyright line with links to ClassicPress and the theme)
+   - Appearance -> Beyond Expectations Settings: General (a private page to show on a 404 error; turn off emoji scripts, the toolbar and embeds), Themes and Plugins (recommended plugins)
 3. Mobile Menu
    - The Mobile Menu is slightly different from other themes. I have created a mobile menu that is
      at the bottom left corner that helps users to navigation easier. The reason why is that 90% of

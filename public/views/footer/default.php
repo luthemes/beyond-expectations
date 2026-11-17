@@ -13,15 +13,7 @@
     <footer <?php Backdrop\Attr\display( 'site-footer', '', [ 'id' => 'site-footer' ] ); ?>>
         <div id="site-info" class="site-footer__info">
             <div class="site-footer__title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
-            <?php if ( BeyondExpectations\mod( 'footer_powered_by' ) ) : ?>
-                <?php if ( function_exists( 'classicpress_version' ) ) : ?>
-                    <a href="<?php echo esc_url( 'https://www.classicpress.net/' ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'beyond-expectations' ), 'ClassicPress' ); ?></a>
-                <?php else : ?>
-                    <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'beyond-expectations' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'beyond-expectations' ), 'WordPress' ); ?></a>
-                <?php endif; ?>
-            <?php else : ?>
-                <div class="site-footer__credit"><?php echo BeyondExpectations\footer_credit(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
-            <?php endif; ?>
+            <?php BeyondExpectations\Template\Footer::displayCredit( [ 'before' => '<div class="site-footer__credit">', 'after' => '</div>' ] ); ?>
         </div>
     </footer>
     <?php wp_footer(); ?>

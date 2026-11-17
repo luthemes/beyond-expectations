@@ -2,6 +2,9 @@
 /**
  * Abstract customizable class.
  *
+ * Base class for creating customizable components, which can be extended to
+ * register customizer panels, sections, settings, controls, and partials.
+ *
  * @package   Beyond Expectations
  * @author    Benjamin Lu <benlumia007@gmail.com>
  * @copyright 2016-2026 Benjamin Lu
@@ -12,20 +15,39 @@
 namespace BeyondExpectations\Customize;
 
 use WP_Customize_Manager;
+use BeyondExpectations\Tools\Collection;
 
 /**
- * Base class for the theme's customizable components. Each method is empty so a component only
- * defines the ones it needs. The `Backdrop\Customize\Component` calls all of them.
+ * Customizable class.
  *
- * @since  0.0.1
+ * @since  1.0.0
  * @access public
  */
 abstract class Customizable {
 
 	/**
+	 * Sets up initial object properties.  If the data array passed in
+	 * contains a key that matches a property of the sub-class, its value
+	 * gets assigned to that property.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  array  $data
+	 * @return void
+	 */
+	public function __construct( array $data = [] ) {
+
+		foreach ( array_keys( get_object_vars( $this ) ) as $key ) {
+			if ( isset( $data[ $key ] ) ) {
+				$this->$key = $data[ $key ];
+			}
+		}
+	}
+
+	/**
 	 * Registers customizer panels.
 	 *
-	 * @since  0.0.1
+	 * @since  1.0.0
 	 * @access public
 	 * @param  WP_Customize_Manager  $manager
 	 * @return void
@@ -35,7 +57,7 @@ abstract class Customizable {
 	/**
 	 * Registers customizer sections.
 	 *
-	 * @since  0.0.1
+	 * @since  1.0.0
 	 * @access public
 	 * @param  WP_Customize_Manager  $manager
 	 * @return void
@@ -45,7 +67,7 @@ abstract class Customizable {
 	/**
 	 * Registers customizer settings.
 	 *
-	 * @since  0.0.1
+	 * @since  1.0.0
 	 * @access public
 	 * @param  WP_Customize_Manager  $manager
 	 * @return void
@@ -55,7 +77,7 @@ abstract class Customizable {
 	/**
 	 * Registers customizer controls.
 	 *
-	 * @since  0.0.1
+	 * @since  1.0.0
 	 * @access public
 	 * @param  WP_Customize_Manager  $manager
 	 * @return void
@@ -65,10 +87,34 @@ abstract class Customizable {
 	/**
 	 * Registers customizer partials.
 	 *
-	 * @since  0.0.1
+	 * @since  1.0.0
 	 * @access public
 	 * @param  WP_Customize_Manager  $manager
 	 * @return void
 	 */
 	public function registerPartials( WP_Customize_Manager $manager ) {}
+
+	/**
+	* Registers JSON for the customize controls script via `wp_localize_script()`.
+	* Objects added to the collection should implement the `JsonSerializable`
+	* interface.
+	*
+	* @since  1.0.0
+	* @access public
+	* @param  Collection  $json
+	* @return void
+	*/
+	public function controlsJson( Collection $json ) {}
+
+	/**
+	* Registers JSON for the customize preview script via `wp_localize_script()`.
+	* Objects added to the collection should implement the `JsonSerializable`
+	* interface.
+	*
+	* @since  1.0.0
+	* @access public
+	* @param  Collection  $json
+	* @return void
+	*/
+	public function previewJson( Collection $json ) {}
 }

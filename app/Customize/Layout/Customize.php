@@ -16,8 +16,8 @@ use Backdrop\Customize\Helpers\Sanitize;
 use BeyondExpectations\Customize\Customizable;
 use WP_Customize_Manager;
 
-use function BeyondExpectations\layouts;
-use function BeyondExpectations\mod;
+use BeyondExpectations\Tools\Config;
+use BeyondExpectations\Tools\Mod;
 
 /**
  * Adds the Layout section, with a radio image control, to the Global panel.
@@ -61,7 +61,7 @@ class Customize extends Customizable {
 	public function registerSettings( WP_Customize_Manager $manager ) {
 
 		$manager->add_setting( 'theme_global_layout', [
-			'default'           => mod( 'layout' ),
+			'default'           => Mod::fallback( 'layout' ),
 			'sanitize_callback' => [ Sanitize::class, 'choices' ],
 		] );
 	}
@@ -76,15 +76,8 @@ class Customize extends Customizable {
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
 
-		$choices = [];
-
-		foreach ( layouts() as $layout => $label ) {
-			$choices[ $layout ] = [
-				'label' => $label,
-				// `%1$s` is replaced with the theme folder URL by the control.
-				'url'   => '%1$s/public/images/layout-' . $layout . '.svg',
-			];
-		}
+		// `%1$s` in each image URL is replaced with the theme folder URL by the control.
+		$choices = Config::get( 'layouts' );
 
 		$manager->add_control( new RadioImage( $manager, 'theme_global_layout', [
 			'section'     => 'theme_global_layout',

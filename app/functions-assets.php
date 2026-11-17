@@ -1,6 +1,8 @@
 <?php
 /**
- * Enqueue scripts and styles.
+ * Assets.
+ *
+ * Enqueues the styles and scripts built by Vite (see `app/Vite`).
  *
  * @package   Beyond Expectations
  * @author    Benjamin Lu <benlumia007@gmail.com>
@@ -11,13 +13,10 @@
 
 namespace BeyondExpectations;
 
-use Backdrop\Fonts;
+use function BeyondExpectations\Vite\asset;
 
 /**
- * Enqueue scripts and styles.
- *
- * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_style/
- * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+ * Enqueue scripts/styles for the front end.
  *
  * @since  0.0.1
  * @access public
@@ -25,23 +24,14 @@ use Backdrop\Fonts;
  */
 add_action( 'wp_enqueue_scripts', function() {
 
-	// Local fonts from the Backdrop fonts package.
-	Fonts\enqueue( 'merriweather-sans' );
-	Fonts\enqueue( 'sanchez' );
+	// Rather than enqueue the main style.css stylesheet, we are going to enqueue screen.css.
+	wp_enqueue_style( 'beyond-expectations-screen', asset( 'resources/scss/screen.scss' ), null, null );
 
-	// The built stylesheet. The theme's style.css only holds the theme header.
-	if ( asset( 'resources/scss/screen.scss' ) ) {
-		wp_enqueue_style( 'beyond-expectations-screen', asset( 'resources/scss/screen.scss' ), [], null );
-	}
+	// Search toggle.
+	wp_enqueue_script( 'beyond-expectations-hide-search', asset( 'resources/js/hide-search.js' ), [ 'jquery' ], null, true );
 
-	// Search toggle and navigation scripts.
-	if ( asset( 'resources/js/hide-search.js' ) ) {
-		wp_enqueue_script( 'beyond-expectations-hide-search', asset( 'resources/js/hide-search.js' ), [ 'jquery' ], null, true );
-	}
-
-	if ( asset( 'resources/js/navigation.js' ) ) {
-		wp_enqueue_script( 'beyond-expectations-navigation', asset( 'resources/js/navigation.js' ), [ 'jquery' ], null, true );
-	}
+	// Enqueue Navigation.
+	wp_enqueue_script( 'beyond-expectations-navigation', asset( 'resources/js/navigation.js' ), [ 'jquery' ], null, true );
 
 	// Screen reader text for the child menu toggles.
 	wp_localize_script( 'beyond-expectations-navigation', 'screenReaderText', [
@@ -49,8 +39,23 @@ add_action( 'wp_enqueue_scripts', function() {
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'beyond-expectations' ) . '</span>',
 	] );
 
-	// Loads the comment reply script where appropriate.
+	// Loads ClassicPress' comment-reply script where appropriate.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+} );
+
+/**
+ * Enqueue the customizer controls script, which hides controls whose active callback is
+ * false (see `resources/js/customize-controls.js`).
+ *
+ * @since  0.0.1
+ * @access public
+ * @return void
+ */
+add_action( 'customize_controls_enqueue_scripts', function() {
+
+	wp_enqueue_script( 'beyond-expectations-customize-controls', asset( 'resources/js/customize-controls.js' ), [ 'customize-controls' ], null, true );
+
+	wp_add_inline_style( 'customize-controls', 'li.customize-control.beyond-expectations-control-inactive { display: none !important; }' );
 } );

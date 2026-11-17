@@ -1,34 +1,18 @@
 <?php
-/**
- * Featured image customizer component.
- *
- * @package   Beyond Expectations
- * @author    Benjamin Lu <benlumia007@gmail.com>
- * @copyright 2016-2026 Benjamin Lu
- * @license   https://www.gnu.org/licenses/gpl-2.0.html
- * @link      https://luthemes.com/portfolio/beyond-expectations
- */
 
 namespace BeyondExpectations\Customize\FeatureImage;
-
 use BeyondExpectations\Customize\Customizable;
 use WP_Customize_Manager;
+use BeyondExpectations\Tools\Collection;
+use BeyondExpectations\Tools\Config;
+use BeyondExpectations\Tools\Mod;
 
-use function BeyondExpectations\feature_image_sizes;
-use function BeyondExpectations\mod;
-
-/**
- * Adds the Feature Image section to the Content panel.
- *
- * @since  0.0.1
- * @access public
- */
 class Customize extends Customizable {
 
 	/**
-	 * Registers the Feature Image section.
+	 * Registers customizer sections.
 	 *
-	 * @since  0.0.1
+	 * @since  2.1.0
 	 * @access public
 	 * @param  WP_Customize_Manager  $manager
 	 * @return void
@@ -42,39 +26,83 @@ class Customize extends Customizable {
 	}
 
 	/**
-	 * Registers the feature image size setting.
+	 * Registers customizer settings.
 	 *
-	 * @since  0.0.1
+	 * @since  2.1.0
 	 * @access public
 	 * @param  WP_Customize_Manager  $manager
 	 * @return void
 	 */
 	public function registerSettings( WP_Customize_Manager $manager ) {
 
+        // Add a setting for the feature image size.
 		$manager->add_setting( 'theme_content_feature_image', [
-			'default'           => mod( 'feature_image_size' ),
+			'default'           => Mod::fallback( 'featured_image_size' ),
 			'sanitize_callback' => function( $value ) {
-				return array_key_exists( $value, feature_image_sizes() ) ? $value : mod( 'feature_image_size' );
+				return array_key_exists( $value, Config::get( 'image-sizes' ) ) ? $value : Mod::fallback( 'featured_image_size' );
 			},
 		] );
 	}
 
 	/**
-	 * Registers the feature image size control.
+	 * Registers customizer controls.
 	 *
-	 * @since  0.0.1
+	 * @since  2.1.0
 	 * @access public
 	 * @param  WP_Customize_Manager  $manager
 	 * @return void
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {
 
-		$manager->add_control( 'theme_content_feature_image', [
-			'section'     => 'theme_content_feature_image',
-			'type'        => 'select',
-			'label'       => esc_html__( 'Feature Image Size', 'beyond-expectations' ),
-			'description' => esc_html__( 'The size of the featured image at the top of a page.', 'beyond-expectations' ),
-			'choices'     => feature_image_sizes(),
-		] );
+           // Prepare choices array.
+    $choices = Config::get( 'image-sizes' );
+    foreach ( $choices as $size_name => $size_attrs ) {
+        $choices[ $size_name ] = $size_attrs['label'];
+    }
+
+            // Add a control for the feature image size.
+    $manager->add_control( 'theme_content_feature_image', array(
+        'label'    => __( 'Feature Image Size', 'beyond-expectations' ),
+        'section'  => 'theme_content_feature_image',
+        'settings' => 'theme_content_feature_image',
+        'type'     => 'select',
+        'choices'  => $choices,
+    ) );
+	}
+
+	/**
+	 * Registers customizer partials.
+	 *
+	 * @since  2.1.0
+	 * @access public
+	 * @param  WP_Customize_Manager  $manager
+	 * @return void
+	 */
+	public function registerPartials( WP_Customize_Manager $manager ) {
+
+	}
+
+	/**
+	* Registers JSON for the customize controls script via `wp_localize_script()`.
+	*
+	* @since  2.1.0
+	* @access public
+	* @param  Collection  $json
+	* @return void
+	*/
+	public function controlsJson( Collection $json ) {
+
+	}
+
+	/**
+	* Registers JSON for the customize preview script via `wp_localize_script()`.
+	*
+	* @since  2.1.0
+	* @access public
+	* @param  Collection  $json
+	* @return void
+	*/
+	public function previewJson( Collection $json ) {
+
 	}
 }

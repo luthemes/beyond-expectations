@@ -28,6 +28,7 @@ const files = [
 // folders to include
 const folders = [
   'app',
+  'config',
   'public',   // Vite build output lives here (public/assets, incl. manifest.json)
   'vendor'
 ];

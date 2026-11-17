@@ -21,16 +21,19 @@ The release zip already includes the built styles and scripts. From the reposito
 If the Backdrop framework can't be found, administrators see a notice in the dashboard instead of a fatal error.
 
 ## Structure
-- `functions.php` loads Composer's autoloader and boots the Backdrop application.
-- `app/` holds the service provider (`Provider.php`) and the functions files for setup, assets, the Vite manifest, icons, the custom header, the customizer, settings and template tags (in the `BeyondExpectations` namespace).
-- `app/Settings/` holds the Appearance > Beyond Expectations Settings page (404 page, disable emoji, toolbar and embeds). The customizer uses the [Backdrop customize](https://github.com/backdrop-dev/customize) package (`app/Customize/`): the panels Theme: Global, Header, Content and Footer, with a Layout section (radio image control, images in `public/images`) in Global, Feature Image in Content and Credit in Footer. Their values are read with `BeyondExpectations\mod()` and the defaults live in `app/Provider.php`.
-- `resources/` holds the source styles (`scss/screen.scss` loads one partial per section), scripts and the header image. `style.css` only holds the theme header.
-- Icons are inline SVG from the [Backdrop icons](https://github.com/backdrop-dev/icons) package (Iconoir), and the social icons are added to the social menu by link. `public/icons/` holds the brand icons that Iconoir doesn't have (Amazon, Reddit, Tumblr, Vimeo and others). No icon font is loaded.
-- `index.php` is the only template ClassicPress loads. The [template hierarchy](https://github.com/backdrop-dev/template-hierarchy) package picks the header, content and footer views, which `Backdrop\View\display()` from the [view](https://github.com/backdrop-dev/view) package loads from `public/views`.
-- The [template manager](https://github.com/backdrop-dev/template-manager) package registers the Full Width and Custom Sidebar page templates (`app/functions-setup.php`).
-- `public/views/header`, `content` and `footer` hold the page views (`content/single.php`, `content/page.php`, `content/archive.php`, ...). `content/default.php` is the blog index and the fallback. The page templates are in `content/custom-templates` and are registered in `app/functions-setup.php`.
-- `public/views/comments/default.php` is the comments template, found by the [theme](https://github.com/backdrop-dev/theme) package's comments filter.
-- `public/views/entry/` and `public/views/sidebar/` hold the entry and sidebar views. A post format falls back to `entry/default.php`.
+The `app/` and `config/` folders follow the same layout as [Amicable](https://github.com/luthemes/amicable).
+
+- `functions.php` loads Composer's autoloader, `app/bootstrap-autoload.php` and `app/framework.php`, which registers the service providers and boots the Backdrop application.
+- `app/Provider.php` binds the theme settings and the theme mod defaults (`config/_settings-mods.php`).
+- `app/CleanCP/` removes the emoji scripts, toolbar and embed script when those options are on.
+- `app/Customize/` uses the [Backdrop customize](https://github.com/backdrop-dev/customize) package: the panels Theme: Global, Header, Content and Footer, with Layout (radio image), Feature Image and Credit sections.
+- `app/Settings/` is the Appearance > Beyond Expectations Settings page, with General (404 page, clean up options), Themes and Plugins tabs. `app/PluginManager/` and `app/ThemeManager/` build the Plugins and Themes tabs from `config/plugins.json` and `config/themes.json`.
+- `app/Template/` holds the 404 page (`ErrorPage`) and the footer credit (`Footer`). `app/Tools/` holds `Config`, `Mod`, `PoweredBy`, `Svg` and `Collection`.
+- `app/Vite/` finds the built styles and scripts in the Vite manifest.
+- `app/functions-*.php`: assets, extras (views folder, fonts), filters, setup and template tags.
+- `config/` holds the theme mod defaults, image sizes, layouts, social icons and the recommended plugins and themes.
+- `resources/` holds the source styles and scripts; Vite builds them into `public/assets`.
+- `public/views/` holds the views loaded by the [view](https://github.com/backdrop-dev/view) and [template hierarchy](https://github.com/backdrop-dev/template-hierarchy) packages. `public/svg/social-icons` holds the brand icons that the [icons](https://github.com/backdrop-dev/icons) package (Iconoir) doesn't have, and `public/images` the layout previews.
 
 ## Copyright and License
 This project is licensed under the GNU General Public License, version 2 or later.

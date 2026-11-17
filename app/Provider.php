@@ -16,6 +16,7 @@
 namespace BeyondExpectations;
 
 use Backdrop\Core\ServiceProvider;
+use BeyondExpectations\Tools\Config;
 
 /**
  * App service provider.
@@ -35,19 +36,20 @@ class Provider extends ServiceProvider {
 	 */
 	public function register(): void {
 
+		// Bind a single instance of theme mod defaults.
+		$this->app->singleton( 'beyond-expectations/mods', function() {
+
+			return array_merge(
+				Config::get( '_settings-mods' )
+			);
+		} );
+
 		// Bind the theme settings so they can be resolved from the container.
 		$this->app->singleton( 'beyond-expectations/settings', function() {
 
 			return [
 				'content_width'  => 840,
-				'banner_size'    => [ 'width' => 840, 'height' => 260, 'crop' => true ],
 				'avatar_size'    => 100,
-				'mods'           => [
-					'layout'             => 'sidebar',
-					'feature_image_size' => 'beyond-expectations-banner',
-					'footer_powered_by'  => true,
-					'footer_credit'      => '',
-				],
 				'header'         => [
 					'default-text-color' => 'ffffff',
 					'height'             => 300,
