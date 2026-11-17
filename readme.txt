@@ -4,7 +4,7 @@ Contributors: luthemes
 Tags: custom-background, custom-header, right-sidebar
 Requires at least: 4.4
 Tested up to: 4.9.4
-Stable tag: 0.3.0
+Stable tag: 0.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,10 @@ Customizer
 2. List of different types that you can modify such as
    - Site Title Tagline
       - Hide Display Header Text (this will hide the entire header with header text)
+   - Layout: content with a sidebar (default) or full width with no sidebar
+   - Featured Image: the size of the featured image at the top of a page (banner, large or full size)
+   - Footer: show the "Proudly powered by" credit, or your own footer text
+   - Appearance -> Beyond Expectations Settings: choose a page to show on a 404 error, and turn off emoji scripts, the toolbar and embeds on the front end
 3. Mobile Menu
    - The Mobile Menu is slightly different from other themes. I have created a mobile menu that is
      at the bottom left corner that helps users to navigation easier. The reason why is that 90% of
@@ -54,13 +58,14 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
-Version: 0.3.0
+Version: 0.0.1
 - Rebuilt on the Backdrop framework 2.0 (Composer); functions moved to the app folder
 - Styles and scripts are built with Vite (Sass); Font Awesome's icon font is replaced by inline SVG icons from the Backdrop icons package (Iconoir)
 - Templates load through the Backdrop view and template hierarchy packages (public/views)
 - Pagination uses the Backdrop pagination package (new pagination__ class names in style.css)
 - Markup uses BEM class names (entry__title, site-header__branding, primary-navigation__toggle and so on) and the Backdrop attr package builds the body, html, entry and layout attributes
 - Uses the Backdrop theme package (body classes, archive titles, pingback and generator tags); the comments template moved to public/views/comments/default.php; only index.php is left in the theme root
+- Customizer options for the layout, the featured image size and the footer credit, and a Beyond Expectations Settings page (404 page, disable emoji, toolbar and embeds)
 - Page templates (Full Width, Custom Sidebar) are registered with the Backdrop template manager package and keep their saved names
 - Targets ClassicPress, with PHP 7.4 or later required
 - Updated the theme and author URIs to luthemes.com

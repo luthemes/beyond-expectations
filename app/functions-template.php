@@ -16,7 +16,7 @@ use function Backdrop\app;
 /**
  * Prints the author avatar, date, author and comments link for an entry.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */
@@ -56,7 +56,7 @@ function entry_posted_on() {
 /**
  * Prints the category and tag lists for an entry.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */
@@ -87,7 +87,7 @@ function entry_taxonomies() {
 /**
  * Prints the social navigation menu, if one is assigned.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */

@@ -19,7 +19,7 @@ use Backdrop\Fonts;
  * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_style/
  * @link   https://developer.wordpress.org/reference/functions/wp_enqueue_script/
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */

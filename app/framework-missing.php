@@ -16,7 +16,7 @@
 /**
  * Returns the message shown when the framework is missing.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return string
  */

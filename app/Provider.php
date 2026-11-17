@@ -20,7 +20,7 @@ use Backdrop\Core\ServiceProvider;
 /**
  * App service provider.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  */
 class Provider extends ServiceProvider {
@@ -29,7 +29,7 @@ class Provider extends ServiceProvider {
 	 * Callback executed when the `Backdrop\Core\Application` class registers providers.
 	 * Use this method to bind items to the container.
 	 *
-	 * @since  0.3.0
+	 * @since  0.0.1
 	 * @access public
 	 * @return void
 	 */
@@ -42,6 +42,12 @@ class Provider extends ServiceProvider {
 				'content_width'  => 840,
 				'banner_size'    => [ 'width' => 840, 'height' => 260, 'crop' => true ],
 				'avatar_size'    => 100,
+				'mods'           => [
+					'layout'             => 'sidebar',
+					'feature_image_size' => 'beyond-expectations-banner',
+					'footer_powered_by'  => true,
+					'footer_credit'      => '',
+				],
 				'header'         => [
 					'default-text-color' => 'ffffff',
 					'height'             => 300,

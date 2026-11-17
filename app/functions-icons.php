@@ -22,7 +22,7 @@ use function Backdrop\Icons\icons;
  * brand icons that Iconoir doesn't have (Amazon, Reddit, Tumblr, Vimeo and so on) are SVG files
  * in `public/icons`.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */
@@ -35,7 +35,7 @@ add_action( 'after_setup_theme', function() {
  * Returns an inline icon from the Backdrop icons package, with the theme's `icon` class so the
  * theme styles can reach it. Returns an empty string for an unknown icon.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @param  string $name
  * @param  array  $args
@@ -49,7 +49,7 @@ function svg( string $name, array $args = [] ): string {
 /**
  * Prints an inline icon.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @param  string $name
  * @param  array  $args
@@ -64,7 +64,7 @@ function the_svg( string $name, array $args = [] ): void {
  * Returns the social icons available to the social menu. Keys are strings to look for in a menu
  * link's URL, and values are icon names.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return array
  */
@@ -116,7 +116,7 @@ function social_icons(): array {
  * Adds the matching social icon in front of each link in the social navigation menu. A link
  * with no matching icon gets a globe.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @param  string   $item_output
  * @param  \WP_Post $item

@@ -18,7 +18,7 @@ namespace BeyondExpectations;
 /**
  * Returns the decoded Vite manifest, or an empty array when the theme hasn't been built.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return array
  */
@@ -39,7 +39,7 @@ function manifest(): array {
  * Returns the URL of a built asset from its source path, such as `resources/scss/screen.scss`.
  * Returns an empty string when the asset isn't in the manifest.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @param  string $path
  * @return string
@@ -60,7 +60,7 @@ function asset( string $path ): string {
  * Tells administrators when the assets haven't been built, which leaves the theme without
  * styles. A packaged release already includes them.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */

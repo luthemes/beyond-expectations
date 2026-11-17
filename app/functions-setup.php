@@ -16,7 +16,7 @@ use function Backdrop\app;
 /**
  * Content width.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */
@@ -28,7 +28,7 @@ add_action( 'after_setup_theme', function() {
 /**
  * Set up theme support. This is where calls to `add_theme_support()` happen.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */
@@ -63,7 +63,7 @@ add_action( 'after_setup_theme', function() {
  *
  * @link   https://developer.wordpress.org/reference/functions/register_nav_menus/
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */
@@ -80,7 +80,7 @@ add_action( 'init', function() {
  *
  * @link   https://developer.wordpress.org/reference/functions/register_sidebar/
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */
@@ -110,7 +110,7 @@ add_action( 'widgets_init', function() {
  * `public/views/content/custom-templates`, and the keys match the file names that earlier
  * versions of the theme saved for pages.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @param  \Backdrop\Template\Manager\Templates  $templates
  * @return void
@@ -132,7 +132,7 @@ add_action( 'backdrop/templates/register', function( $templates ) {
  * Sets the folder that views are loaded from. Backdrop looks in `resources/views` by default,
  * but this theme keeps its views in `public/views`.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return string
  */

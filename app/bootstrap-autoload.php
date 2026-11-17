@@ -20,6 +20,7 @@ array_map( function( $file ) {
 	'functions-customize',
 	'functions-header',
 	'functions-icons',
+	'functions-settings',
 	'functions-setup',
 	'functions-template',
 	'functions-vite'

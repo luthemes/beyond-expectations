@@ -3,3 +3,13 @@
 21.0 - Content Area (Full Width)
 ================================================================================================
 */
+
+/* Global layout chosen in the customizer: no sidebar. */
+.layout-full .content-area {
+    float: none;
+    width: 100%;
+}
+
+.layout-full .widget-area {
+    display: none;
+}
