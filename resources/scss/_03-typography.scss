@@ -4,9 +4,10 @@
 ================================================================================================
 */
 body {
-    font-family: 'Fira Sans', sans-serif;
-    /* The Fira Sans files in the Backdrop fonts package are missing their ligature glyphs, so
-       "fi", "fl" and "ffi" disappear unless ligatures are turned off. */
+    font-family: 'Merriweather', serif;
+    /* The Fira Sans files in the Backdrop fonts package (used for the title, headings and
+       menus) are missing their ligature glyphs, so "fi", "fl" and "ffi" disappear unless
+       ligatures are turned off. Set here so every element inherits it. */
     font-variant-ligatures: no-common-ligatures;
     line-height: 1.6;
 }
@@ -17,7 +18,7 @@ h3,
 h4, 
 h5, 
 h6 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 p {
