@@ -9,10 +9,13 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
+<?php $error_page = is_404() ? BeyondExpectations\error_page() : null; ?>
 <article <?php Backdrop\Attr\display( 'entry', 'none' ); ?>>
     <header class="archive-header">
         <h2 class="archive-header__title">
-            <?php if (is_404()) {
+            <?php if ($error_page) {
+                echo esc_html( get_the_title( $error_page ) );
+            } else if (is_404()) {
                 _e('Page Not Available', 'beyond-expectations');
             } else if (is_search()) {
                 printf(__('Nothing found for: <small>', 'beyond-expectations') . get_search_query() . '</small>');
@@ -23,7 +26,10 @@
         </h2>
     </header>
     <div class="entry__content entry__content--full-width">
-        <?php if (is_home() && current_user_can('publish_posts')) : ?>
+        <?php if ($error_page) : ?>
+            <?php echo apply_filters( 'the_content', $error_page->post_content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+            <?php get_search_form(); ?>
+        <?php elseif (is_home() && current_user_can('publish_posts')) : ?>
             <p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'beyond-expectations' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
         <?php elseif (is_404()) : ?>
             <p><?php printf(__( "You tried going to %s, which doesn't exist, so that means I probably broke something.", 'beyond-expectations'), '<code>' . home_url( esc_url( $_SERVER['REQUEST_URI'] ) ) . '</code>' ); ?></p>

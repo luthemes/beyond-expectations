@@ -22,7 +22,8 @@ If the Backdrop framework can't be found, administrators see a notice in the das
 
 ## Structure
 - `functions.php` loads Composer's autoloader and boots the Backdrop application.
-- `app/` holds the service provider (`Provider.php`) and the functions files for setup, assets, the Vite manifest, icons, the custom header, the customizer and template tags (in the `BeyondExpectations` namespace).
+- `app/` holds the service provider (`Provider.php`) and the functions files for setup, assets, the Vite manifest, icons, the custom header, the customizer, settings and template tags (in the `BeyondExpectations` namespace).
+- `app/Settings/` holds the Appearance > Beyond Expectations Settings page (404 page, disable emoji, toolbar and embeds). The customizer adds Layout, Featured Image and Footer sections (`app/functions-customize.php`); their values are read with `BeyondExpectations\mod()` and the defaults live in `app/Provider.php`.
 - `resources/` holds the source styles (`scss/screen.scss` loads one partial per section), scripts and the header image. `style.css` only holds the theme header.
 - Icons are inline SVG from the [Backdrop icons](https://github.com/backdrop-dev/icons) package (Iconoir), and the social icons are added to the social menu by link. `public/icons/` holds the brand icons that Iconoir doesn't have (Amazon, Reddit, Tumblr, Vimeo and others). No icon font is loaded.
 - `index.php` is the only template ClassicPress loads. The [template hierarchy](https://github.com/backdrop-dev/template-hierarchy) package picks the header, content and footer views, which `Backdrop\View\display()` from the [view](https://github.com/backdrop-dev/view) package loads from `public/views`.

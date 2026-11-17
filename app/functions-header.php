@@ -16,7 +16,7 @@ use function Backdrop\app;
 /**
  * Adds custom header support.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */
@@ -32,7 +32,7 @@ add_action( 'after_setup_theme', function() {
 /**
  * Outputs the header text color styles.
  *
- * @since  0.3.0
+ * @since  0.0.1
  * @access public
  * @return void
  */
