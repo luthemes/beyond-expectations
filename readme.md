@@ -24,7 +24,7 @@ If the Backdrop framework can't be found, administrators see a notice in the das
 - `functions.php` loads Composer's autoloader and boots the Backdrop application.
 - `app/` holds the service provider (`Provider.php`) and the functions files for setup, assets, the Vite manifest, icons, the custom header, the customizer and template tags (in the `BeyondExpectations` namespace).
 - `resources/` holds the source styles (`scss/screen.scss` loads one partial per section), scripts and the header image. `style.css` only holds the theme header.
-- `public/svg/` holds the inline SVG icons; the social icons in `public/svg/social` are added to the social menu by link. No icon font is loaded.
+- Icons are inline SVG from the [Backdrop icons](https://github.com/backdrop-dev/icons) package (Iconoir), and the social icons are added to the social menu by link. `public/icons/` holds the brand icons that Iconoir doesn't have (Amazon, Reddit, Tumblr, Vimeo and others). No icon font is loaded.
 - `index.php` is the only template ClassicPress loads. The [template hierarchy](https://github.com/backdrop-dev/template-hierarchy) package picks the header, content and footer views, which `Backdrop\View\display()` from the [view](https://github.com/backdrop-dev/view) package loads from `public/views`.
 - The [template manager](https://github.com/backdrop-dev/template-manager) package registers the Full Width and Custom Sidebar page templates (`app/functions-setup.php`).
 - `public/views/header`, `content` and `footer` hold the page views (`content/single.php`, `content/page.php`, `content/archive.php`, ...). `content/default.php` is the blog index and the fallback. The page templates are in `content/custom-templates` and are registered in `app/functions-setup.php`.
@@ -34,6 +34,6 @@ If the Backdrop framework can't be found, administrators see a notice in the das
 ## Copyright and License
 This project is licensed under the GNU General Public License, version 2 or later.
 
-The screenshot is licensed CC0, by Greg Rakozy (https://unsplash.com/photos/oMpAz-DN-9I). Merriweather Sans (Sorkin Type) and Sanchez (Latinotype) are licensed under SIL OFL 1.1 and load from the [Backdrop fonts](https://github.com/backdrop-dev/fonts) package. The social icons are [Font Awesome Free](https://fontawesome.com) 5 brand icons, licensed CC BY 4.0, used as inline SVG.
+The screenshot is licensed CC0, by Greg Rakozy (https://unsplash.com/photos/oMpAz-DN-9I). Merriweather Sans (Sorkin Type) and Sanchez (Latinotype) are licensed under SIL OFL 1.1 and load from the [Backdrop fonts](https://github.com/backdrop-dev/fonts) package. Icons are [Iconoir](https://iconoir.com) (MIT) through the Backdrop icons package, and the brand icons in `public/icons` are [Font Awesome Free](https://fontawesome.com) 5 brand icons, licensed CC BY 4.0, used as inline SVG.
 
 Copyright © 2016–2026 Benjamin Lu

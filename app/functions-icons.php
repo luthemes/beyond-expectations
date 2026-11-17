@@ -2,8 +2,8 @@
 /**
  * Inline SVG icons.
  *
- * Icons are SVG files in `public/svg` that are printed inline, so no icon font is loaded. The
- * social icons in `public/svg/social` are added to the social navigation menu by link.
+ * Icons come from the Backdrop icons package (Iconoir) and are printed inline, so no icon font is
+ * loaded. The social icons are added to the social navigation menu by link.
  *
  * @package   Beyond Expectations
  * @author    Benjamin Lu <benlumia007@gmail.com>
@@ -14,56 +14,55 @@
 
 namespace BeyondExpectations;
 
+use function Backdrop\Icons\icon;
+use function Backdrop\Icons\icons;
+
 /**
- * Returns an inline SVG icon from `public/svg`, such as `search` or `social/facebook`. The
- * icon gets the classes `icon icon--{name}`. Returns an empty string for an unknown icon.
+ * Adds the theme's own icons to the Backdrop icons package. The package bundles Iconoir, and the
+ * brand icons that Iconoir doesn't have (Amazon, Reddit, Tumblr, Vimeo and so on) are SVG files
+ * in `public/icons`.
+ *
+ * @since  0.3.0
+ * @access public
+ * @return void
+ */
+add_action( 'after_setup_theme', function() {
+
+	icons()->addPath( get_parent_theme_file_path( 'public/icons' ) );
+} );
+
+/**
+ * Returns an inline icon from the Backdrop icons package, with the theme's `icon` class so the
+ * theme styles can reach it. Returns an empty string for an unknown icon.
  *
  * @since  0.3.0
  * @access public
  * @param  string $name
+ * @param  array  $args
  * @return string
  */
-function svg( string $name ): string {
+function svg( string $name, array $args = [] ): string {
 
-	$name = trim( $name, '/' );
-
-	// Only plain icon names, so a name can't point outside the icons folder.
-	if ( ! preg_match( '#^[a-z0-9-]+(/[a-z0-9-]+)?$#', $name ) ) {
-		return '';
-	}
-
-	$file = get_parent_theme_file_path( "public/svg/{$name}.svg" );
-
-	if ( ! is_readable( $file ) ) {
-		return '';
-	}
-
-	$svg   = trim( (string) file_get_contents( $file ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-	$class = 'icon icon--' . basename( $name );
-
-	// Give every icon the same classes, in place of the ones it was exported with.
-	$svg = preg_replace( '/\sclass="[^"]*"/', '', $svg, 1 );
-	$svg = preg_replace( '/^<svg/', '<svg class="' . esc_attr( $class ) . '"', $svg, 1 );
-
-	return (string) apply_filters( "beyond-expectations/svg/{$name}", $svg );
+	return icon( $name, array_merge( [ 'class' => 'icon' ], $args ) );
 }
 
 /**
- * Prints an inline SVG icon.
+ * Prints an inline icon.
  *
  * @since  0.3.0
  * @access public
  * @param  string $name
+ * @param  array  $args
  * @return void
  */
-function the_svg( string $name ): void {
+function the_svg( string $name, array $args = [] ): void {
 
-	echo svg( $name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo svg( $name, $args ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 /**
  * Returns the social icons available to the social menu. Keys are strings to look for in a menu
- * link's URL, and values are the icon names in `public/svg/social`.
+ * link's URL, and values are icon names.
  *
  * @since  0.3.0
  * @access public
@@ -81,15 +80,15 @@ function social_icons(): array {
 		'dribbble.com'    => 'dribbble',
 		'dropbox.com'     => 'dropbox',
 		'facebook.com'    => 'facebook',
-		'feed'            => 'rss-square-solid',
+		'feed'            => 'rss-feed',
 		'flickr.com'      => 'flickr',
 		'foursquare.com'  => 'foursquare',
-		'getpocket.com'   => 'getpocket',
+		'getpocket.com'   => 'pocket',
 		'github.com'      => 'github',
-		'plus.google.com' => 'google-plus',
+		'plus.google.com' => 'google',
 		'instagram.com'   => 'instagram',
 		'linkedin.com'    => 'linkedin',
-		'mailto:'         => 'envelope-open-regular',
+		'mailto:'         => 'mail',
 		'medium.com'      => 'medium',
 		'pinterest.com'   => 'pinterest',
 		'reddit.com'      => 'reddit',
@@ -135,7 +134,7 @@ add_filter( 'walker_nav_menu_start_el', function( $item_output, $item, $depth, $
 
 	foreach ( social_icons() as $url => $name ) {
 		if ( false !== strpos( $item->url, $url ) ) {
-			$icon = "social/{$name}";
+			$icon = $name;
 			break;
 		}
 	}

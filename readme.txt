@@ -56,7 +56,7 @@ Changelog
 ================================================================================================
 Version: 0.3.0
 - Rebuilt on the Backdrop framework 2.0 (Composer); functions moved to the app folder
-- Styles and scripts are built with Vite (Sass); Font Awesome's icon font is replaced by inline SVG icons
+- Styles and scripts are built with Vite (Sass); Font Awesome's icon font is replaced by inline SVG icons from the Backdrop icons package (Iconoir)
 - Templates load through the Backdrop view and template hierarchy packages (public/views)
 - Pagination uses the Backdrop pagination package (new pagination__ class names in style.css)
 - Markup uses BEM class names (entry__title, site-header__branding, primary-navigation__toggle and so on) and the Backdrop attr package builds the body, html, entry and layout attributes
@@ -150,5 +150,9 @@ Merriweather Sans by Sorkin Type - https://github.com/SorkinType/Merriweather-Sa
 Sanchez by Latinotype - https://www.latinotype.com
 Both licensed under SIL OFL 1.1 and loaded from the Backdrop fonts package (https://github.com/backdrop-dev/fonts)
 
-Social icons: Font Awesome Free 5 brand icons by Fonticons, Inc. - https://fontawesome.com
+Icons: Iconoir, https://iconoir.com
+(C) 2021 Luca Burgio, MIT License, https://opensource.org/licenses/MIT
+Bundled in vendor/backdrop-dev/icons/assets (Backdrop Icons, https://github.com/backdrop-dev/icons, GPLv2 or later)
+
+Brand icons without an Iconoir version (public/icons): Font Awesome Free 5 brand icons by Fonticons, Inc. - https://fontawesome.com
 Licensed under CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/ (used as inline SVG, no icon font is loaded)

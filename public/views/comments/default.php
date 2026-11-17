@@ -39,8 +39,8 @@ if ( post_password_required() ) {
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
     <nav id="comment-nav-below" class="comments-area__navigation cf" role="navigation">
-            <div class="comments-area__previous"><?php previous_comments_link( BeyondExpectations\svg( 'arrow-circle-left' ) . __( 'Older Comments', 'beyond-expectations' ) ); ?></div>
-            <div class="comments-area__next"><?php next_comments_link( BeyondExpectations\svg( 'arrow-circle-right' ) . __( 'Newer Comments', 'beyond-expectations' ) ); ?></div>
+            <div class="comments-area__previous"><?php previous_comments_link( BeyondExpectations\svg( 'arrow-left-circle' ) . __( 'Older Comments', 'beyond-expectations' ) ); ?></div>
+            <div class="comments-area__next"><?php next_comments_link( BeyondExpectations\svg( 'arrow-right-circle' ) . __( 'Newer Comments', 'beyond-expectations' ) ); ?></div>
     </nav>
     <?php endif; ?>
 
