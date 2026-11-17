@@ -1160,21 +1160,22 @@ a:hover {
     text-align: center;
 }
 
-.paging-navigation ul {
+.pagination__items {
+    list-style: none;
     margin: 0;
+    padding: 0;
     text-align: center;
 }
 
-.paging-navigation li { display: inline; }
+.pagination__item { display: inline; }
 
-a.page-numbers,
-span.page-numbers {
+a.pagination__anchor,
+span.pagination__anchor {
     border: 1px solid #000000;
-     padding: 0.5em 1.2em;
-
+    padding: 0.5em 1.2em;
 }
 
-.paging-navigation .current {
+.pagination__anchor--current {
     font-weight: bold;
 }
 
