@@ -34,17 +34,17 @@ features.
 	}
 
 	menu.setAttribute( 'aria-expanded', 'false' );
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-		menu.className += ' nav-menu';
+	if ( -1 === menu.className.indexOf( 'primary-navigation__menu' ) ) {
+		menu.className += ' primary-navigation__menu';
 	}
 
 	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
+		if ( -1 !== container.className.indexOf( 'primary-navigation--toggled' ) ) {
+			container.className = container.className.replace( ' primary-navigation--toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
-			container.className += ' toggled';
+			container.className += ' primary-navigation--toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}
@@ -71,8 +71,8 @@ features.
 	function toggleFocus() {
 		var self = this;
 
-		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
+		// Move up through the ancestors of the current link until we hit .primary-navigation__menu.
+		while ( -1 === self.className.indexOf( 'primary-navigation__menu' ) ) {
 
 			// On li elements toggle the class .focus.
 			if ( 'li' === self.tagName.toLowerCase() ) {
@@ -89,13 +89,13 @@ features.
 
 	function initMainNavigation( container ) {
 		// Add dropdown toggle that display child menu items.
-		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
+		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="primary-navigation__dropdown" aria-expanded="false">' + screenReaderText.expand + '</button>' );
 
-		container.find( '.dropdown-toggle' ).click( function( e ) {
+		container.find( '.primary-navigation__dropdown' ).click( function( e ) {
 			var _this = $( this );
 			e.preventDefault();
-			_this.toggleClass( 'toggle-on' );
-			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
+			_this.toggleClass( 'primary-navigation__dropdown--open' );
+			_this.next( '.children, .sub-menu' ).toggleClass( 'primary-navigation__submenu--open' );
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 			_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
 		} );
@@ -108,9 +108,9 @@ features.
 			initMainNavigation( params.newContainer );
 
 			// Re-sync expanded states from oldContainer.
-			params.oldContainer.find( '.dropdown-toggle.toggle-on' ).each(function() {
+			params.oldContainer.find( '.primary-navigation__dropdown.primary-navigation__dropdown--open' ).each(function() {
 				var containerId = $( this ).parent().prop( 'id' );
-				$( params.newContainer ).find( '#' + containerId + ' > .dropdown-toggle' ).triggerHandler( 'click' );
+				$( params.newContainer ).find( '#' + containerId + ' > .primary-navigation__dropdown' ).triggerHandler( 'click' );
 			});
 		}
 	});
@@ -123,14 +123,14 @@ features.
 		if( $(this).scrollTop() >= position ){
 			direction = 'down';
 			if(direction !== previous){
-				$('.menu-toggle').addClass('hide');
+				$('.primary-navigation__toggle').addClass('primary-navigation__toggle--hidden');
 
 				previous = direction;
 			}
 		} else {
 			direction = 'up';
 			if(direction !== previous){
-				$('.menu-toggle').removeClass('hide');
+				$('.primary-navigation__toggle').removeClass('primary-navigation__toggle--hidden');
 
 				previous = direction;
 			}

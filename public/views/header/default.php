@@ -10,17 +10,17 @@
  */
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php Backdrop\Attr\display( 'html' ); ?>>
     <head>
         <meta charset="<?php bloginfo('charset'); ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://gmpg.org/xfn/11" rel="profile" />
         <?php wp_head(); ?>
     </head>
-<body <?php body_class(); ?>>
+<body <?php Backdrop\Attr\display( 'body' ); ?>>
     <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
-    <div id="social-search" class="social-search">
-    <nav class="align-center">
+    <div id="social-search" <?php Backdrop\Attr\display( 'top-bar' ); ?>>
+    <nav class="top-bar__inner">
         <div class="social-navigation cf">
         <div class="search-toggle cf">
             <i class="fa fa-search cf"> </i>
@@ -30,29 +30,31 @@
         </div>
     </nav>
     </div>
-    <div id="search-container" class="search-box-wrapper cf">
-        <div class="search-box cf">
+    <div <?php Backdrop\Attr\display( 'search-box', '', [ 'id' => 'search-container', 'class' => 'search-box cf' ] ); ?>>
+        <div class="search-box__inner cf">
             <?php get_search_form(); ?>
         </div>
     </div>
-    <?php if (get_header_image()) { ?>
-        <header id="site-header" class="site-header" style="background: url(<?php echo esc_url( get_header_image() ); ?>);">
-    <?php } else { ?>
-            <header id="site-header" class="site-header">
-    <?php } ?>
-        <div id="site-branding" class="site-branding">
-            <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-            <h4 class="site-description"><?php bloginfo('description'); ?></h4>
+    <?php
+        $header_attr = [ 'id' => 'site-header' ];
+
+        if ( get_header_image() ) {
+            $header_attr['style'] = sprintf( 'background: url(%s);', esc_url( get_header_image() ) );
+        }
+    ?>
+    <header <?php Backdrop\Attr\display( 'site-header', '', $header_attr ); ?>>
+        <div id="site-branding" class="site-header__branding">
+            <h1 class="site-header__title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+            <h4 class="site-header__description"><?php bloginfo('description'); ?></h4>
         </div>
     </header>
-    <nav id="site-navigation" class="primary-navigation">
-        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'beyond-expectations'); ?></button>
+    <nav <?php Backdrop\Attr\display( 'primary-navigation', '', [ 'id' => 'site-navigation' ] ); ?>>
+        <button class="primary-navigation__toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'beyond-expectations'); ?></button>
         <?php
             wp_nav_menu(array(
                 'theme_location'    => 'primary-navigation',
                 'menu_id'           => 'primary-menu',
-                'menu_class'        => 'nav-menu'   
-            )); 
+                'menu_class'        => 'primary-navigation__menu')); 
         ?>
     </nav>
-    <section id="site-content" class="site-content cf">
+    <section <?php Backdrop\Attr\display( 'site-content', '', [ 'id' => 'site-content', 'class' => 'site-content cf' ] ); ?>>
