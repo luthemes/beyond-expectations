@@ -45,8 +45,10 @@ add_action( 'after_setup_theme', function() {
 	// Automatically add feed links to `<head>`.
 	add_theme_support( 'automatic-feed-links' );
 
-	// Outputs HTML5 markup for core features.
-	add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'caption' ] );
+	// Outputs HTML5 markup for core features. ClassicPress 2.0 and later use HTML5 by default.
+	if ( ! function_exists( 'classicpress_version' ) || version_compare( classicpress_version(), '2.0.0', '<' ) ) {
+		add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'caption' ] );
+	}
 
 	// Adds custom background support.
 	add_theme_support( 'custom-background', [ 'default-color' => 'ffffff' ] );
