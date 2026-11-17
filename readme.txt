@@ -152,13 +152,13 @@ Copyright and Licensed as CC0
 By Greg Rakozy (https://unsplash.com/grakozy)
 https://unsplash.com/photos/oMpAz-DN-9I
 
-Merriweather Sans by Sorkin Type - https://github.com/SorkinType/Merriweather-Sans
-Sanchez by Latinotype - https://www.latinotype.com
+Merriweather by Sorkin Type - https://github.com/SorkinType/Merriweather
+Fira Sans by Carrois Apostrophe and Mozilla - https://github.com/mozilla/Fira
 Both licensed under SIL OFL 1.1 and loaded from the Backdrop fonts package (https://github.com/backdrop-dev/fonts)
 
 Icons: Iconoir, https://iconoir.com
 (C) 2021 Luca Burgio, MIT License, https://opensource.org/licenses/MIT
 Bundled in vendor/backdrop-dev/icons/assets (Backdrop Icons, https://github.com/backdrop-dev/icons, GPLv2 or later)
 
-Brand icons without an Iconoir version (public/icons): Font Awesome Free 5 brand icons by Fonticons, Inc. - https://fontawesome.com
+Brand icons without an Iconoir version (public/svg/social-icons): Font Awesome Free 5 brand icons by Fonticons, Inc. - https://fontawesome.com
 Licensed under CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/ (used as inline SVG, no icon font is loaded)
