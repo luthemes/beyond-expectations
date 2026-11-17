@@ -1,8 +1,6 @@
 <?php
 /**
- * Template Name: Custom Sidebar Template
- *
- * Beyond Expectations - custom-sidebar.php
+ * Beyond Expectations - page.php
  *
  * @package   Beyond Expectations
  * @author    Benjamin Lu <benlumia007@gmail.com>
@@ -11,18 +9,12 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-<?php get_header(); ?>
     <div id="content-area" class="content-area">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <?php Backdrop\View\display( 'entry', 'custom-sidebar' ); ?>
+                <?php Backdrop\View\display( 'entry', 'page' ); ?>
         <?php endwhile; ?>
-                <div class="paging-navigation">
-                    <?php the_posts_pagination(); ?>
-                </div>
         <?php else : ?>
-                    <?php Backdrop\View\display( 'entry', 'none' ); ?>
         <?php endif; ?>
     </div>
-<?php Backdrop\View\display( 'sidebar', 'custom' ); ?>
-<?php get_footer(); ?>
+<?php Backdrop\View\display( 'sidebar', 'secondary' ); ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Beyond Expectations - archive.php
+ * Beyond Expectations - full-width.php
  *
  * @package   Beyond Expectations
  * @author    Benjamin Lu <benlumia007@gmail.com>
@@ -9,23 +9,15 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-<?php get_header(); ?>
-    <div id="content-area" class="content-area">
+    <div id="content-area" class="content-area full-width">
         <?php if (have_posts()) : ?>
-	       <header class="archive-header">
-                <h2 class="archive-content">
-                    <?php the_archive_title(); ?>
-                </h2>
-            </header>
             <?php while (have_posts()) : the_post(); ?>
-                <?php Backdrop\View\display( 'entry', 'archive' ); ?>
+                <?php Backdrop\View\display( 'entry', 'full-width' ); ?>
         <?php endwhile; ?>
                 <div class="paging-navigation">
                     <?php the_posts_pagination(); ?>
                 </div>
         <?php else : ?>
-                <?php Backdrop\View\display( 'entry', 'none' ); ?>
+                    <?php Backdrop\View\display( 'entry', 'none' ); ?>
         <?php endif; ?>
     </div>
-<?php Backdrop\View\display( 'sidebar', 'primary' ); ?>
-<?php get_footer(); ?>
