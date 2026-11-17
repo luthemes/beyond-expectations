@@ -9,12 +9,13 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-<?php $error_page = is_404() ? BeyondExpectations\error_page() : null; ?>
+<?php $error_page = isset( $error ) && $error->hasPost() ? $error : null; ?>
+<?php $error_page && $error_page->setup(); ?>
 <article <?php Backdrop\Attr\display( 'entry', 'none' ); ?>>
     <header class="archive-header">
         <h2 class="archive-header__title">
             <?php if ($error_page) {
-                echo esc_html( get_the_title( $error_page ) );
+                $error_page->displayTitle();
             } else if (is_404()) {
                 _e('Page Not Available', 'beyond-expectations');
             } else if (is_search()) {
@@ -27,7 +28,7 @@
     </header>
     <div class="entry__content entry__content--full-width">
         <?php if ($error_page) : ?>
-            <?php echo apply_filters( 'the_content', $error_page->post_content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+            <?php $error_page->displayContent(); ?>
             <?php get_search_form(); ?>
         <?php elseif (is_home() && current_user_can('publish_posts')) : ?>
             <p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'beyond-expectations' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
@@ -59,3 +60,4 @@
     }
     ?>
 </div>
+<?php $error_page && $error_page->reset(); ?>

@@ -16,12 +16,12 @@
 array_map( function( $file ) {
 	require_once get_parent_theme_file_path( "app/{$file}.php" ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 }, [
+	// Loaded here rather than by Composer, so `BeyondExpectations\Vite\asset()` exists before the
+	// asset functions below use it.
+	'Vite/functions-vite',
 	'functions-assets',
-	'functions-customize',
-	'functions-header',
-	'functions-icons',
-	'functions-settings',
+	'functions-extras',
+	'functions-filters',
 	'functions-setup',
-	'functions-template',
-	'functions-vite'
+	'functions-template'
 ] );

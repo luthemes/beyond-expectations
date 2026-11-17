@@ -1,0 +1,20 @@
+/* Styles for the Beyond Expectations Settings page (Appearance > Beyond Expectations Settings). */
+.plugin-browser .plugins {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.plugin-browser .plugin-card {
+    box-sizing: border-box;
+    float: none;
+    margin: 0;
+    padding-top: 1rem;
+    width: calc(50% - 8px);
+}
+
+@media screen and (max-width: 782px) {
+    .plugin-browser .plugin-card {
+        width: 100%;
+    }
+}

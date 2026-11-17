@@ -10,7 +10,7 @@
  */
 ?>
 <article <?php Backdrop\Attr\display( 'entry', 'page' ); ?>>
-    <?php the_post_thumbnail( BeyondExpectations\feature_image_size() ); ?>
+    <?php the_post_thumbnail( BeyondExpectations\Tools\Mod::get( 'theme_content_feature_image' ) ); ?>
     <header class="entry__header">
         <?php the_title(sprintf('<h1 class="entry__title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?> 
     </header>

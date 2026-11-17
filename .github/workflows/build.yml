@@ -24,7 +24,7 @@ jobs:
                   php-version: '7.4'
 
             - name: Lint PHP
-              run: find app public functions.php index.php -name '*.php' -print0 | xargs -0 -n1 php -l
+              run: find app config public functions.php index.php -name '*.php' -print0 | xargs -0 -n1 php -l
 
             - name: Install Node dependencies
               run: if [ -f package-lock.json ]; then npm ci --no-fund; else npm install --no-fund; fi
@@ -35,6 +35,6 @@ jobs:
 
             - name: Check the manifest
               run: |
-                  for entry in resources/scss/screen.scss resources/js/navigation.js resources/js/hide-search.js; do
+                  for entry in resources/scss/screen.scss resources/scss/admin.scss resources/js/navigation.js resources/js/hide-search.js resources/js/customize-controls.js; do
                       grep -q "\"$entry\"" public/assets/manifest.json || { echo "::error::$entry is missing from the manifest."; exit 1; }
                   done

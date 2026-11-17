@@ -12,6 +12,7 @@
 namespace BeyondExpectations;
 
 use function Backdrop\app;
+use BeyondExpectations\Tools\Config;
 
 /**
  * Content width.
@@ -53,9 +54,19 @@ add_action( 'after_setup_theme', function() {
 	// Adds custom background support.
 	add_theme_support( 'custom-background', [ 'default-color' => 'ffffff' ] );
 
-	// Adds featured image support and the banner image size used by pages.
+	// Adds featured image support and the image sizes in `config/image-sizes.php`.
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'beyond-expectations-banner', $settings['banner_size']['width'], $settings['banner_size']['height'], $settings['banner_size']['crop'] );
+
+	foreach ( Config::get( 'image-sizes' ) as $name => $size ) {
+		add_image_size( $name, $size['width'], $size['height'], $size['crop'] ?? false );
+	}
+
+	// Adds the custom header, which prints its styles with `header_style()`.
+	$header = $settings['header'];
+
+	$header['wp-head-callback'] = __NAMESPACE__ . '\\header_style';
+
+	add_theme_support( 'custom-header', $header );
 }, 5 );
 
 /**
@@ -129,14 +140,26 @@ add_action( 'backdrop/templates/register', function( $templates ) {
 } );
 
 /**
- * Sets the folder that views are loaded from. Backdrop looks in `resources/views` by default,
- * but this theme keeps its views in `public/views`.
+ * Outputs the header text color styles.
  *
  * @since  0.0.1
  * @access public
- * @return string
+ * @return void
  */
-add_filter( 'backdrop/template/path', function() {
+function header_style() {
 
-	return 'public/views';
-} );
+	$text_color = get_header_textcolor();
+
+	// If no custom options for text are set, let's bail.
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $text_color ) {
+		return;
+	}
+
+	if ( ! display_header_text() ) {
+		$css = '.site-header__branding { display: none; }';
+	} else {
+		$css = sprintf( '.site-header__title a, .site-header__description { color: #%s; }', esc_attr( $text_color ) );
+	}
+
+	printf( '<style type="text/css">%s</style>' . "\n", $css ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
