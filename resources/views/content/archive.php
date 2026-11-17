@@ -1,6 +1,6 @@
 <?php
 /**
- * Beyond Expectations - search.php
+ * Beyond Expectations - archive.php
  *
  * @package   Beyond Expectations
  * @author    Benjamin Lu <benlumia007@gmail.com>
@@ -9,18 +9,15 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-<?php get_header(); ?>
     <div id="content-area" class="content-area">
-            <?php if (have_posts()) : ?>
-                <div class="entry-header">
-                    <h2 class="content-archive">
-                        <?php if (is_search()) { ?>
-                            <?php printf(__('Search for: <small>', 'beyond-expectations') . get_search_query() . '</small>'); ?>
-                        <?php } ?>
-                    </h2>
-                </div>
+        <?php if (have_posts()) : ?>
+	       <header class="archive-header">
+                <h2 class="archive-content">
+                    <?php the_archive_title(); ?>
+                </h2>
+            </header>
             <?php while (have_posts()) : the_post(); ?>
-                <?php Backdrop\View\display( 'entry', 'search' ); ?>
+                <?php Backdrop\View\display( 'entry', 'archive' ); ?>
         <?php endwhile; ?>
                 <div class="paging-navigation">
                     <?php the_posts_pagination(); ?>
@@ -30,4 +27,3 @@
         <?php endif; ?>
     </div>
 <?php Backdrop\View\display( 'sidebar', 'primary' ); ?>
-<?php get_footer(); ?>

@@ -1,8 +1,6 @@
 <?php
 /**
- * Template Name: Full Width Template
- *
- * Beyond Expectations - full-width.php
+ * Beyond Expectations - custom-sidebar.php
  *
  * @package   Beyond Expectations
  * @author    Benjamin Lu <benlumia007@gmail.com>
@@ -11,11 +9,10 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-<?php get_header(); ?>
-    <div id="content-area" class="content-area full-width">
+    <div id="content-area" class="content-area">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <?php Backdrop\View\display( 'entry', 'full-width' ); ?>
+                <?php Backdrop\View\display( 'entry', 'custom-sidebar' ); ?>
         <?php endwhile; ?>
                 <div class="paging-navigation">
                     <?php the_posts_pagination(); ?>
@@ -24,4 +21,4 @@
                     <?php Backdrop\View\display( 'entry', 'none' ); ?>
         <?php endif; ?>
     </div>
-<?php get_footer(); ?>
+<?php Backdrop\View\display( 'sidebar', 'custom' ); ?>

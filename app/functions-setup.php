@@ -102,3 +102,20 @@ add_action( 'widgets_init', function() {
 		] );
 	}
 } );
+
+/**
+ * Registers the page templates. They are views in `resources/views/content/custom-templates`,
+ * and the keys match the file names that earlier versions of the theme saved for pages.
+ *
+ * @since  0.3.0
+ * @access public
+ * @param  array  $templates
+ * @return array
+ */
+add_filter( 'theme_page_templates', function( $templates ) {
+
+	$templates['custom-templates/full-width.php']      = esc_html__( 'Full Width Template', 'beyond-expectations' );
+	$templates['custom-templates/custom-sidebar.php']  = esc_html__( 'Custom Sidebar Template', 'beyond-expectations' );
+
+	return $templates;
+} );

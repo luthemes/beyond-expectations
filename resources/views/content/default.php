@@ -1,6 +1,6 @@
 <?php
 /**
- * Beyond Expectations - page.php
+ * Beyond Expectations - default.php
  *
  * @package   Beyond Expectations
  * @author    Benjamin Lu <benlumia007@gmail.com>
@@ -9,14 +9,16 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-<?php get_header(); ?>
     <div id="content-area" class="content-area">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <?php Backdrop\View\display( 'entry', 'page' ); ?>
+                <?php Backdrop\View\display( 'entry', get_post_format() ?: 'default' ); ?>
         <?php endwhile; ?>
+                <div class="paging-navigation">
+                    <?php the_posts_pagination(); ?>
+                </div>
         <?php else : ?>
+                <?php Backdrop\View\display( 'entry', 'none' ); ?>
         <?php endif; ?>
     </div>
-<?php Backdrop\View\display( 'sidebar', 'secondary' ); ?>
-<?php get_footer(); ?>
+<?php Backdrop\View\display( 'sidebar', 'primary' ); ?>
