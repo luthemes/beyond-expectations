@@ -38,12 +38,3 @@ jobs:
                   for entry in resources/scss/screen.scss resources/js/navigation.js resources/js/hide-search.js; do
                       grep -q "\"$entry\"" public/assets/manifest.json || { echo "::error::$entry is missing from the manifest."; exit 1; }
                   done
-
-            - name: Print the built files (temporary)
-              run: |
-                  for f in public/assets/manifest.json public/assets/css/*.css public/assets/js/*.js; do
-                      echo "=====FILE $f====="
-                      cat "$f"
-                      echo
-                  done
-                  echo "=====END====="
