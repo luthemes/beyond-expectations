@@ -9,11 +9,11 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header">
-        <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+<article <?php Backdrop\Attr\display( 'entry', 'custom-sidebar' ); ?>>
+    <header class="entry__header">
+        <?php the_title('<h1 class="entry__title">', '</h1>'); ?>
     </header>
-    <div class="entry-content full-width">
+    <div class="entry__content entry__content--full-width">
         <?php the_content(); ?>
         <?php wp_link_pages(); ?>
     </div>

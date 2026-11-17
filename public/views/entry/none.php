@@ -9,9 +9,9 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article <?php Backdrop\Attr\display( 'entry', 'none' ); ?>>
     <header class="archive-header">
-        <h2 class="content-archive">
+        <h2 class="archive-header__title">
             <?php if (is_404()) {
                 _e('Page Not Available', 'beyond-expectations');
             } else if (is_search()) {
@@ -22,7 +22,7 @@
             ?>
         </h2>
     </header>
-    <div class="entry-content full-width">
+    <div class="entry__content entry__content--full-width">
         <?php if (is_home() && current_user_can('publish_posts')) : ?>
             <p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'beyond-expectations' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
         <?php elseif (is_404()) : ?>
@@ -37,9 +37,9 @@
         <?php endif; ?>
     </div>
 </article>
-<div class="recent-posts full-width">
+<div class="recent-posts">
     <?php if (is_404() || is_search()) { ?>
-        <h3 class="recent-posts"><?php _e('Most Recent Posts', 'beyond-expectations'); ?></h3>
+        <h3 class="recent-posts__title"><?php _e('Most Recent Posts', 'beyond-expectations'); ?></h3>
             <ul>
                 <?php
                     $args = array('numberposts' => '10');

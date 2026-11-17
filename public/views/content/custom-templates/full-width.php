@@ -9,7 +9,7 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-    <div id="content-area" class="content-area full-width">
+    <div <?php Backdrop\Attr\display( 'content-area', 'full-width', [ 'id' => 'content-area' ] ); ?>>
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
                 <?php Backdrop\View\display( 'entry', 'full-width' ); ?>

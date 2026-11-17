@@ -46,9 +46,9 @@ function header_style() {
 	}
 
 	if ( ! display_header_text() ) {
-		$css = '.header-image, .site-branding { display: none; }';
+		$css = '.site-header__branding { display: none; }';
 	} else {
-		$css = sprintf( '.site-title a, .site-description { color: #%s; }', esc_attr( $text_color ) );
+		$css = sprintf( '.site-header__title a, .site-header__description { color: #%s; }', esc_attr( $text_color ) );
 	}
 
 	printf( '<style type="text/css">%s</style>' . "\n", $css ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

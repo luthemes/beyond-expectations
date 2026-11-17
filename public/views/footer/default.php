@@ -10,9 +10,9 @@
  */
 ?>
 </section>
-    <footer id="site-footer" class="site-footer">
-        <div id="site-info" class="site-info">
-            <div class="info-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+    <footer <?php Backdrop\Attr\display( 'site-footer', '', [ 'id' => 'site-footer' ] ); ?>>
+        <div id="site-info" class="site-footer__info">
+            <div class="site-footer__title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
             <?php if ( function_exists( 'classicpress_version' ) ) : ?>
                 <a href="<?php echo esc_url( 'https://www.classicpress.net/' ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'beyond-expectations' ), 'ClassicPress' ); ?></a>
             <?php else : ?>
