@@ -104,7 +104,7 @@ add_action( 'widgets_init', function() {
 } );
 
 /**
- * Registers the page templates. They are views in `resources/views/content/custom-templates`,
+ * Registers the page templates. They are views in `public/views/content/custom-templates`,
  * and the keys match the file names that earlier versions of the theme saved for pages.
  *
  * @since  0.3.0
@@ -118,4 +118,17 @@ add_filter( 'theme_page_templates', function( $templates ) {
 	$templates['custom-templates/custom-sidebar.php']  = esc_html__( 'Custom Sidebar Template', 'beyond-expectations' );
 
 	return $templates;
+} );
+
+/**
+ * Sets the folder that views are loaded from. Backdrop looks in `resources/views` by default,
+ * but this theme keeps its views in `public/views`.
+ *
+ * @since  0.3.0
+ * @access public
+ * @return string
+ */
+add_filter( 'backdrop/template/path', function() {
+
+	return 'public/views';
 } );

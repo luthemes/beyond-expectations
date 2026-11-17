@@ -3,7 +3,7 @@
  * Beyond Expectations - index.php
  *
  * This is the only template WordPress loads. The Backdrop template hierarchy decides which
- * header, content and footer views in `resources/views` are used for the current page.
+ * header, content and footer views in `public/views` are used for the current page.
  *
  * @package   Beyond Expectations
  * @author    Benjamin Lu <benlumia007@gmail.com>
