@@ -73,10 +73,9 @@ img {
     max-width: 100%;
 } 
 
-/* Inline SVG icons (see public/svg and BeyondExpectations\svg()). */
+/* Inline SVG icons (Backdrop icons package, see BeyondExpectations\svg()). */
 .icon {
     display: inline-block;
-    fill: currentColor;
     height: 1em;
     vertical-align: -0.125em;
     width: 1em;

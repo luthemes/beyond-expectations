@@ -79,7 +79,7 @@ function entry_taxonomies() {
 			'<div class="entry__tags">%3$s %1$s <span class="entry__tag-list"><b><i>%2$s</i></b></span></div>',
 			esc_html__( 'Tagged', 'beyond-expectations' ),
 			$tag_list, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			svg( 'tag' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			svg( 'label' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		);
 	}
 }
