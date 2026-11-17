@@ -5,7 +5,11 @@
 */
 body {
     font-family: 'Merriweather Sans', sans-serif;
+    line-height: 1.6;
+    word-spacing: 0.12em;
 }
+
+/* Merriweather Sans has narrow word spaces (0.18em), so words run together at body sizes. */
 
 h1,
 h2,
