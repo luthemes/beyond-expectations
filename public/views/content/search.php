@@ -9,10 +9,10 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-    <div id="content-area" class="content-area">
+    <div <?php Backdrop\Attr\display( 'content-area', '', [ 'id' => 'content-area' ] ); ?>>
             <?php if (have_posts()) : ?>
-                <div class="entry-header">
-                    <h2 class="content-archive">
+                <div class="archive-header">
+                    <h2 class="archive-header__title">
                         <?php if (is_search()) { ?>
                             <?php printf(__('Search for: <small>', 'beyond-expectations') . get_search_query() . '</small>'); ?>
                         <?php } ?>

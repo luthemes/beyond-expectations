@@ -15,7 +15,7 @@ and show the Search Toggle Navigation.
 jQuery(document).ready(function($){
     $(".search-toggle").click(function(){
         $("#search-container").slideToggle('slow', function(){
-            $(".search-toggle").toggleClass('active');
+            $(".search-toggle").toggleClass('search-toggle--active');
         });
     });
 });

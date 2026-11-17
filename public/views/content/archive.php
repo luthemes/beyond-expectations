@@ -9,10 +9,10 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-    <div id="content-area" class="content-area">
+    <div <?php Backdrop\Attr\display( 'content-area', '', [ 'id' => 'content-area' ] ); ?>>
         <?php if (have_posts()) : ?>
 	       <header class="archive-header">
-                <h2 class="archive-content">
+                <h2 class="archive-header__title">
                     <?php the_archive_title(); ?>
                 </h2>
             </header>
