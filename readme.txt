@@ -27,9 +27,10 @@ Customizer
 2. List of different types that you can modify such as
    - Site Title Tagline
       - Hide Display Header Text (this will hide the entire header with header text)
-   - Layout: content with a sidebar (default) or full width with no sidebar
-   - Featured Image: the size of the featured image at the top of a page (banner, large or full size)
-   - Footer: show the "Proudly powered by" credit, or your own footer text
+   - Theme: Global > Layout: content with a sidebar (default) or full width with no sidebar
+   - Theme: Header > Branding and Header Image
+   - Theme: Content > Feature Image: the size of the featured image at the top of a page (banner, large or full size)
+   - Theme: Footer > Credit: show the "Proudly powered by" credit, or your own footer text
    - Appearance -> Beyond Expectations Settings: choose a page to show on a 404 error, and turn off emoji scripts, the toolbar and embeds on the front end
 3. Mobile Menu
    - The Mobile Menu is slightly different from other themes. I have created a mobile menu that is
