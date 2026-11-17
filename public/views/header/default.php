@@ -19,12 +19,13 @@
     </head>
 <body <?php Backdrop\Attr\display( 'body' ); ?>>
     <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
+    <a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'beyond-expectations' ); ?></a>
     <div id="social-search" <?php Backdrop\Attr\display( 'top-bar' ); ?>>
     <nav class="top-bar__inner">
         <div class="social-navigation cf">
         <div class="search-toggle cf">
             <?php BeyondExpectations\Tools\Svg::display( 'search' ); ?>
-            <a href ="#search-container" class="screen-reader-text cf"><?php _e('Search', 'beyond-expectations'); ?></a>
+            <a href="#search-container" class="search-toggle__link screen-reader-text cf" aria-controls="search-container" aria-expanded="false"><?php esc_html_e( 'Search', 'beyond-expectations' ); ?></a>
         </div>
             <?php BeyondExpectations\social_navigation(); ?>
         </div>

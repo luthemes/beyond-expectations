@@ -10,6 +10,8 @@ body {
        ligatures are turned off. Set here so every element inherits it. */
     font-variant-ligatures: no-common-ligatures;
     line-height: 1.6;
+    /* Long words and URLs wrap instead of running out of the content area. */
+    overflow-wrap: break-word;
 }
 
 h1,
