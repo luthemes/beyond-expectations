@@ -28,7 +28,15 @@ function mod( string $name ) {
 
 	$defaults = app()->resolve( 'beyond-expectations/settings' )['mods'];
 
-	return get_theme_mod( "beyond_expectations_{$name}", $defaults[ $name ] ?? null );
+	// The setting IDs, which follow the Backdrop panel names (theme_global, theme_content, theme_footer).
+	$ids = [
+		'layout'             => 'theme_global_layout',
+		'feature_image_size' => 'theme_content_feature_image',
+		'footer_powered_by'  => 'theme_footer_powered_by',
+		'footer_credit'      => 'theme_footer_custom_credit',
+	];
+
+	return get_theme_mod( $ids[ $name ] ?? $name, $defaults[ $name ] ?? null );
 }
 
 /**

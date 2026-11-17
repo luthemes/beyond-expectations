@@ -32,6 +32,7 @@ $theme->provider( Backdrop\Template\Hierarchy\Provider::class );
 $theme->provider( Backdrop\Template\Manager\Provider::class );
 $theme->provider( Backdrop\View\Provider::class );
 $theme->provider( BeyondExpectations\Provider::class );
+$theme->provider( BeyondExpectations\Customize\Provider::class );
 
 /** ------------------------------------------------------------------------------------------
  * Perform any actions.

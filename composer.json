@@ -33,6 +33,7 @@
 		"backdrop-dev/pagination": "^1.0",
 		"backdrop-dev/fonts": "^1.0.3",
 		"backdrop-dev/icons": "^1.0",
+		"backdrop-dev/customize": "^2.0",
 		"backdrop-dev/attr": "^1.0"
 	}
 }
