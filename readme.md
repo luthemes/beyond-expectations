@@ -26,6 +26,6 @@ If the Backdrop framework can't be found, administrators see a notice in the das
 ## Copyright and License
 This project is licensed under the GNU General Public License, version 2 or later.
 
-The screenshot is licensed CC0, by Greg Rakozy (https://unsplash.com/photos/oMpAz-DN-9I). Font Awesome by Dave Gandy is licensed under SIL OFL 1.1 and MIT.
+The screenshot is licensed CC0, by Greg Rakozy (https://unsplash.com/photos/oMpAz-DN-9I). Merriweather Sans (Sorkin Type) and Sanchez (Latinotype) are licensed under SIL OFL 1.1 and load from the [Backdrop fonts](https://github.com/backdrop-dev/fonts) package. Font Awesome by Dave Gandy is licensed under SIL OFL 1.1 and MIT.
 
 Copyright © 2016–2026 Benjamin Lu

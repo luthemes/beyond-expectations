@@ -144,6 +144,10 @@ Copyright and Licensed as CC0
 By Greg Rakozy (https://unsplash.com/grakozy)
 https://unsplash.com/photos/oMpAz-DN-9I
 
+Merriweather Sans by Sorkin Type - https://github.com/SorkinType/Merriweather-Sans
+Sanchez by Latinotype - https://www.latinotype.com
+Both licensed under SIL OFL 1.1 and loaded from the Backdrop fonts package (https://github.com/backdrop-dev/fonts)
+
 Font Awesome by Dave Gandy - http://fontawesome.io
 Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License
 Source: http://fortawesome.github.io/Font-Awesome/
