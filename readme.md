@@ -18,8 +18,9 @@ If the Backdrop framework can't be found, administrators see a notice in the das
 ## Structure
 - `functions.php` loads Composer's autoloader and boots the Backdrop application.
 - `app/` holds the service provider (`Provider.php`) and the functions files for setup, assets, the custom header, the customizer and template tags (in the `BeyondExpectations` namespace).
-- Root template files (`index.php`, `single.php`, ...) and `custom-templates/` are standard theme templates. They load entries and sidebars with `Backdrop\View\display()` from the [view](https://github.com/backdrop-dev/view) package.
-- `resources/views/entry/` and `resources/views/sidebar/` hold the view templates. A post format falls back to `entry/default.php`.
+- `index.php` is the only template ClassicPress loads. The [template hierarchy](https://github.com/backdrop-dev/template-hierarchy) package picks the header, content and footer views, which `Backdrop\View\display()` from the [view](https://github.com/backdrop-dev/view) package loads from `resources/views`.
+- `resources/views/header`, `content` and `footer` hold the page views (`content/single.php`, `content/page.php`, `content/archive.php`, ...). `content/default.php` is the blog index and the fallback. The page templates are in `content/custom-templates` and are registered in `app/functions-setup.php`.
+- `resources/views/entry/` and `resources/views/sidebar/` hold the entry and sidebar views. A post format falls back to `entry/default.php`.
 
 ## Copyright and License
 This project is licensed under the GNU General Public License, version 2 or later.
