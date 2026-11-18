@@ -13,6 +13,10 @@ a {
 }
 
 a:hover {
-    /* Was #0099cc at 3.27:1 against white, below AA. #0077a3 is 5.04:1. */
-    color: #0077a3;
+    /* No accent color in this theme: the hover is the muted grey #666666
+       used for meta labels and other secondary text. #666666 on white is
+       about 5.7:1, still above the WCAG AA 4.5:1 minimum. The old blue
+       (#0099cc, then #0077a3 at 5.04:1) was dropped so the hover matches
+       the monochrome palette. */
+    color: #666666;
 }
