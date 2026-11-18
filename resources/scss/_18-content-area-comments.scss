@@ -102,15 +102,12 @@
 /* The Reply link is a small outlined button that inverts on hover/focus; the
    Edit link stays a plain link. */
 .comment__meta .comment__reply-link {
-    border: 1px solid #1d1d1d;
     display: inline-block;
     padding: 0.2em 0.75em;
 }
 
 .comment__meta .comment__reply-link:hover,
 .comment__meta .comment__reply-link:focus {
-    background: #1d1d1d;
-    color: #ffffff;
     text-decoration: none;
 }
 
