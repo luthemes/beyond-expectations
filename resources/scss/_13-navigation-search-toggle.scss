@@ -48,9 +48,23 @@ input[type = "search"] {
 
 }
 
-.search-form .screen-reader-text,
-.search-toggle .screen-reader-text {
-    display: none;
+/* The "Search" link is for keyboard and screen reader users. Keep it inside the toggle, so it
+   doesn't stick out past the right edge of the screen, and show it there when it has focus. */
+.search-toggle {
+    position: relative;
+}
+
+.search-toggle .search-toggle__link {
+    left: 0;
+    top: 0;
+}
+
+.search-toggle .search-toggle__link:focus {
+    left: auto;
+    right: 0;
+    top: 100%;
+    white-space: nowrap;
+    z-index: 100;
 }
 
 .search-toggle .icon {

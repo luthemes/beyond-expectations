@@ -3,7 +3,8 @@
 19.0 - Content Area (404 and Search)
 ================================================================================================
 */
-.entry__content code {
+.error404 .entry__content code,
+.search .entry__content code {
     font-family: 'Fira Sans', sans-serif;
     font-style: italic;
     text-decoration: underline;

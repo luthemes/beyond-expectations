@@ -142,7 +142,10 @@ features.
 	$( 'img.aligncenter' ).wrap( '<figure class="centered-image"></figure>');
 
 
-    $('a[href*="#"]:not([href="#"])').click(function() {
+    // Smooth scrolling for in-page links. The skip link and the search toggle are left out: the
+    // skip link has to move keyboard focus, which the browser does itself, and the search toggle
+    // opens the search form (see hide-search.js).
+    $('a[href*="#"]:not([href="#"]):not(.skip-link):not(.search-toggle__link)').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');

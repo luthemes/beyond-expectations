@@ -9,17 +9,21 @@
 }
 
 .pagination__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
-.pagination__item { display: inline; }
+.pagination__item { display: block; }
 
 a.pagination__anchor,
 span.pagination__anchor {
     border: 1px solid #000000;
+    display: block;
     padding: 0.5em 1.2em;
 }
 
