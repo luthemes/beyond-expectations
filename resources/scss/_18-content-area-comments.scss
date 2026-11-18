@@ -38,8 +38,10 @@
 .comment__meta {
     border-bottom: 1px solid #cccccc;
     font-size: 14px;
+    /* Contains the floated avatar, so the line under the header clears it. Without avatars
+       (Settings > Discussion), the header is only as tall as its text. */
+    display: flow-root;
     line-height: 1.5;
-    min-height: 58px;
     padding-bottom: 10px;
 }
 
@@ -88,7 +90,6 @@
 .comment__content {
     clear: both;
     font-size: 14px;
-    margin-left: 70px;
 }
 
 .comment__content p {
@@ -100,10 +101,6 @@
     display: inline-block;
     font-size: 12px;
     padding: 3px 4px;
-}
-
-.comment__body--ping .comment__meta {
-    min-height: 0;
 }
 
 .comment__type {
