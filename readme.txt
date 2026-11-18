@@ -147,10 +147,11 @@ Upgrade Notice
 
 Resources
 ================================================================================================
-Screenshot
-Copyright and Licensed as CC0 
-By Greg Rakozy (https://unsplash.com/grakozy)
+Header image (resources/images/header-image.jpg) and screenshot
+"Silhouette photography of person" by Greg Rakozy (https://unsplash.com/@grakozy)
 https://unsplash.com/photos/oMpAz-DN-9I
+Licensed CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/), as published on Unsplash in 2015
+The header image is a cropped and darkened copy of the photo
 
 Merriweather by Sorkin Type - https://github.com/SorkinType/Merriweather
 Fira Sans by Carrois Apostrophe and Mozilla - https://github.com/mozilla/Fira
