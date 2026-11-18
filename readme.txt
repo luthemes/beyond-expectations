@@ -2,8 +2,8 @@ Beyond Expectations WordPress Theme
 ================================================================================================
 Contributors: luthemes
 Tags: custom-background, custom-header, right-sidebar
-Requires at least: 4.4
-Tested up to: 4.9.4
+Requires at least: 6.2
+Tested up to: 6.2
 Stable tag: 0.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
