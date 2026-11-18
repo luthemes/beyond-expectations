@@ -12,9 +12,9 @@
     <div <?php Backdrop\Attr\display( 'content-area', '', [ 'id' => 'content-area' ] ); ?>>
         <?php if (have_posts()) : ?>
 	       <header class="archive-header">
-                <h2 class="archive-header__title">
+                <h1 class="archive-header__title">
                     <?php the_archive_title(); ?>
-                </h2>
+                </h1>
             </header>
             <?php while (have_posts()) : the_post(); ?>
                 <?php Backdrop\View\display( 'entry', 'archive' ); ?>

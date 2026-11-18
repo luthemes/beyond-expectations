@@ -45,7 +45,18 @@
     ?>
     <header <?php Backdrop\Attr\display( 'site-header', '', $header_attr ); ?>>
         <div id="site-branding" class="site-header__branding">
+            <?php
+                // The site title is the page H1 only on the blog home
+                // (is_home() covers both the blog-as-front-page and the
+                // posts page). On a static front page the page title is
+                // the H1, and on every other page the entry/archive
+                // title is, so the site title is a plain link there.
+            ?>
+            <?php if ( is_home() ) : ?>
             <h1 class="site-header__title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+            <?php else : ?>
+            <p class="site-header__title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></p>
+            <?php endif; ?>
             <h4 class="site-header__description"><?php bloginfo('description'); ?></h4>
         </div>
     </header>

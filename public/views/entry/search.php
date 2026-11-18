@@ -11,7 +11,7 @@
 ?>
 <article <?php Backdrop\Attr\display( 'entry', 'search' ); ?>>
     <header class="entry__header">
-        <?php the_title(sprintf('<h1 class="entry__title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?> 
+        <?php the_title(sprintf('<h2 class="entry__title"><a href="%s">', esc_url(get_permalink())), '</a></h2>'); ?> 
     </header>
     <div class="entry__body cf">
         <div class="entry__metadata">
