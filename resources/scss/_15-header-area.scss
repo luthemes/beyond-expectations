@@ -20,6 +20,14 @@
     padding: 0;
 }
 
+/* The title link is sized in em, so it inherits the parent element's size:
+   an h1 is 2em but a p is 1em, which made the title half-size on inner pages
+   (where the template uses a p) after the H1 fix. Sizing the title element
+   itself keeps the link at the same size on every page. */
+.site-header__title {
+    font-size: 2em;
+}
+
 .site-header__title::after {
     border-bottom: 1px solid #cccccc;
     content: "";
