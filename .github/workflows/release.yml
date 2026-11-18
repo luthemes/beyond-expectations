@@ -15,6 +15,14 @@ jobs:
             - name: Checkout
               uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
+            # PHP + wp-cli are only needed for the Generate POT step below;
+            # the release itself is built with Node (Vite).
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '7.4'
+                  tools: wp-cli
+
             - name: Setup Node.js
               uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
               with:
@@ -38,6 +46,16 @@ jobs:
 
             - name: Install Composer dependencies
               run: composer install --no-dev --no-interaction --prefer-dist
+
+            # Regenerate the translation template so the zip always ships a
+            # fresh .pot, including the framework's strings (the make-pot
+            # script uses --ignore-domain for exactly that reason). Runs
+            # after composer install so vendor/backdrop-dev is present to
+            # scan, and before Build so the export picks the file up. This
+            # does NOT commit the regenerated .pot back to the repo — the
+            # committed file stays the source of truth for translators.
+            - name: Generate POT
+              run: composer make-pot
 
             # Uses package-lock.json when the repository has one.
             - name: Install Node dependencies
