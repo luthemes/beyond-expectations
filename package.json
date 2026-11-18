@@ -27,6 +27,7 @@
 		"build": "npm run prod && npm run export",
 		"watch": "vite build --watch",
 		"prod": "vite build",
-		"export": "node export-theme.js"
+		"export": "node export-theme.js",
+		"make-pot": "composer make-pot"
 	}
 }
