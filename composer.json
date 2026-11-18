@@ -37,5 +37,8 @@
 		"backdrop-dev/languages": "^1.0",
 		"backdrop-dev/customize": "^1.0.3",
 		"backdrop-dev/attr": "^1.0"
+	},
+	"scripts": {
+		"make-pot": "wp i18n make-pot . public/lang/beyond-expectations.pot --domain=beyond-expectations --include=\"app,public/views,config,functions.php,index.php,vendor/backdrop-dev\" --exclude=\"node_modules,public/assets,public/lang\""
 	}
 }

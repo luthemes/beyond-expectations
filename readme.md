@@ -20,6 +20,9 @@ The release zip already includes the built styles and scripts. From the reposito
 
 If the Backdrop framework can't be found, administrators see a notice in the dashboard instead of a fatal error.
 
+## Translations
+The theme is translation-ready: its strings and the Backdrop framework's strings are translated from the single file `public/lang/beyond-expectations.pot` (domain `beyond-expectations`; the framework's `backdrop` domain is aliased to it). To regenerate that file after changing a translatable string, run `composer install --no-dev` first so `vendor/backdrop-dev` exists, then `composer make-pot` (or `npm run make-pot`). WP-CLI must already be installed on the machine — it is not a Composer dependency. Verify the result with `grep -c '^msgid' public/lang/beyond-expectations.pot` — it should be around 138 entries, including the framework strings.
+
 ## Structure
 The `app/` and `config/` folders follow the same layout as [Amicable](https://github.com/luthemes/amicable).
 
