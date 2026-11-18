@@ -31,7 +31,9 @@ class Svg {
 	 *
 	 * The filtered output is sanitized with `wp_kses()` before it is returned, so
 	 * anything hooked to the `beyond-expectations/svg/{name}` filter cannot inject
-	 * markup outside the SVG allowlist.
+	 * markup outside the SVG allowlist. `wp_kses()` lowercases tag and attribute
+	 * names in its output, so the correct casing of `viewBox` and `<clipPath>`
+	 * is restored afterwards (see below).
 	 *
 	 * @since  0.0.1
 	 * @access public
@@ -52,7 +54,23 @@ class Svg {
 
 		$svg = (string) apply_filters( "beyond-expectations/svg/{$name}", $svg );
 
-		return wp_kses( $svg, static::allowedTags() );
+		$svg = wp_kses( $svg, static::allowedTags() );
+
+		// `wp_kses()` lowercases tag and attribute names, so `viewBox="0 0 24 24"`
+		// comes back as `viewbox="0 0 24 24"` and `<clipPath>` as `<clippath>`.
+		// Without a working `viewBox`, the browser renders the icon's 24-unit
+		// artwork at 1:1 inside the 18px icon box, clipping the right-hand side
+		// (the search magnifier's right arc and most of its handle). Restore
+		// the correct casing. These replacements only touch tag and attribute
+		// names: in the sanitized output `viewbox=` can only occur as an
+		// attribute name, and `<clippath` / `</clippath>` only as tags.
+		// (`clipPath` is used by the icons package's `git` and
+		// `rhombus-arrow-right` icons; the theme's own icons do not use it.)
+		$svg = str_replace( ' viewbox=', ' viewBox=', $svg );
+		$svg = str_replace( '<clippath', '<clipPath', $svg );
+		$svg = str_replace( '</clippath>', '</clipPath>', $svg );
+
+		return $svg;
 	}
 
 	/**
