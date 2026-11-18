@@ -11,9 +11,16 @@
 ?>
 <?php $error_page = isset( $error ) && $error->hasPost() ? $error : null; ?>
 <?php $error_page && $error_page->setup(); ?>
+<?php
+	// This view is the page heading on 404 / empty archive / empty
+	// search pages, where there is no other H1 — so it is the H1
+	// there. On an empty blog home the site title is already the
+	// H1, so it stays an H2.
+	$none_title_tag = is_home() ? 'h2' : 'h1';
+?>
 <article <?php Backdrop\Attr\display( 'entry', 'none' ); ?>>
     <header class="archive-header">
-        <h2 class="archive-header__title">
+        <<?php echo esc_html( $none_title_tag ); ?> class="archive-header__title">
             <?php if ($error_page) {
                 $error_page->displayTitle();
             } else if (is_404()) {
@@ -24,7 +31,7 @@
                 _e('Nothing Found', 'beyond-expectations');
             }
             ?>
-        </h2>
+        </<?php echo esc_html( $none_title_tag ); ?>>
     </header>
     <div class="entry__content entry__content--full-width">
         <?php if ($error_page) : ?>

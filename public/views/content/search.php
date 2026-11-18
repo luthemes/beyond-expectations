@@ -12,11 +12,11 @@
     <div <?php Backdrop\Attr\display( 'content-area', '', [ 'id' => 'content-area' ] ); ?>>
             <?php if (have_posts()) : ?>
                 <div class="archive-header">
-                    <h2 class="archive-header__title">
+                    <h1 class="archive-header__title">
                         <?php if (is_search()) { ?>
                             <?php printf(__('Search for: <small>', 'beyond-expectations') . get_search_query() . '</small>'); ?>
                         <?php } ?>
-                    </h2>
+                    </h1>
                 </div>
             <?php while (have_posts()) : the_post(); ?>
                 <?php Backdrop\View\display( 'entry', 'search' ); ?>
