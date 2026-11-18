@@ -50,26 +50,48 @@
 
 /* Small label above each meta value (Author, Published, Discussion), so the
    rail reads as labelled data rather than bare values. The label is muted
-   and uppercase; the value underneath stays the prominent part. */
+   and uppercase; the value underneath stays the prominent part. The tight
+   line-height (1.2) and small bottom margin (0.15em) keep the label close
+   to its own value — about 2px between the two line boxes — while the
+   0.75em margin on each item (below) puts a wider gap between groups. */
 .entry__metadata .entry__label {
     color: #666666;
     display: block;
     font-family: 'Fira Sans', sans-serif;
     font-size: 0.75rem;
     letter-spacing: 0.05em;
-    margin-bottom: 0.25em;
+    line-height: 1.2;
+    margin-bottom: 0.15em;
     text-transform: uppercase;
 }
 
-.entry__metadata .entry__author {
+/* One label+value group each. The spacing lives here, on the item level,
+   not on the inner links (their old 0.5em margins are removed below):
+   0.75em after each group, none after the last one. Together with the
+   tight label this makes the value-to-next-label gap (about 19px) clearly
+   wider than the label-to-value gap (about 9px glyph to glyph), so the
+   rail reads as three pairs instead of six floating lines. */
+.entry__metadata .entry__author,
+.entry__metadata .entry__published,
+.entry__metadata .entry__comments-link {
     display: block;
+    line-height: 1.3;
+    margin-bottom: 0.75em;
+}
+
+.entry__metadata .entry__author:last-child,
+.entry__metadata .entry__published:last-child,
+.entry__metadata .entry__comments-link:last-child {
+    margin-bottom: 0;
+}
+
+.entry__metadata .entry__author {
     font-family: 'Fira Sans', sans-serif;
     font-size: 1em;
 }
 
 .entry__metadata .entry__published a {
     display: block;
-    margin: 0.5em 0;
     font-size: 0.875em;
     font-weight: normal;
 }
@@ -78,7 +100,6 @@
     display: block;
     font-weight: normal;
     font-size: 0.875em;
-    margin: 0.5em 0;
 }
 
 .entry__content {
