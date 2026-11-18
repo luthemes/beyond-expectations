@@ -32,7 +32,7 @@ function entry_posted_on() {
 	);
 
 	printf(
-		'<span class="entry__author"><b>%2$s</b></span><span class="entry__published"><b>%1$s</b></span>',
+		'<span class="entry__author"><span class="entry__label">%3$s</span><b>%2$s</b></span><span class="entry__published"><span class="entry__label">%4$s</span><b>%1$s</b></span>',
 		sprintf(
 			'<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry__date">%3$s</span></a>',
 			esc_url( get_permalink() ),
@@ -45,11 +45,13 @@ function entry_posted_on() {
 			// Translators: %s is the author's name.
 			esc_attr( sprintf( __( 'View all posts by %s', 'beyond-expectations' ), get_the_author() ) ),
 			esc_html( get_the_author() )
-		)
+		),
+		esc_html__( 'Author', 'beyond-expectations' ),
+		esc_html__( 'Published', 'beyond-expectations' )
 	);
 
 	if ( ! is_page() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="entry__comments-link"><b>';
+		echo '<span class="entry__comments-link"><span class="entry__label">' . esc_html__( 'Discussion', 'beyond-expectations' ) . '</span><b>';
 		comments_popup_link( __( 'Leave a Comment', 'beyond-expectations' ) );
 		echo '</b></span>';
 	}

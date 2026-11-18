@@ -48,6 +48,19 @@
     margin: 0 auto 0.5em auto;
 }
 
+/* Small label above each meta value (Author, Published, Discussion), so the
+   rail reads as labelled data rather than bare values. The label is muted
+   and uppercase; the value underneath stays the prominent part. */
+.entry__metadata .entry__label {
+    color: #666666;
+    display: block;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25em;
+    text-transform: uppercase;
+}
+
 .entry__metadata .entry__author {
     display: block;
     font-family: 'Fira Sans', sans-serif;
