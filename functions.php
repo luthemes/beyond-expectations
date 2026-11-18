@@ -27,5 +27,11 @@ if ( ! class_exists( 'Backdrop\\Core\\Application' ) ) {
 	return;
 }
 
+// If the Vite-built assets haven't been built, show a notice instead of a
+// silently unstyled site (see `app/assets-missing.php`).
+if ( ! file_exists( get_parent_theme_file_path( 'public/assets/manifest.json' ) ) ) {
+	require_once get_parent_theme_file_path( 'app/assets-missing.php' );
+}
+
 require_once get_parent_theme_file_path( 'app/bootstrap-autoload.php' );
 require_once get_parent_theme_file_path( 'app/framework.php' );

@@ -13,18 +13,14 @@ and show the Search Toggle Navigation.
 ================================================================================================
 */
 jQuery(document).ready(function($){
-    // The toggle is a div, with a screen reader link inside it so keyboard users can reach it.
-    // A click on the link bubbles up to the div; the link itself shouldn't jump to the form.
-    $(".search-toggle__link").on('click', function(event){
-        event.preventDefault();
-    });
-
-    $(".search-toggle").click(function(){
+    // The toggle is a single <button> containing the search icon and a
+    // screen-reader-only label. It controls #search-container.
+    $(".search-toggle").on('click', function(){
         $("#search-container").slideToggle('slow', function(){
             var open = $("#search-container").is(':visible');
 
             $(".search-toggle").toggleClass('search-toggle--active', open);
-            $(".search-toggle__link").attr('aria-expanded', open ? 'true' : 'false');
+            $(".search-toggle").attr('aria-expanded', open ? 'true' : 'false');
 
             // Move focus into the search field when the form opens.
             if ( open ) {

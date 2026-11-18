@@ -137,15 +137,6 @@
 	transition: all ease-out 400ms;
 }
 
-.primary-navigation__toggle--hidden {
-	bottom: -2.5em;
-}
-
-.primary-navigation--toggled .primary-navigation__toggle--hidden {
-	bottom: 1em;
-}
-
-
 .primary-navigation__toggle:hover,
 .primary-navigation__toggle:focus {
 	text-decoration: underline;

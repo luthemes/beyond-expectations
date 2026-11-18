@@ -40,7 +40,7 @@
         <?php elseif (is_home() && current_user_can('publish_posts')) : ?>
             <p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'beyond-expectations' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
         <?php elseif (is_404()) : ?>
-            <p><?php printf(__( "You tried going to %s, which doesn't exist, so that means I probably broke something.", 'beyond-expectations'), '<code>' . home_url( esc_url( $_SERVER['REQUEST_URI'] ) ) . '</code>' ); ?></p>
+            <p><?php printf(__( "You tried going to %s, which doesn't exist, so that means I probably broke something.", 'beyond-expectations'), '<code>' . esc_url( home_url( $_SERVER['REQUEST_URI'] ) ) . '</code>' ); ?></p>
             <?php get_search_form(); ?>
         <?php elseif (is_search()) : ?>
             <p><?php _e( 'Nothing matched your search terms. Check out the most recent articles below or try searching for something else:', 'beyond-expectations' ); ?></p>
@@ -59,7 +59,7 @@
                     $args = array('numberposts' => '10');
                     $recent_posts = wp_get_recent_posts($args);
                         foreach ($recent_posts as $recent) {
-                            echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li>';
+                            echo '<li><a href="' . esc_url( get_permalink( $recent["ID"] ) ) . '">' . esc_html( $recent["post_title"] ) . '</a></li>';
                         }
                 ?>
             </ul>

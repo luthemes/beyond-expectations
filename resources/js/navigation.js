@@ -33,7 +33,8 @@ features.
 		return;
 	}
 
-	menu.setAttribute( 'aria-expanded', 'false' );
+	// `aria-expanded` lives on the toggle button (which already has
+	// `aria-expanded="false"` in the template), not on the menu list.
 	if ( -1 === menu.className.indexOf( 'primary-navigation__menu' ) ) {
 		menu.className += ' primary-navigation__menu';
 	}
@@ -42,11 +43,9 @@ features.
 		if ( -1 !== container.className.indexOf( 'primary-navigation--toggled' ) ) {
 			container.className = container.className.replace( ' primary-navigation--toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
 			container.className += ' primary-navigation--toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
-			menu.setAttribute( 'aria-expanded', 'true' );
 		}
 	};
 
@@ -115,44 +114,27 @@ features.
 		}
 	});
 
-	// Hide/show toggle button on scroll
-
-	var position, direction, previous;
-
-	$(window).scroll(function(){
-		if( $(this).scrollTop() >= position ){
-			direction = 'down';
-			if(direction !== previous){
-				$('.primary-navigation__toggle').addClass('primary-navigation__toggle--hidden');
-
-				previous = direction;
-			}
-		} else {
-			direction = 'up';
-			if(direction !== previous){
-				$('.primary-navigation__toggle').removeClass('primary-navigation__toggle--hidden');
-
-				previous = direction;
-			}
-		}
-		position = $(this).scrollTop();
-	});
-
 	// Wrap centered images in a new figure element
 	$( 'img.aligncenter' ).wrap( '<figure class="centered-image"></figure>');
 
 
-    // Smooth scrolling for in-page links. The skip link and the search toggle are left out: the
-    // skip link has to move keyboard focus, which the browser does itself, and the search toggle
-    // opens the search form (see hide-search.js).
-    $('a[href*="#"]:not([href="#"]):not(.skip-link):not(.search-toggle__link)').click(function() {
+    // Smooth scrolling for in-page links. The skip link is left out: the
+    // browser moves keyboard focus to its target itself (see the
+    // `tabindex="-1"` on #site-content). After scrolling, focus is moved to
+    // the target so keyboard users land on the content, not just the viewport.
+    $('a[href*="#"]:not([href="#"]):not(.skip-link)').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
                 if (target.length) {
                     $('html, body').animate({
                     scrollTop: target.offset().top
-                }, 1000);
+                }, 1000, function() {
+                    if ( ! target.is( ':focus' ) ) {
+                        target.attr( 'tabindex', '-1' );
+                        target.trigger( 'focus' );
+                    }
+                });
             return false;
         }
     }

@@ -149,15 +149,30 @@ class Plugin {
         return $this->author;
     }
 
-    public function displayCard() { 
+	/**
+	 * Returns a valid HTML id base for this plugin's card.
+	 *
+	 * Plugin names are file paths (`akismet/akismet.php`), so the raw name
+	 * is not a valid id — `/` and `.` are not allowed in one. Sanitizing
+	 * turns them into `-` (`akismet-akismet-php`).
+	 *
+	 * @since  0.0.1
+	 * @access protected
+	 * @return string
+	 */
+	protected function cardId() {
+		return sanitize_title( $this->name );
+	}
+
+    public function displayCard() {
             if ( $this->name === 'classicpress-directory-integration/classicpress-directory-integration.php' ) {
                 return;
             }
         ?>
-        <div class="plugin-card" aria-describedby="<?php echo esc_attr( sprintf( '%1$s-action %1$s-name', $this->name() ) ) ?>" data-slug="<?php echo esc_attr( $this->name() ) ?>">
+        <div class="plugin-card" aria-describedby="<?php echo esc_attr( sprintf( '%s-name', $this->cardId() ) ) ?>" data-slug="<?php echo esc_attr( $this->name() ) ?>">
 
             <div class="plugin-title" style="padding: 0 1rem">
-                <h2 class="plugin-name" id="<?php echo esc_attr( sprintf( '%s-name', $this->name() ) ) ?>" style="margin-bottom: 0.25rem;">
+                <h2 class="plugin-name" id="<?php echo esc_attr( sprintf( '%s-name', $this->cardId() ) ) ?>" style="margin-bottom: 0.25rem;">
                     <?php echo esc_html( $this->label() ) ?>
                 </h2>
                 <?php echo esc_html( wp_strip_all_tags( $this->author() ) ); ?>

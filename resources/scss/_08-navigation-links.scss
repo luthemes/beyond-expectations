@@ -5,9 +5,14 @@
 */
 a {
     color: #1d1d1d;
-    text-decoration: none;
+    /* Links are underlined so they are distinguishable from body text.
+       #1d1d1d on the white body background is 16.86:1, well above the
+       WCAG AA 4.5:1 minimum. The navigation partials loaded after this
+       one keep their own `text-decoration: none` for menu links. */
+    text-decoration: underline;
 }
 
 a:hover {
-    color: #0099cc;
+    /* Was #0099cc at 3.27:1 against white, below AA. #0077a3 is 5.04:1. */
+    color: #0077a3;
 }

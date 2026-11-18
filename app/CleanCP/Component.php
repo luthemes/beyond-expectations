@@ -35,6 +35,8 @@ class Component implements Bootable {
 
 		if ( Options::get( 'disable_emoji' ) ) {
 			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+			// The emoji styles are printed separately, on `wp_print_styles`.
+			remove_action( 'wp_print_styles', 'print_emoji_styles' );
 		}
 
 		if ( Options::get( 'disable_toolbar' ) ) {
