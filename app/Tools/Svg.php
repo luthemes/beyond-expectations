@@ -32,8 +32,11 @@ class Svg {
 	 * The filtered output is sanitized with `wp_kses()` before it is returned, so
 	 * anything hooked to the `beyond-expectations/svg/{name}` filter cannot inject
 	 * markup outside the SVG allowlist. `wp_kses()` lowercases tag and attribute
-	 * names in its output, so the correct casing of `viewBox` and `<clipPath>`
-	 * is restored afterwards (see below).
+	 * names in its output, and on this install it appears to strip `viewBox`
+	 * entirely (PR #35 only restored the casing, which is a no-op when the
+	 * attribute is gone). The `viewBox` value and any `<clipPath>` block are
+	 * therefore captured before sanitizing and restored afterwards (see below),
+	 * so the icon always comes back with its real `viewBox`.
 	 *
 	 * @since  0.0.1
 	 * @access public
@@ -54,6 +57,21 @@ class Svg {
 
 		$svg = (string) apply_filters( "beyond-expectations/svg/{$name}", $svg );
 
+		// Capture the `viewBox` value and any `<clipPath>` block BEFORE
+		// `wp_kses()` runs. Without the captured values there would be
+		// nothing left to restore if `wp_kses()` strips them. The value is
+		// never hardcoded: Iconoir icons carry `0 0 24 24`, the theme's own
+		// brand icons carry their own (e.g. `0 0 512 512` for wordpress).
+		$viewbox = '';
+		if ( preg_match( '/\bviewBox="([^"]*)"/', $svg, $matches ) ) {
+			$viewbox = $matches[1];
+		}
+
+		$clippath = '';
+		if ( preg_match( '/<clipPath\b[^>]*>.*?<\/clipPath>/s', $svg, $matches ) ) {
+			$clippath = $matches[0];
+		}
+
 		$svg = wp_kses( $svg, static::allowedTags() );
 
 		// `wp_kses()` lowercases tag and attribute names, so `viewBox="0 0 24 24"`
@@ -69,6 +87,43 @@ class Svg {
 		$svg = str_replace( ' viewbox=', ' viewBox=', $svg );
 		$svg = str_replace( '<clippath', '<clipPath', $svg );
 		$svg = str_replace( '</clippath>', '</clipPath>', $svg );
+
+		// If `wp_kses()` stripped `viewBox` outright instead of lowercasing
+		// it, the casing restore above is a no-op — put the captured value
+		// back on the opening `<svg>` tag. (The value was captured before
+		// sanitizing, from the icons package's own output, so it is the
+		// icon's real `viewBox`, not a guess.)
+		if ( '' !== $viewbox && ! preg_match( '/\bviewBox="/i', $svg ) ) {
+			$pos = stripos( $svg, '<svg' );
+			$end = false !== $pos ? strpos( $svg, '>', $pos ) : false;
+
+			if ( false !== $end ) {
+				$svg = substr_replace( $svg, ' viewBox="' . esc_attr( $viewbox ) . '"', $end, 0 );
+			}
+		}
+
+		// Same for a stripped `<clipPath>` block: put the captured block back
+		// inside `<defs>` (or right after the opening `<svg>` tag when there
+		// is no `<defs>`). The block is the icons package's own output, and
+		// its `id` still matches the `url(#…)` reference on the `<g>` — the
+		// reference survives `wp_kses()` because `clip-path` is an allowed
+		// attribute. Any stray copy of the block's inner shape left behind
+		// by the strip sits inside `<defs>`, where it is never rendered, so
+		// restoring the block cannot draw a duplicate shape.
+		if ( '' !== $clippath && false === stripos( $svg, '<clippath' ) && false === stripos( $svg, '<clipPath' ) ) {
+			$defs_pos = stripos( $svg, '<defs>' );
+
+			if ( false !== $defs_pos ) {
+				$svg = substr_replace( $svg, $clippath, $defs_pos + strlen( '<defs>' ), 0 );
+			} else {
+				$pos = stripos( $svg, '<svg' );
+				$end = false !== $pos ? strpos( $svg, '>', $pos ) : false;
+
+				if ( false !== $end ) {
+					$svg = substr_replace( $svg, $clippath, $end + 1, 0 );
+				}
+			}
+		}
 
 		return $svg;
 	}
@@ -91,10 +146,12 @@ class Svg {
 		// files, plus the ones the icons package sets when rendering
 		// (`width`, `height`, `class`, `aria-hidden`/`role`/`aria-label`,
 		// `focusable`). The theme's Font Awesome brand icons also carry
-		// `data-prefix` and `data-icon`.
+		// `data-prefix` and `data-icon`. `viewBox` is listed lowercase
+		// (`viewbox`): `wp_kses()` compares lowercased attribute names, so
+		// the camelCase key never matched and the attribute was stripped.
 		$svg_atts = [
 			'xmlns'        => true,
-			'viewBox'      => true,
+			'viewbox'      => true,
 			'width'        => true,
 			'height'       => true,
 			'class'        => true,
