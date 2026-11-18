@@ -23,7 +23,7 @@
 				<?php Backdrop\Theme\Comment\display_author_link( [ 'class' => 'comment__author-link' ] ); ?>
 			</span>
 
-			<?php Backdrop\Theme\Comment\display_edit_link( [ 'class' => 'comment__edit-link', 'text' => esc_html__( 'Edit', 'beyond-expectations' ) ] ); ?>
+			<?php Backdrop\Theme\Comment\display_edit_link( [ 'class' => 'comment__edit-link', 'text' => esc_html__( 'Edit', 'beyond-expectations' ), 'before' => BeyondExpectations\sep() ] ); ?>
 		</header>
 
 	</article>

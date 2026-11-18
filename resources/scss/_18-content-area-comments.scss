@@ -34,10 +34,22 @@
     background: #f0f0f0;
 }
 
+/* Header, like Amicable: avatar, author, then the date, Edit and Reply links on one line. */
 .comment__meta {
-    font-size: 12px;
-    line-height: 1.4;
+    border-bottom: 1px solid #cccccc;
+    font-size: 14px;
+    line-height: 1.5;
     min-height: 58px;
+    padding-bottom: 10px;
+}
+
+.comment__meta a {
+    text-decoration: none;
+}
+
+.comment__meta a:hover,
+.comment__meta a:focus {
+    text-decoration: underline;
 }
 
 .comment__avatar {
@@ -48,20 +60,29 @@
     margin-right: 10px;
 }
 
+.comment__parent {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
 .comment__author {
     display: block;
-    font-size: 14px;
     font-weight: bold;
 }
 
-.comment__date,
-.comment__parent {
+.comment__metadata {
     display: block;
+    font-size: 13px;
 }
 
 .comment__permalink,
 .comment__parent-link {
     color: inherit;
+}
+
+.comment__metadata .sep {
+    color: #999999;
 }
 
 .comment__content {
@@ -79,33 +100,6 @@
     display: inline-block;
     font-size: 12px;
     padding: 3px 4px;
-}
-
-.comment__actions {
-    margin: 0.5em 0;
-    text-align: right;
-}
-
-.comment__edit-link {
-    font-size: 12px;
-    margin-right: 1em;
-}
-
-.comment__reply-link {
-    border: 1px solid #c3c3c3;
-    color: #333333;
-    display: inline-block;
-    font-size: 85%;
-    line-height: 1.3em;
-    padding: .5em 1.4em;
-    text-decoration: none;
-}
-
-.comment__reply-link:hover,
-.comment__reply-link:focus {
-    background: #000000;
-    border-color: #000000;
-    color: #ffffff;
 }
 
 .comment__body--ping .comment__meta {
