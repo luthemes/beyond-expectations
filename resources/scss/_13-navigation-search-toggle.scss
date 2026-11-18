@@ -37,24 +37,27 @@ input[type = "search"] {
 /* The toggle is a single <button> with the search icon and a screen-reader-only
    label inside it. As a button it needs the browser's default button chrome
    removed; the keyboard focus outline is left alone.
-   Sizing: the button must actually fit its 18px icon. The theme sets global
-   `box-sizing: border-box`, so a 20px-wide button with 7.5px padding left a
-   5px content box and the 18px icon overflowed it. A 35px square with no
-   padding gives the icon room (and matches the ~36px height of the
-   neighbouring social links: 18px icon + 9px padding top and bottom). */
+   Sizing: the button must match the social links next to it, or its icon
+   sits high. The links (`_11`) are `display: block` with `padding: 9px 15px`
+   on the body's 16px / 1.6 line, so they are 9 + 25.6 + 9 = 43.6px tall
+   with their 18px icons centred. A fixed 35px button top-aligned in the
+   44px bar sat (44 - 35) / 2 = 4.5px high. So this button takes the same
+   9px vertical padding and the same line — font-size 1rem, line-height 1.6
+   (`_05` sets buttons to 12px / 1, which would give a 19.2px line box and
+   a 37.2px button) — and its 18px icon stays inline with
+   `vertical-align: middle`, exactly like the social icons. Width is the
+   18px icon + 8.5px padding each side = 35px. */
 .search-toggle {
-    align-items: center;
     background: transparent;
     border: 0;
     color: #ffffff;
     cursor: pointer;
-    display: flex;
     float: right;
-    height: 35px;
-    justify-content: center;
-    padding: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 9px 8.5px;
     position: relative;
-    width: 35px;
+    text-align: center;
 }
 
 .search-toggle:hover,
