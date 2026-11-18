@@ -38,7 +38,7 @@ add_action( 'after_setup_theme', function() {
 	$settings = app()->resolve( 'beyond-expectations/settings' );
 
 	// Load theme translations.
-	load_theme_textdomain( 'beyond-expectations', get_parent_theme_file_path( 'languages' ) );
+	load_theme_textdomain( 'beyond-expectations', get_parent_theme_file_path( 'public/lang' ) );
 
 	// Automatically add the `<title>` tag.
 	add_theme_support( 'title-tag' );
