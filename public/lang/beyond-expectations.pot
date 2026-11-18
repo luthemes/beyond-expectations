@@ -1,0 +1,597 @@
+# Translation template for the Beyond Expectations theme.
+# Copyright (C) 2016-2026 Benjamin Lu
+# This file is distributed under the same license as the Beyond Expectations theme.
+msgid ""
+msgstr ""
+"Project-Id-Version: Beyond Expectations 0.0.1\n"
+"Report-Msgid-Bugs-To: https://github.com/luthemes/beyond-expectations/issues\n"
+"POT-Creation-Date: 2026-11-18 08:00-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: make-pot.py (beyond-expectations)\n"
+"X-Domain: beyond-expectations\n"
+
+#: vendor/backdrop-dev/resources/src/Provider.php:73
+msgid "%1$s can't find its built styles and scripts. Run %2$s in the theme folder, or install the theme from a release."
+msgstr ""
+
+#: config/_settings-mods.php:62
+msgid "&#169; %1$s. %2$s."
+msgstr ""
+
+#: app/functions-template.php:131
+msgctxt "meta separator"
+msgid "&middot;"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/functions-filters.php:425
+msgid "(Untitled)"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Entry/functions-entry.php:372
+msgctxt "taxonomy terms separator"
+msgid ", "
+msgstr ""
+
+#: app/Template/ErrorPage.php:115
+#: vendor/backdrop-dev/theme/src/Util/Title.php:155
+msgid "404 Not Found"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:159
+msgid "404 Page"
+msgstr ""
+
+#: app/ThemeManager/Theme.php:286
+msgid "Activate"
+msgstr ""
+
+#: app/ThemeManager/Theme.php:285
+msgid "Activate %s"
+msgstr ""
+
+#: app/ThemeManager/Theme.php:239
+msgid "Active:"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:260
+msgid "Add New Page"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:291
+msgid "All modern browsers support emoji natively. Disabling emoji scripts removes the JavaScript loaded on every page of your site for a small percentage of users on outdated browsers."
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:126
+msgid "Archives"
+msgstr ""
+
+#: config/image-sizes.php:19
+msgid "Banner (840 by 260, cropped)"
+msgstr ""
+
+#: app/Settings/Provider.php:45
+msgid "Beyond Expectations Settings"
+msgstr ""
+
+#: vendor/backdrop-dev/customize/src/Component.php:116
+msgid "Branding"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Entry/functions-entry.php:316
+#: vendor/backdrop-dev/theme/src/Site/functions-site.php:304
+msgid "ClassicPress"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:121
+msgid "Clean ClassicPress"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:219
+msgid "Clean up unnecessary items on the front end of your site for speed improvements."
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:121
+msgid "Clean WordPress"
+msgstr ""
+
+#: app/functions-assets.php:40
+msgid "collapse child menu"
+msgstr ""
+
+#: public/views/comments/default.php:46
+msgid "Comments"
+msgstr ""
+
+#: public/views/comments/default.php:53
+msgid "Comments are closed."
+msgstr ""
+
+#: config/layouts.php:17
+msgid "Content with sidebar"
+msgstr ""
+
+#: app/functions-filters.php:35
+msgid "Continue reading&nbsp;%s&nbsp;&rarr;"
+msgstr ""
+
+#: app/Customize/Footer/Customize.php:24
+msgid "Credit"
+msgstr ""
+
+#: app/Customize/Footer/Customize.php:74
+msgid "Custom Footer Text"
+msgstr ""
+
+#: app/functions-setup.php:103
+msgid "Custom Sidebar"
+msgstr ""
+
+#: app/functions-setup.php:137
+msgid "Custom Sidebar Template"
+msgstr ""
+
+#: app/Settings/Admin/OptionsPage.php:203
+#: app/ThemeManager/Theme.php:275
+msgid "Customize"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:325
+msgid "Disable ClassicPress Embeds"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:286
+msgid "Disable Emoji Scripts"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:308
+msgid "Disable Toolbar"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:325
+msgid "Disable WordPress Embeds"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:312
+msgid "Disables the toolbar on the front end of the site, which loads additional JavaScript and CSS on every page load."
+msgstr ""
+
+#: app/ThemeManager/Theme.php:304
+msgid "Download"
+msgstr ""
+
+#: public/views/comment/default.php:42
+#: public/views/comment/ping.php:26
+#: vendor/backdrop-dev/theme/src/Comment/functions-comment.php:271
+msgid "Edit"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:176
+msgid "Embeds"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:166
+msgid "Emoji"
+msgstr ""
+
+#: app/functions-assets.php:39
+msgid "expand child menu"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:237
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:188
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: app/Customize/FeatureImage/Customize.php:24
+msgid "Feature Image"
+msgstr ""
+
+#: app/Customize/FeatureImage/Customize.php:65
+msgid "Feature Image Size"
+msgstr ""
+
+#: app/functions-setup.php:132
+msgid "Full Width Template"
+msgstr ""
+
+#: config/layouts.php:21
+msgid "Full width, no sidebar"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:248
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:274
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:54
+msgid "General"
+msgstr ""
+
+#: app/Customize/Layout/Customize.php:84
+msgid "Global Layout"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Entry/functions-entry.php:315
+msgid "https://classicpress.net"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Site/functions-site.php:264
+msgid "https://wordpress.org"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Site/functions-site.php:303
+msgid "https://www.classicpress.net"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:262
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: public/views/comment/default.php:22
+msgid "In reply to %s"
+msgstr ""
+
+#: app/Template/ErrorPage.php:134
+msgid "It looks like you stumbled upon a page that does not exist. Perhaps rolling the dice with a search might help."
+msgstr ""
+
+#: public/views/entry/none.php:49
+msgid "It seems we cannot find what you are looking for. Perhaps searching can help."
+msgstr ""
+
+#: config/image-sizes.php:33
+msgid "Landscape: Large"
+msgstr ""
+
+#: config/image-sizes.php:27
+msgid "Landscape: Medium"
+msgstr ""
+
+#: app/Customize/Layout/Customize.php:43
+msgid "Layout"
+msgstr ""
+
+#: app/functions-template.php:53
+msgid "Leave a Comment"
+msgstr ""
+
+#: app/ThemeManager/Theme.php:295
+msgid "Live Preview"
+msgstr ""
+
+#: public/views/header/default.php:64
+msgid "Menu"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:261
+msgid "Minute %s"
+msgstr ""
+
+#: public/views/entry/none.php:56
+msgid "Most Recent Posts"
+msgstr ""
+
+#: public/views/comments/default.php:48
+msgid "Newer Comments"
+msgstr ""
+
+#: public/views/content/archive.php:25
+#: public/views/content/custom-templates/custom-sidebar.php:20
+#: public/views/content/custom-templates/full-width.php:20
+#: public/views/content/default.php:20
+#: public/views/content/search.php:27
+msgid "Next"
+msgstr ""
+
+#: public/views/entry/none.php:31
+msgid "Nothing Found"
+msgstr ""
+
+#: public/views/entry/none.php:29
+msgid "Nothing found for: <small>"
+msgstr ""
+
+#: public/views/entry/none.php:46
+msgid "Nothing matched your search terms. Check out the most recent articles below or try searching for something else:"
+msgstr ""
+
+#: public/views/comments/default.php:47
+msgid "Older Comments"
+msgstr ""
+
+#: public/views/comments/default.php:27
+msgctxt "comments title"
+msgid "One Comment"
+msgid_plural "%s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: public/views/entry/none.php:27
+msgid "Page Not Available"
+msgstr ""
+
+#: public/views/comment/ping.php:20
+msgid "Pingback"
+msgstr ""
+
+#: app/Settings/Admin/Views/Plugins.php:54
+msgid "Plugins"
+msgstr ""
+
+#: app/functions-template.php:73
+msgid "Posted In"
+msgstr ""
+
+#: config/_settings-mods.php:66
+#: config/_settings-mods.php:69
+msgid "Powered by %1$s and %2$s."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:42
+msgid "Powered by coffee."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:36
+msgid "Powered by crazy ideas and passion."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:35
+msgid "Powered by heart and soul."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:38
+msgid "Powered by love."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:41
+msgid "Powered by peace and understanding."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:43
+msgid "Powered by sleepness nights."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:45
+msgid "Powered by something greater than myself."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:51
+msgid "Powered by the beauty of the human spirit."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:40
+msgid "Powered by the code of a maniac."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:50
+msgid "Powered by the courage of the unheard voices."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:56
+msgid "Powered by the dance between light and darkness."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:59
+msgid "Powered by the echoes of laughter and joy."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:53
+msgid "Powered by the energy of uncharted galaxies."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:47
+msgid "Powered by the fusion of technology and dreams."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:55
+msgid "Powered by the legacy of the ancients."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:44
+msgid "Powered by the love of all things."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:54
+msgid "Powered by the magic hidden in plain sight."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:49
+msgid "Powered by the melodies of the unseen world."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:52
+msgid "Powered by the quest for eternal wisdom."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:60
+msgid "Powered by the relentless pursuit of truth."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:58
+msgid "Powered by the secrets of the deep ocean."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:48
+msgid "Powered by the strength found in kindness."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:37
+msgid "Powered by the thing that holds all things together in the universe."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:57
+msgid "Powered by the touch of the morning sun."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:39
+msgid "Powered by the vast and endless void."
+msgstr ""
+
+#: app/Tools/PoweredBy.php:46
+msgid "Powered by whispers from the future."
+msgstr ""
+
+#: public/views/content/archive.php:24
+#: public/views/content/custom-templates/custom-sidebar.php:19
+#: public/views/content/custom-templates/full-width.php:19
+#: public/views/content/default.php:19
+#: public/views/content/search.php:26
+msgid "Previous"
+msgstr ""
+
+#: app/functions-setup.php:84
+msgid "Primary Navigation"
+msgstr ""
+
+#: app/functions-setup.php:101
+msgid "Primary Sidebar"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:125
+msgid "Reading"
+msgstr ""
+
+#: public/views/entry/none.php:41
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:336
+msgid "Removes the JavaScript that allows other sites to embed your posts."
+msgstr ""
+
+#: public/views/header/default.php:28
+msgid "Search"
+msgstr ""
+
+#: public/views/content/search.php:17
+msgid "Search for: <small>"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:142
+msgid "Search results for: %s"
+msgstr ""
+
+#: app/functions-setup.php:102
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:269
+msgid "Select a page to display when users visit a 404 error on your site. Ensure the page is set to private so it does not appear on the front end."
+msgstr ""
+
+#: app/Customize/Layout/Customize.php:85
+msgid "Select the layout used for posts, archives and pages."
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:204
+msgid "Settings related to reading and display options for your site, including the 404 error page."
+msgstr ""
+
+#: app/Customize/Footer/Customize.php:67
+msgid "Show random \"powered by\" credit text."
+msgstr ""
+
+#: public/views/header/default.php:22
+msgid "Skip to content"
+msgstr ""
+
+#: app/functions-setup.php:85
+msgid "Social Navigation"
+msgstr ""
+
+#: app/functions-template.php:82
+msgid "Tagged"
+msgstr ""
+
+#: app/framework-missing.php:27
+msgid "The Beyond Expectations theme can't find the Backdrop framework. Run %1$s in the %2$s folder, or upload a copy of the theme that includes its vendor folder."
+msgstr ""
+
+#: index.php:21
+msgid "Theme dependencies are missing"
+msgstr ""
+
+#: vendor/backdrop-dev/customize/src/Component.php:87
+msgid "Theme: Content"
+msgstr ""
+
+#: vendor/backdrop-dev/customize/src/Component.php:88
+msgid "Theme: Footer"
+msgstr ""
+
+#: vendor/backdrop-dev/customize/src/Component.php:85
+msgid "Theme: Global"
+msgstr ""
+
+#: vendor/backdrop-dev/customize/src/Component.php:86
+msgid "Theme: Header"
+msgstr ""
+
+#: app/Settings/Admin/Views/Themes.php:54
+msgid "Themes"
+msgstr ""
+
+#: index.php:20
+msgid "This site is temporarily unavailable."
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:171
+msgid "Toolbar"
+msgstr ""
+
+#: public/views/comment/ping.php:20
+msgid "Trackback"
+msgstr ""
+
+#: app/Settings/Admin/Views/General.php:353
+msgid "Update Settings"
+msgstr ""
+
+#: app/functions-template.php:46
+msgid "View all posts by %s"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:224
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:223
+msgid "Week %1$s of %2$s"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Site/functions-site.php:265
+msgid "WordPress"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:210
+#: vendor/backdrop-dev/theme/src/Util/Title.php:225
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: public/views/entry/none.php:43
+msgid "You tried going to %s, which doesn't exist, so that means I probably broke something."
+msgstr ""
+
+#: public/views/comment/default.php:58
+msgid "Your comment is awaiting moderation."
+msgstr ""
