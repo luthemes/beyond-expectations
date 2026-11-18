@@ -4,8 +4,10 @@
 ================================================================================================
 */
 .comments-area__title {
+    border-bottom: 1px solid #cccccc;
     margin-bottom: 20px;
-    text-align: center;
+    padding: 0 0 0.5em 0;
+    text-align: left;
 }
 
 .comments-area__list {
@@ -20,18 +22,25 @@
 }
 
 .comments-area__list .children {
-    margin: 20px 0 0 20px;
-    padding: 0;
+    border-left: 1px solid #cccccc;
+    margin: 20px 0 0 0;
+    padding: 0 0 0 20px;
 }
 
+/* A comment card: light background with a dark left accent bar instead of a plain
+   full border. Square corners, like the rest of the theme. */
 .comment__body {
-    border: 1px solid #cccccc;
+    background: #fafafa;
+    border-left: 3px solid #1d1d1d;
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 1.25em;
 }
 
+/* The post author's own comments keep their grey background and get a thicker
+   accent bar, so they are recognisable at a glance. */
 .bypostauthor > .comment__body {
     background: #f0f0f0;
+    border-left: 6px solid #1d1d1d;
 }
 
 /* Header, like Amicable: avatar, author, then the date, Edit and Reply links on one line. */
@@ -70,10 +79,13 @@
 
 .comment__author {
     display: block;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 .comment__metadata {
+    color: #666666;
     display: block;
     font-size: 13px;
 }
@@ -85,6 +97,21 @@
 
 .comment__metadata .sep {
     color: #999999;
+}
+
+/* The Reply link is a small outlined button that inverts on hover/focus; the
+   Edit link stays a plain link. */
+.comment__meta .comment__reply-link {
+    border: 1px solid #1d1d1d;
+    display: inline-block;
+    padding: 0.2em 0.75em;
+}
+
+.comment__meta .comment__reply-link:hover,
+.comment__meta .comment__reply-link:focus {
+    background: #1d1d1d;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .comment__content {
@@ -131,11 +158,13 @@
 }
 
 .comment-reply-title {
+    border-bottom: 1px solid #cccccc;
     font-size: 20px;
     margin: 0;
     margin-top: 10px;
     padding: 0;
     padding-top: 10px;
+    padding-bottom: 0.5em;
 }
 
 .comment-form p {
@@ -156,22 +185,32 @@
 }
 
 .form-submit .submit {
+    background: #1d1d1d;
+    border: 1px solid #1d1d1d;
+    color: #ffffff;
+    cursor: pointer;
 	display: inline-block;
-    color: #000000;
 	padding: 16px 20px;
     font-size: 1em;
 	text-decoration: none;
-	border: 1px solid #c3c3c3;
 }
 
-.form-submit .submit:hover {
-	border-color: #000;
-	border-width: 1px;
-    color: #000000;
+.form-submit .submit:hover,
+.form-submit .submit:focus {
+    background: #ffffff;
+    border-color: #1d1d1d;
+    color: #1d1d1d;
 	box-shadow: none;
 }
 
 #respond textarea#comment{
     height: 200px;
-    width: 99%;	
+    padding: 0.8em;
+    width: 99%;
+}
+
+/* Darkened border on focus; the default outline is left alone so keyboard
+   focus stays visible. */
+#respond textarea#comment:focus {
+    border-color: #1d1d1d;
 }
