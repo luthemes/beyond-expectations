@@ -33,6 +33,7 @@ The `app/` and `config/` folders follow the same layout as [Amicable](https://gi
 - `app/functions-*.php`: assets, extras (views folder, fonts), filters, setup and template tags.
 - `config/` holds the theme mod defaults, image sizes, layouts, social icons and the recommended plugins and themes.
 - `resources/` holds the source styles and scripts; Vite builds them into `public/assets`.
+- `public/views/comments/default.php` is the comments area and `public/views/comment/` holds a single comment (`default.php`, and `ping.php` for pingbacks and trackbacks), like Amicable.
 - `public/views/` holds the views loaded by the [view](https://github.com/backdrop-dev/view) and [template hierarchy](https://github.com/backdrop-dev/template-hierarchy) packages. `public/svg/social-icons` holds the brand icons that the [icons](https://github.com/backdrop-dev/icons) package (Iconoir) doesn't have, and `public/images` the layout previews.
 
 ## Copyright and License
