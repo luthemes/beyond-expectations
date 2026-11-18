@@ -27,6 +27,7 @@ $theme->provider( Backdrop\Attr\Provider::class );
 $theme->provider( Backdrop\Fonts\Provider::class );
 $theme->provider( Backdrop\Icons\Provider::class );
 $theme->provider( Backdrop\Pagination\Provider::class );
+$theme->provider( Backdrop\Resources\Provider::class );
 $theme->provider( Backdrop\Theme\Provider::class );
 $theme->provider( Backdrop\Template\Hierarchy\Provider::class );
 $theme->provider( Backdrop\Template\Manager\Provider::class );
@@ -35,7 +36,6 @@ $theme->provider( BeyondExpectations\Provider::class );
 $theme->provider( BeyondExpectations\CleanCP\Provider::class );
 $theme->provider( BeyondExpectations\Customize\Provider::class );
 $theme->provider( BeyondExpectations\Settings\Provider::class );
-$theme->provider( BeyondExpectations\Vite\Provider::class );
 
 /** ------------------------------------------------------------------------------------------
  * Perform any actions.

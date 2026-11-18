@@ -15,7 +15,7 @@ namespace BeyondExpectations\Settings\Admin;
 
 use Backdrop\Contracts\Bootable;
 use BeyondExpectations\Settings\Admin\Views;
-use function BeyondExpectations\Vite\asset;
+use function Backdrop\Resources\enqueue_style;
 
 /**
  * Options page class.
@@ -184,7 +184,7 @@ class OptionsPage implements Bootable {
 	<?php }
 
 	public function admin_styles() {
-		wp_enqueue_style( 'beyond-expectations-admin', asset( 'resources/scss/admin.scss' ), null, null );
+		enqueue_style( 'beyond-expectations-admin', 'resources/scss/admin.scss' );
 	}
 
 	/**

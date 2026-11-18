@@ -29,7 +29,7 @@ The `app/` and `config/` folders follow the same layout as [Amicable](https://gi
 - `app/Customize/` uses the [Backdrop customize](https://github.com/backdrop-dev/customize) package: the panels Theme: Global, Header, Content and Footer, with Layout (radio image), Feature Image and Credit sections.
 - `app/Settings/` is the Appearance > Beyond Expectations Settings page, with General (404 page, clean up options), Themes and Plugins tabs. `app/PluginManager/` and `app/ThemeManager/` build the Plugins and Themes tabs from `config/plugins.json` and `config/themes.json`.
 - `app/Template/` holds the 404 page (`ErrorPage`) and the footer credit (`Footer`). `app/Tools/` holds `Config`, `Mod`, `PoweredBy`, `Svg` and `Collection`.
-- `app/Vite/` finds the built styles and scripts in the Vite manifest.
+- The [Backdrop resources](https://github.com/backdrop-dev/resources) package loads the styles and scripts Vite builds into `public/assets`, using its manifest (`app/functions-assets.php`).
 - `app/functions-*.php`: assets, extras (views folder, fonts), filters, setup and template tags.
 - `config/` holds the theme mod defaults, image sizes, layouts, social icons and the recommended plugins and themes.
 - `resources/` holds the source styles and scripts; Vite builds them into `public/assets`.
