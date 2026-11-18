@@ -24,7 +24,7 @@ if ( post_password_required() ) {
 			<?php
 			printf(
 				// Translators: %s is the number of comments.
-				esc_html( _nx( 'One Comment', '%s Comments', get_comments_number(), 'comments title', 'beyond-expectations' ) ),
+				esc_html( _nx( '%s Comment', '%s Comments', get_comments_number(), 'comments title', 'beyond-expectations' ) ),
 				esc_html( number_format_i18n( get_comments_number() ) )
 			);
 			?>

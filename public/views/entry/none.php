@@ -38,9 +38,21 @@
             <?php $error_page->displayContent(); ?>
             <?php get_search_form(); ?>
         <?php elseif (is_home() && current_user_can('publish_posts')) : ?>
-            <p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'beyond-expectations' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+            <p><?php
+                printf(
+                    // Translators: %1$s is the URL of the "Add New Post" admin screen.
+                    __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'beyond-expectations' ),
+                    esc_url( admin_url( 'post-new.php' ) )
+                );
+            ?></p>
         <?php elseif (is_404()) : ?>
-            <p><?php printf(__( "You tried going to %s, which doesn't exist, so that means I probably broke something.", 'beyond-expectations'), '<code>' . esc_url( home_url( $_SERVER['REQUEST_URI'] ) ) . '</code>' ); ?></p>
+            <p><?php
+                printf(
+                    // Translators: %s is the URL the visitor tried to visit.
+                    __( "You tried going to %s, which doesn't exist, so that means I probably broke something.", 'beyond-expectations' ),
+                    '<code>' . esc_url( home_url( $_SERVER['REQUEST_URI'] ) ) . '</code>'
+                );
+            ?></p>
             <?php get_search_form(); ?>
         <?php elseif (is_search()) : ?>
             <p><?php _e( 'Nothing matched your search terms. Check out the most recent articles below or try searching for something else:', 'beyond-expectations' ); ?></p>
