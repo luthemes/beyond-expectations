@@ -112,3 +112,23 @@ function social_navigation() {
 		'fallback_cb'     => '',
 	] );
 }
+
+/**
+ * Returns a separator for meta lines, such as between a comment's date, edit link and reply
+ * link.
+ *
+ * @since  0.0.1
+ * @access public
+ * @param  string  $sep
+ * @return string
+ */
+function sep( $sep = '' ) {
+
+	return apply_filters(
+		'beyond-expectations/sep',
+		sprintf(
+			' <span class="sep">%s</span> ',
+			$sep ?: esc_html_x( '&middot;', 'meta separator', 'beyond-expectations' )
+		)
+	);
+}
