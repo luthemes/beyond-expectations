@@ -92,8 +92,23 @@ class Plugins extends View {
 	 */
 	public function registerDefaultPlugins( PluginCollection $plugins ) {
 
-		$contents = file_get_contents( get_parent_theme_file_path( 'config/plugins.json' ) );
-		$config   = json_decode( $contents, true );
+		$config = [];
+		$path   = get_parent_theme_file_path( 'config/plugins.json' );
+
+		// If the config file is missing or unreadable, or the JSON is
+		// invalid or the wrong shape, fall back to an empty list so the
+		// settings page still renders instead of breaking.
+		if ( is_readable( $path ) ) {
+			$contents = file_get_contents( $path );
+
+			if ( false !== $contents ) {
+				$decoded = json_decode( $contents, true );
+
+				if ( JSON_ERROR_NONE === json_last_error() && is_array( $decoded ) ) {
+					$config = $decoded;
+				}
+			}
+		}
 
 		// Add all active plugins to the collection.
 		$active_plugins = get_option( 'active_plugins', [] );
