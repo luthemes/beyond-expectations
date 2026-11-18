@@ -27,8 +27,13 @@ input[type = "search"] {
 }
 
 .widget {
+    border-bottom: 1px solid #cccccc;
     margin: 0 0 30px 0;
-    
+    padding: 0 0 1.5em 0;
+}
+
+.widget:last-child {
+    border-bottom: 0;
 }
 
 .widget ul,
@@ -53,9 +58,12 @@ input[type = "search"] {
 }
 
 .widget__title {
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
+    border-bottom: 2px solid #1d1d1d;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 1em 0;
+    padding: 0 0 0.5em 0;
 }
 
 .rsswidget {
