@@ -20,12 +20,13 @@
 
 .entry__header {
     display: block;
-    text-align: center;
+    text-align: left;
 }
 
 .entry__title {
+    border-bottom: 1px solid #cccccc;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0.5em 0;
 }
 
 .entry__body {
@@ -33,13 +34,11 @@
 }
 
 .entry__metadata {
+    border-right: 1px solid #cccccc;
     float: left;
-    text-align: center;
+    padding-right: 1em;
+    text-align: left;
     width: 19.04761904761905%;
-}
-
-.entry__metadata {
-    text-align: center;
 }
 
 .entry__metadata .avatar {
@@ -92,7 +91,9 @@
 }
 
 .entry__footer {
-    padding: 0;
+    border-top: 1px solid #cccccc;
+    margin-top: 1em;
+    padding: 0.5em 0 0 0;
     text-align: left;
 }
 
