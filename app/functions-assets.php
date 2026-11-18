@@ -2,7 +2,7 @@
 /**
  * Assets.
  *
- * Enqueues the styles and scripts built by Vite (see `app/Vite`).
+ * Enqueues the styles and scripts built by Vite, with the Backdrop resources package.
  *
  * @package   Beyond Expectations
  * @author    Benjamin Lu <benlumia007@gmail.com>
@@ -13,7 +13,8 @@
 
 namespace BeyondExpectations;
 
-use function BeyondExpectations\Vite\asset;
+use function Backdrop\Resources\enqueue_script;
+use function Backdrop\Resources\enqueue_style;
 
 /**
  * Enqueue scripts/styles for the front end.
@@ -25,13 +26,13 @@ use function BeyondExpectations\Vite\asset;
 add_action( 'wp_enqueue_scripts', function() {
 
 	// Rather than enqueue the main style.css stylesheet, we are going to enqueue screen.css.
-	wp_enqueue_style( 'beyond-expectations-screen', asset( 'resources/scss/screen.scss' ), null, null );
+	enqueue_style( 'beyond-expectations-screen', 'resources/scss/screen.scss' );
 
 	// Search toggle.
-	wp_enqueue_script( 'beyond-expectations-hide-search', asset( 'resources/js/hide-search.js' ), [ 'jquery' ], null, true );
+	enqueue_script( 'beyond-expectations-hide-search', 'resources/js/hide-search.js', [ 'jquery' ] );
 
 	// Enqueue Navigation.
-	wp_enqueue_script( 'beyond-expectations-navigation', asset( 'resources/js/navigation.js' ), [ 'jquery' ], null, true );
+	enqueue_script( 'beyond-expectations-navigation', 'resources/js/navigation.js', [ 'jquery' ] );
 
 	// Screen reader text for the child menu toggles.
 	wp_localize_script( 'beyond-expectations-navigation', 'screenReaderText', [
@@ -55,7 +56,7 @@ add_action( 'wp_enqueue_scripts', function() {
  */
 add_action( 'customize_controls_enqueue_scripts', function() {
 
-	wp_enqueue_script( 'beyond-expectations-customize-controls', asset( 'resources/js/customize-controls.js' ), [ 'customize-controls' ], null, true );
+	enqueue_script( 'beyond-expectations-customize-controls', 'resources/js/customize-controls.js', [ 'customize-controls' ] );
 
 	wp_add_inline_style( 'customize-controls', 'li.customize-control.beyond-expectations-control-inactive { display: none !important; }' );
 } );
