@@ -23,10 +23,10 @@
     <div id="social-search" <?php Backdrop\Attr\display( 'top-bar' ); ?>>
     <nav class="top-bar__inner">
         <div class="social-navigation cf">
-        <div class="search-toggle cf">
+        <button type="button" class="search-toggle cf" aria-controls="search-container" aria-expanded="false">
             <?php BeyondExpectations\Tools\Svg::display( 'search' ); ?>
-            <a href="#search-container" class="search-toggle__link screen-reader-text cf" aria-controls="search-container" aria-expanded="false"><?php esc_html_e( 'Search', 'beyond-expectations' ); ?></a>
-        </div>
+            <span class="screen-reader-text"><?php esc_html_e( 'Search', 'beyond-expectations' ); ?></span>
+        </button>
             <?php BeyondExpectations\social_navigation(); ?>
         </div>
     </nav>
@@ -57,7 +57,7 @@
             <?php else : ?>
             <p class="site-header__title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></p>
             <?php endif; ?>
-            <h4 class="site-header__description"><?php bloginfo('description'); ?></h4>
+            <p class="site-header__description"><?php bloginfo('description'); ?></p>
         </div>
     </header>
     <nav <?php Backdrop\Attr\display( 'primary-navigation', '', [ 'id' => 'site-navigation' ] ); ?>>
@@ -69,4 +69,4 @@
                 'menu_class'        => 'primary-navigation__menu')); 
         ?>
     </nav>
-    <section <?php Backdrop\Attr\display( 'site-content', '', [ 'id' => 'site-content', 'class' => 'site-content cf' ] ); ?>>
+    <section <?php Backdrop\Attr\display( 'site-content', '', [ 'id' => 'site-content', 'class' => 'site-content cf', 'tabindex' => '-1' ] ); ?>>

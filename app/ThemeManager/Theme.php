@@ -138,6 +138,21 @@ class Theme {
 	}
 
 	/**
+	 * Returns a valid HTML id base for this theme's card.
+	 *
+	 * The card id is built from the theme name, which is not guaranteed to
+	 * be a valid id (e.g. a name with `/` or `.` in it), so the name is
+	 * sanitized; the raw name is kept in `data-slug`.
+	 *
+	 * @since  1.2.0
+	 * @access protected
+	 * @return string
+	 */
+	protected function cardId() {
+		return sanitize_title( $this->name );
+	}
+
+	/**
 	 * Returns the screenshot URL.
 	 *
 	 * @since  1.2.0
@@ -148,15 +163,26 @@ class Theme {
 
 		$screenshot = $this->installed() ? $this->wp_theme->get_screenshot() : $this->screenshot;
 
-		$screenshot = sprintf(
-			$screenshot,
-			get_template_directory_uri(),
-			get_stylesheet_directory_uri()
+		// The screenshot URL may contain `%1$s` / `%2$s` placeholders for the
+		// parent and child theme URIs. Substitute them directly: sprintf()
+		// would mangle any other `%` in the URL, e.g. `%20` in an encoded path.
+		$screenshot = str_replace(
+			[ '%1$s', '%2$s' ],
+			[ get_template_directory_uri(), get_stylesheet_directory_uri() ],
+			$screenshot
 		);
+
+		// The version is the parent theme's, and wp_get_theme() reloads it on
+		// every call — cache it; it only changes when the theme updates.
+		static $parent_version = null;
+
+		if ( null === $parent_version ) {
+			$parent_version = wp_get_theme( get_template() )->get( 'Version' );
+		}
 
 		return add_query_arg(
 			'version',
-			wp_get_theme( get_template() )->get( 'Version' ),
+			$parent_version,
 			$screenshot
 		);
 	}
@@ -224,7 +250,7 @@ class Theme {
 	 */
 	public function displayCard() { ?>
 
-		<div class="theme<?php echo $this->active() ? ' active' : '' ?>" aria-describedby="<?php echo esc_attr( sprintf( '%1$s-action %1$s-name', $this->name() ) ) ?>" data-slug="<?php echo esc_attr( $this->name() ) ?>">
+		<div class="theme<?php echo $this->active() ? ' active' : '' ?>" aria-describedby="<?php echo esc_attr( sprintf( '%1$s-action %1$s-name', $this->cardId() ) ) ?>" data-slug="<?php echo esc_attr( $this->name() ) ?>">
 
 			<div class="theme-screenshot">
 				<img src="<?php echo esc_url( $this->screenshot() ) ?>" alt="" />
@@ -232,7 +258,7 @@ class Theme {
 
 			<div class="theme-id-container">
 
-				<h2 class="theme-name" id="<?php echo esc_attr( sprintf( '%s-name', $this->name() ) ) ?>">
+				<h2 class="theme-name" id="<?php echo esc_attr( sprintf( '%s-name', $this->cardId() ) ) ?>">
 					<?php if ( $this->active() ) : ?>
 						<?php printf(
 							'<span>%s</span> %s',
@@ -244,7 +270,7 @@ class Theme {
 					<?php endif ?>
 				</h2>
 
-				<div class="theme-actions">
+				<div class="theme-actions" id="<?php echo esc_attr( sprintf( '%s-action', $this->cardId() ) ) ?>">
 					<?php foreach ( $this->themeActions() as $action ) : ?>
 						<?php echo $action // phpcs:ignore ?>
 					<?php endforeach ?>

@@ -5,6 +5,3 @@ vendor
 public/assets
 /beyond-expectations/
 beyond-expectations-*.zip
-
-# Composer writes this on install. The framework is pinned in composer.json instead.
-composer.lock

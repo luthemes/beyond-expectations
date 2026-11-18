@@ -97,13 +97,14 @@ class General extends View {
 	 */
 	function validateSettings( $settings ) { // phpcs:ignore
 
-		// Checkboxes.
-		$settings['disable_emoji']    = ! empty( $settings['disable_emoji']    );
-		$settings['disable_toolbar']  = ! empty( $settings['disable_toolbar']  );
-		$settings['disable_wp_embed'] = ! empty( $settings['disable_wp_embed'] );
+		// Checkboxes. An unchecked box is absent from the submitted data,
+		// so default it to false instead of reading a missing key.
+		$settings['disable_emoji']    = isset( $settings['disable_emoji'] ) ? (bool) $settings['disable_emoji'] : false;
+		$settings['disable_toolbar']  = isset( $settings['disable_toolbar'] ) ? (bool) $settings['disable_toolbar'] : false;
+		$settings['disable_wp_embed'] = isset( $settings['disable_wp_embed'] ) ? (bool) $settings['disable_wp_embed'] : false;
 
 		// Integers.
-		$settings['error_page'] = absint( $settings['error_page']           );
+		$settings['error_page'] = isset( $settings['error_page'] ) ? absint( $settings['error_page'] ) : 0;
 
 		// Return the validated/sanitized settings.
 		return $settings;
@@ -354,25 +355,5 @@ class General extends View {
 		</form>
 
 	<?php }
-
-	/**
-	 * Displays the home posts number field.
-	 *
-	 * @since      1.0.0
-	 * @deprecated 2.1.0
-	 * @access     public
-	 * @return     void
-	 */
-	public function fieldHomePostsNumber() {}
-
-	/**
-	 * Displays the archive posts number field.
-	 *
-	 * @since      1.0.0
-	 * @deprecated 2.1.0
-	 * @access     public
-	 * @return     void
-	 */
-	public function fieldArchivePostsNumber() {}
 
 }

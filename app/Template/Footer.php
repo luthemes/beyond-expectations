@@ -52,10 +52,21 @@ class Footer {
 
 		$text = Mod::get( 'theme_footer_powered_by' ) ? PoweredBy::render() : Mod::get( 'theme_footer_custom_credit' );
 
+		// Links in the credit can come from the custom credit setting, so make
+		// sure every link carries rel="noopener" (a link with a rel attribute
+		// already — e.g. rel="author" — is left alone).
+		$text = preg_replace_callback(
+			'/<a\b[^>]*>/i',
+			function( $matches ) {
+				return false === stripos( $matches[0], 'rel=' ) ? str_replace( '<a', '<a rel="noopener"', $matches[0] ) : $matches[0];
+			},
+			wp_kses( $text, static::allowedTags() )
+		);
+
 		return sprintf(
 			'%s%s%s',
 			$args['before'],
-			wp_kses( $text, static::allowedTags() ),
+			$text,
 			$args['after']
 		);
 	}
@@ -70,7 +81,7 @@ class Footer {
 	public static function allowedTags() {
 
 		return [
-			'a'       => [ 'href' => true, 'title' => true, 'class' => true ],
+			'a'       => [ 'href' => true, 'title' => true, 'class' => true, 'rel' => true ],
 			'abbr'    => [ 'title' => true ],
 			'acronym' => [ 'title' => true ],
 			'bold'    => [ 'class' => true ],
