@@ -39,6 +39,6 @@
 		"backdrop-dev/attr": "^1.0"
 	},
 	"scripts": {
-		"make-pot": "wp i18n make-pot . public/lang/beyond-expectations.pot --include=\"app,public/views,config,functions.php,index.php,vendor/backdrop-dev\" --exclude=\"node_modules,public/assets,public/lang\""
+		"make-pot": "wp i18n make-pot . public/lang/beyond-expectations.pot --ignore-domain --include=\"app,public/views,config,functions.php,index.php,vendor/backdrop-dev\" --exclude=\"node_modules,public/assets,public/lang\""
 	}
 }
