@@ -9,10 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-18T22:32:41+01:00\n"
+"POT-Creation-Date: 2026-11-18T22:57:25+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
-"X-Domain: beyond-expectations\n"
 
 #. Theme Name of the theme
 #: style.css
@@ -258,6 +257,7 @@ msgid "Beyond Expectations Settings"
 msgstr ""
 
 #: app/Template/ErrorPage.php:115
+#: vendor/backdrop-dev/theme/src/Util/Title.php:155
 msgid "404 Not Found"
 msgstr ""
 
@@ -440,10 +440,12 @@ msgstr ""
 
 #: public/views/comment/default.php:42
 #: public/views/comment/ping.php:26
+#: vendor/backdrop-dev/theme/src/Comment/functions-comment.php:271
 msgid "Edit"
 msgstr ""
 
 #: public/views/comment/default.php:58
+#: vendor/backdrop-dev/theme/src/Comments/Component.php:47
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -457,8 +459,9 @@ msgstr ""
 
 #. Translators: %s is the number of comments.
 #: public/views/comments/default.php:27
+#, php-format
 msgctxt "comments title"
-msgid "One Comment"
+msgid "%s Comment"
 msgid_plural "%s Comments"
 msgstr[0] ""
 msgstr[1] ""
@@ -511,25 +514,27 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: public/views/entry/none.php:41
+#. Translators: %1$s is the URL of the "Add New Post" admin screen.
+#: public/views/entry/none.php:44
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: public/views/entry/none.php:43
+#. Translators: %s is the URL the visitor tried to visit.
+#: public/views/entry/none.php:52
 #, php-format
 msgid "You tried going to %s, which doesn't exist, so that means I probably broke something."
 msgstr ""
 
-#: public/views/entry/none.php:46
+#: public/views/entry/none.php:58
 msgid "Nothing matched your search terms. Check out the most recent articles below or try searching for something else:"
 msgstr ""
 
-#: public/views/entry/none.php:49
+#: public/views/entry/none.php:61
 msgid "It seems we cannot find what you are looking for. Perhaps searching can help."
 msgstr ""
 
-#: public/views/entry/none.php:56
+#: public/views/entry/none.php:68
 msgid "Most Recent Posts"
 msgstr ""
 
@@ -543,4 +548,129 @@ msgstr ""
 
 #: public/views/header/default.php:64
 msgid "Menu"
+msgstr ""
+
+#: vendor/backdrop-dev/customize/src/Component.php:85
+msgid "Theme: Global"
+msgstr ""
+
+#: vendor/backdrop-dev/customize/src/Component.php:86
+msgid "Theme: Header"
+msgstr ""
+
+#: vendor/backdrop-dev/customize/src/Component.php:87
+msgid "Theme: Content"
+msgstr ""
+
+#: vendor/backdrop-dev/customize/src/Component.php:88
+msgid "Theme: Footer"
+msgstr ""
+
+#: vendor/backdrop-dev/customize/src/Component.php:116
+msgid "Branding"
+msgstr ""
+
+#: vendor/backdrop-dev/pagination/src/Pagination.php:501
+msgid "&hellip;"
+msgstr ""
+
+#. Translators: 1 is the theme name, 2 is the build command.
+#: vendor/backdrop-dev/resources/src/Provider.php:73
+#, php-format
+msgid "%1$s can't find its built styles and scripts. Run %2$s in the theme folder, or install the theme from a release."
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: vendor/backdrop-dev/theme/src/Comments/Component.php:30
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Entry/functions-entry.php:315
+msgid "https://classicpress.net"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Entry/functions-entry.php:316
+#: vendor/backdrop-dev/theme/src/Site/functions-site.php:304
+msgid "ClassicPress"
+msgstr ""
+
+#. Translators: Separates tags, categories, etc. when displaying a post.
+#: vendor/backdrop-dev/theme/src/Entry/functions-entry.php:372
+msgctxt "taxonomy terms separator"
+msgid ", "
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/functions-filters.php:425
+msgid "(Untitled)"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Site/functions-site.php:264
+msgid "https://wordpress.org"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Site/functions-site.php:265
+msgid "WordPress"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Site/functions-site.php:303
+msgid "https://www.classicpress.net"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:126
+msgid "Archives"
+msgstr ""
+
+#. Translators: %s is the search query.
+#: vendor/backdrop-dev/theme/src/Util/Title.php:142
+#, php-format
+msgid "Search results for: %s"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:188
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:210
+#: vendor/backdrop-dev/theme/src/Util/Title.php:225
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#. Translators: 1 is the week number and 2 is the year.
+#: vendor/backdrop-dev/theme/src/Util/Title.php:223
+#, php-format
+msgid "Week %1$s of %2$s"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:224
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:237
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:248
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#. Translators: Minute archive title. %s is the minute time format.
+#: vendor/backdrop-dev/theme/src/Util/Title.php:261
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:262
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: vendor/backdrop-dev/theme/src/Util/Title.php:274
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
 msgstr ""
