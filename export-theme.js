@@ -18,6 +18,7 @@ const exportPath = 'beyond-expectations'; // folder to export into
 
 // root-level files to include
 const files = [
+  'changelog.md',
   'functions.php',
   'index.php',
   'readme.txt',

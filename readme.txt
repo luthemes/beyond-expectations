@@ -59,18 +59,18 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
-Version: 0.0.1
-- Rebuilt on the Backdrop framework 2.0 (Composer); functions moved to the app folder
-- Styles and scripts are built with Vite (Sass); Font Awesome's icon font is replaced by inline SVG icons from the Backdrop icons package (Iconoir)
-- Templates load through the Backdrop view and template hierarchy packages (public/views)
-- Pagination uses the Backdrop pagination package (new pagination__ class names in style.css)
-- Markup uses BEM class names (entry__title, site-header__branding, primary-navigation__toggle and so on) and the Backdrop attr package builds the body, html, entry and layout attributes
-- Uses the Backdrop theme package (body classes, archive titles, pingback and generator tags); the comments template moved to public/views/comments/default.php; only index.php is left in the theme root
-- Customizer options for the layout, the featured image size and the footer credit, and a Beyond Expectations Settings page (404 page, disable emoji, toolbar and embeds)
-- Page templates (Full Width, Custom Sidebar) are registered with the Backdrop template manager package and keep their saved names
-- Targets ClassicPress, with PHP 7.4 or later required
-- Updated the theme and author URIs to luthemes.com
-- Fixed the header navigation aria attribute and the footer markup
+Version: 0.0.1 - November 17, 2026
+- Rebuilt for ClassicPress on the Backdrop framework 2.0 and its Composer packages; app/ and config/ follow Amicable's layout
+- Customizer panels (Theme: Global, Header, Content, Footer) with Layout (radio image), Feature Image and footer Credit sections
+- Appearance > Beyond Expectations Settings with General (404 page, turn off emoji, toolbar and embeds), Themes and Plugins tabs
+- Comment views like Amicable (comments/default.php, comment/default.php, comment/ping.php)
+- Templates are views in public/views; markup uses BEM class names and the Backdrop attr package
+- Styles and scripts are built with Vite (Sass); Font Awesome is replaced by inline SVG icons (Iconoir)
+- Fonts: Fira Sans for headings and Merriweather for body text, loaded locally
+- Full Width and Custom Sidebar page templates keep their saved names
+- Skip link, keyboard access to the search toggle, and fixes from the Theme Unit Test data
+- Requires PHP 7.4 or later
+- See changelog.md for the full list
 
 Version: 0.2.2
 - Change both URIs
