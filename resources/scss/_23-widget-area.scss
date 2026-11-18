@@ -6,7 +6,8 @@
 .widget-area {
     float: right;
     width: 25.43103448275862%;
-    word-break: break-all;
+    /* Only break a word that doesn't fit; break-all split ordinary words like "read-able". */
+    overflow-wrap: break-word;
 }
 
 .widget-area .search-submit,
