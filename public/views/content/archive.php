@@ -9,7 +9,7 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-    <div <?php Backdrop\Attr\display( 'content-area', '', [ 'id' => 'content-area' ] ); ?>>
+    <div <?php Backdrop\Attr\display( 'content-area', '', [ 'id' => 'content-area', 'class' => 'content-area app-main' ] ); ?>>
         <?php if (have_posts()) : ?>
 	       <header class="archive-header">
                 <h1 class="archive-header__title">

@@ -34,12 +34,6 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Enqueue Navigation.
 	enqueue_script( 'beyond-expectations-navigation', 'resources/js/navigation.js', [ 'jquery' ] );
 
-	// Screen reader text for the child menu toggles.
-	wp_localize_script( 'beyond-expectations-navigation', 'screenReaderText', [
-		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'beyond-expectations' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'beyond-expectations' ) . '</span>',
-	] );
-
 	// Loads ClassicPress' comment-reply script where appropriate.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

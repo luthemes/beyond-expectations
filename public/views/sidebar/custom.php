@@ -9,6 +9,6 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-<div <?php Backdrop\Attr\display( 'widget-area', 'custom', [ 'id' => 'widget-area' ] ); ?>>
+<div <?php Backdrop\Attr\display( 'widget-area', 'custom', [ 'id' => 'widget-area', 'class' => 'widget-area widget-area--custom app-sidebar' ] ); ?>>
     <?php dynamic_sidebar('custom'); ?>
 </div>

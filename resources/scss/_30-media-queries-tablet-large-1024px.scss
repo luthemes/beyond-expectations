@@ -3,15 +3,14 @@
 30.0 - Media Queries (Tablet Large 1024px)
 ================================================================================================
 */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
     
     .primary-navigation {
         clear: none;
     }
 	
 	/* Position the menu in the header */
-	.primary-navigation,
-	.primary-navigation--toggled {
+	.primary-navigation {
         background: #000000;
 		position: relative;
 		max-width: 100%;
@@ -33,21 +32,17 @@
         color: #ffffff;
     }
 	
-	.primary-navigation ul,
-	.primary-navigation--toggled ul {
+	.primary-navigation ul {
 		max-height: none;
 		padding-left: 0;
 		text-align: center;
         
 	}
 	
-	.primary-navigation--toggled ul {
-		overflow-y: visible;
-	}
 	
 	/* Display the menu items in a horizontal order */
 	.primary-navigation li {
-		display: inline-block;
+		display: inline-flex;
 		border: none;
 	}
 	
@@ -58,7 +53,7 @@
 	
 	/* Left-align drop-down menu items */
 	.primary-navigation li li {
-		display: block;
+		display: flex;
 		text-align: left;
 	}
 	
@@ -88,33 +83,12 @@
 		text-decoration: none;
 	}
 	
-	/* Position drop-down menus absolutely */
-	.primary-navigation ul ul.primary-navigation__submenu--open {
-		position: absolute;
-		width: 17em;
-		display: block;
-		z-index: 10;
-        right: 0.6em;
-		margin-left: 0;
-		background: #000;
-	}
 	
-	.primary-navigation ul ul ul.primary-navigation__submenu--open {
-		right: 0;
-        padding-left: 1em;
-        position: relative;
-	}
 	
 	/* Indent 3rd level drop-down menus */
 	.primary-navigation ul ul ul a {
 		padding-left: 2em;
 	}
 	
-	/* Simplify the drop-down toggle */
-	.primary-navigation__dropdown {
-		top: 6px;
-		right: 8px;
-
-	}
 	
 }
