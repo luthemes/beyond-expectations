@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d0804bc936bd65ed3bae08acb555136",
+    "content-hash": "741ddfb763adc254dcfa00ebe870b4e3",
     "packages": [
         {
             "name": "backdrop-dev/attr",
@@ -763,6 +763,61 @@
                 "source": "https://github.com/backdrop-dev/view/tree/v1.0.3"
             },
             "time": "2026-11-17T19:44:31+00:00"
+        },
+        {
+            "name": "techkodeninja/chassis",
+            "version": "0.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/techkodeninja/chassis.git",
+                "reference": "b676b320a5651aa9eb6ba947bd36bddf8474d077"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/techkodeninja/chassis/zipball/b676b320a5651aa9eb6ba947bd36bddf8474d077",
+                "reference": "b676b320a5651aa9eb6ba947bd36bddf8474d077",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "suggest": {
+                "backdrop-dev/framework": "Use Techkodeninja\\Chassis\\Providers\\Backdrop in ClassicPress themes.",
+                "novaris-dev/framework": "Use Techkodeninja\\Chassis\\Providers\\Novaris in Novaris sites."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Techkodeninja\\Chassis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Lu",
+                    "email": "benlumia007@gmail.com",
+                    "homepage": "https://luthemes.com"
+                }
+            ],
+            "description": "Shared structure and UI building blocks for themes: SCSS tokens, layout objects, and components, with service providers for Backdrop (ClassicPress) and Novaris.",
+            "homepage": "https://github.com/techkodeninja/chassis",
+            "keywords": [
+                "backdrop",
+                "classicpress",
+                "css",
+                "novaris",
+                "scss",
+                "ui"
+            ],
+            "support": {
+                "issues": "https://github.com/techkodeninja/chassis/issues",
+                "source": "https://github.com/techkodeninja/chassis/tree/0.1.8"
+            },
+            "time": "2026-11-09T06:24:17+00:00",
+            "published-time": "2026-11-09T06:24:47+00:00"
         }
     ],
     "packages-dev": [],
@@ -775,5 +830,5 @@
         "php": ">=7.4"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.11.0"
 }

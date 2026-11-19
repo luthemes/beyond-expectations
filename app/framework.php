@@ -33,6 +33,7 @@ $theme->provider( Backdrop\Theme\Provider::class );
 $theme->provider( Backdrop\Template\Hierarchy\Provider::class );
 $theme->provider( Backdrop\Template\Manager\Provider::class );
 $theme->provider( Backdrop\View\Provider::class );
+$theme->provider( Techkodeninja\Chassis\Providers\Backdrop::class );
 $theme->provider( BeyondExpectations\Provider::class );
 $theme->provider( BeyondExpectations\CleanCP\Provider::class );
 $theme->provider( BeyondExpectations\Customize\Provider::class );
