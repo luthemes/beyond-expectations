@@ -111,8 +111,8 @@
     color: #999999;
 }
 
-/* The Reply link is a small outlined button that inverts on hover/focus; the
-   Edit link stays a plain link. */
+/* The Reply link is a plain inline-block link with padding; hover/focus only
+   removes the underline. The Edit link stays a plain link. */
 .comment__meta .comment__reply-link {
     display: inline-block;
     padding: 0.2em 0.75em;
