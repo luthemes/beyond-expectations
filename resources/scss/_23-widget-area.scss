@@ -2,12 +2,12 @@
 ================================================================================================
 23.0 - Widget Area
 ================================================================================================
+Chassis owns the `.widget` box (background, border, radius, shadow, padding,
+list reset) via `chassis.json` + Chassis 0.2.0. The theme keeps only the flat
+overrides below: the divider/padding/margin, the title underline, calendar,
+RSS, and search rules — plus the three content rules Chassis does not cover
+(nested-list indent, widget select, text widget margin).
 */
-.widget-area {
-    /* Only break a word that doesn't fit; break-all split ordinary words like "read-able". */
-    overflow-wrap: break-word;
-}
-
 .widget-area .search-submit,
 .widget-area .screen-reader-text {
     display: none;
@@ -32,17 +32,6 @@ input[type = "search"] {
 
 .widget:last-child {
     border-bottom: 0;
-}
-
-.widget ul,
-.widget ol {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.widget li {
-    margin: 5px 0 0 0;
 }
 
 .widget li li {
@@ -73,10 +62,6 @@ input[type = "search"] {
     font-weight: bold;
     margin-top: 20px;
     text-align: left;
-}
-
-.rssSummary {
-
 }
 
 #wp-calendar {
