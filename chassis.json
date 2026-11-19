@@ -1,9 +1,115 @@
 {
 	"$schema": "https://raw.githubusercontent.com/techkodeninja/chassis/develop/schemas/chassis.schema.json",
 	"settings": {
+		"palette": {
+			"ink": "#1d1d1d",
+			"muted": "#666666",
+			"divider": "#cccccc",
+			"alt": "#fafafa",
+			"black": "#000000",
+			"white": "#ffffff"
+		},
 		"font": {
 			"body": "'Merriweather', serif",
-			"heading": "'Fira Sans', sans-serif"
+			"heading": "'Fira Sans', sans-serif",
+			"code": "Monaco, Consolas, \"Andale Mono\", \"DejaVu Sans Mono\", monospace",
+			"meta": "'Fira Sans', sans-serif"
+		},
+		"spacing": {
+			"xs": "0.25rem",
+			"s": "0.5rem",
+			"m": "0.75rem",
+			"l": "1em",
+			"l-plus": "1.5rem",
+			"xl": "2.5rem"
+		},
+		"layout": {
+			"width": "74.375em",
+			"sidebar": "19rem"
+		},
+		"shape": {
+			"radius": "0",
+			"shadow": "none",
+			"border-width": "0.063rem"
+		},
+		"custom": {
+			"border-widget": "none",
+			"border-widget-bottom": "var(--border-width) solid var(--color-widget-border)"
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "#ffffff",
+			"text": "#1d1d1d",
+			"muted": "#666666",
+			"divider": "#cccccc",
+			"alt": "#fafafa",
+			"accent": "#1d1d1d",
+			"accent-text": "#ffffff"
+		},
+		"typography": {
+			"size": "1rem",
+			"line-height": "1.6"
+		},
+		"elements": {
+			"link": {
+				"color": { "text": "@ink" },
+				":hover": { "color": { "text": "@muted" } }
+			},
+			"heading": {
+				"color": { "text": "@ink" }
+			},
+			"h1": { "typography": { "size": "2em" } },
+			"button": {
+				"spacing": { "padding": "0.6em" },
+				"border": { "width": "1px" }
+			}
+		},
+		"header": {
+			"color": { "text": "#ffffff" },
+			"spacing": { "padding": "3.5em 0" },
+			"title": { "typography": { "size": "2em" } }
+		},
+		"primary-menu": {
+			"link": { "spacing": { "padding": "0.5em 1em" } }
+		},
+		"menu-button": {
+			"position": "bottom-left",
+			"hide-on-scroll": false,
+			"color": {
+				"background": "#000000",
+				"text": "#ffffff"
+			},
+			"border": "2px solid #ffffff"
+		},
+		"content": {},
+		"post": {
+			"color": { "background": "transparent" },
+			"border": { "color": "@divider", "style": "none" },
+			"spacing": { "padding": "0" }
+		},
+		"widget": {
+			"color": {
+				"background": "transparent",
+				"text": "@ink"
+			},
+			"border": { "color": "@divider" },
+			"title": { "color": { "text": "@ink" } }
+		},
+		"comments": {},
+		"pagination": {
+			"spacing": { "padding": "0.5em 1.2em" }
+		},
+		"badge": {
+			"typography": {
+				"size": "0.75rem",
+				"letter-spacing": "0.05em",
+				"transform": "uppercase"
+			},
+			"spacing": { "padding": "0.5em 0.75em" }
+		},
+		"footer": {
+			"color": { "background": "#000000", "text": "#ffffff" }
 		}
 	}
 }
