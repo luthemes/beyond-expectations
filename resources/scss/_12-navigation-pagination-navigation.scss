@@ -3,9 +3,11 @@
 12.0 - Navigation (Pagination Navigation)
 ================================================================================================
 */
-.paging-navigation {
+/* The pagination nav carries the 2em padding the old .paging-navigation
+   wrapper had (the wrapper was removed from the templates); the items are
+   centered by flex, so text-align is no longer needed. */
+.pagination {
     padding: 2em;
-    text-align: center;
 }
 
 .pagination__items {
@@ -27,6 +29,11 @@ span.pagination__anchor {
     padding: 0.5em 1.2em;
 }
 
-.pagination__anchor--current {
+/* Current page: bold only — no accent background (overrides Chassis's
+   .pagination__anchor--current / .pagination [aria-current] rule). */
+.pagination .pagination__anchor--current {
+    background: transparent;
+    border-color: #000000;
+    color: #1d1d1d;
     font-weight: bold;
 }

@@ -14,12 +14,10 @@
             <?php while (have_posts()) : the_post(); ?>
                 <?php Backdrop\View\display( 'entry', get_post_format() ?: 'default' ); ?>
         <?php endwhile; ?>
-                <div class="paging-navigation">
-                    <?php Backdrop\Pagination\display( 'posts', [
-                        'prev_text' => esc_html__( 'Previous', 'beyond-expectations' ),
-                        'next_text' => esc_html__( 'Next', 'beyond-expectations' )
-                    ] ); ?>
-                </div>
+                <?php Backdrop\Pagination\display( 'posts', [
+                    'prev_text' => esc_html__( 'Previous', 'beyond-expectations' ),
+                    'next_text' => esc_html__( 'Next', 'beyond-expectations' )
+                ] ); ?>
         <?php else : ?>
                 <?php Backdrop\View\display( 'entry', 'none' ); ?>
         <?php endif; ?>
