@@ -142,30 +142,26 @@
     text-align: left;
 }
 
-/* Sticky posts read as set apart, not just labelled. The old rule was
-   only the word "Featured" in plain body text, with nothing to make
-   the post itself stand out. Now the whole post gets the same #fafafa
-   background and dark left accent as the comment cards, and the label
-   becomes a solid dark pill with a star. */
+/* Sticky posts read as set apart, not just labelled. The background and
+   dark left accent come from Chassis's `.sticky`
+   (chassis-classicpress.css: alt background, 0.25rem accent border — 1px
+   thicker than the theme's old 3px). The theme keeps only the inner
+   padding, so the content does not touch the background's edges, and the
+   badge's type metrics, so the pill looks as it did. The pill itself is
+   a real `<span class="badge">` in entry/default.php now, not a
+   `::before`, so screen readers announce "Featured". It renders on the
+   blog home only, matching where WordPress adds the `sticky` class. */
 .sticky {
-    background: #fafafa;
-    border-left: 3px solid #1d1d1d;
     padding: 1.25em 1.25em 1.25em 1.5em;
 }
 
-.sticky::before {
-    background: #1d1d1d;
-    color: #ffffff;
-    content: "★  Featured";
-    display: inline-block;
+.sticky .badge {
     font-family: 'Fira Sans', sans-serif;
-    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     line-height: 1;
     margin-bottom: 1em;
     padding: 0.5em 0.75em;
-    text-transform: uppercase;
 }
 
 .recent-posts,
