@@ -15,6 +15,13 @@
     padding: 0;
 }
 
+/* Chassis 0.2.0 puts `margin-bottom: var(--space-l)` on every `.comment` <li>
+   inside `.comments-area__list`. The card itself already has 20px below it
+   (`.comment__body`), so that would double the gap between comments. */
+.comments-area__list .comment {
+    margin-bottom: 0;
+}
+
 /* A single comment (public/views/comment/default.php). */
 .comments-area__list,
 .comments-area__list .children {
@@ -63,7 +70,12 @@
     text-decoration: underline;
 }
 
-.comment__avatar {
+/* Scoped to `.comment__meta` so this wins over Chassis 0.2.0's
+   `.comments-area__list .comment__avatar` (same two-class specificity, but
+   Chassis would otherwise square the round avatar with `--radius: 0` and
+   change the margin to `var(--space-m)`). The avatar always sits inside
+   the header in `comment/default.php`. */
+.comment__meta .comment__avatar {
     border: 4px solid #cccccc;
     border-radius: 50%;
     display: block;
