@@ -4,8 +4,6 @@
 ================================================================================================
 */
 .widget-area {
-    float: right;
-    width: 25.43103448275862%;
     /* Only break a word that doesn't fit; break-all split ordinary words like "read-able". */
     overflow-wrap: break-word;
 }

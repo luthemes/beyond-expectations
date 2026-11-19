@@ -9,7 +9,7 @@
  * @link      https://luthemes.com/portfolio/beyond-expectations
  */
 ?>
-    <div <?php Backdrop\Attr\display( 'content-area', '', [ 'id' => 'content-area' ] ); ?>>
+    <div <?php Backdrop\Attr\display( 'content-area', '', [ 'id' => 'content-area', 'class' => 'content-area app-main' ] ); ?>>
         <?php Backdrop\View\display( 'entry', 'none', [ 'error' => $error ] ); ?>
     </div>
 <?php Backdrop\View\display( 'sidebar', 'primary' ); ?>
