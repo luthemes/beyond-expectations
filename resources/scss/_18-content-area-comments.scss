@@ -29,41 +29,54 @@
 
 /* A comment card: light background with a dark left accent bar instead of a plain
    full border. Square corners, like the rest of the theme. */
-.comment__body {
+.comment-body {
     background: #fafafa;
     border-left: 3px solid #1d1d1d;
+    /* Chassis's `.comment-body` adds a bottom border (a separator for themes
+       without a card background). This theme's card has none, so it is
+       removed here to keep the card as designed. */
+    border-bottom: 0;
     margin-bottom: 20px;
     padding: 1.25em;
 }
 
 /* The post author's own comments keep their grey background and get a thicker
    accent bar, so they are recognisable at a glance. */
-.bypostauthor > .comment__body {
+.bypostauthor > .comment-body {
     background: #f0f0f0;
     border-left: 6px solid #1d1d1d;
+    /* Chassis's `.bypostauthor > .comment-body` sets its own padding, which
+       would shrink the author's card from the theme's 1.25em. Keep it. */
+    padding: 1.25em;
 }
 
 /* Header, like Amicable: avatar, author, then the date, Edit and Reply links on one line. */
-.comment__meta {
+.comment-meta {
     border-bottom: 1px solid #cccccc;
     font-size: 14px;
     /* Contains the floated avatar, so the line under the header clears it. Without avatars
        (Settings > Discussion), the header is only as tall as its text. */
     display: flow-root;
     line-height: 1.5;
+    /* Chassis's `.comment-meta` adds a bottom margin; the theme's header
+       has none (the spacing below comes from the content's own margins). */
+    margin-bottom: 0;
     padding-bottom: 10px;
 }
 
-.comment__meta a {
+.comment-meta a {
     text-decoration: none;
 }
 
-.comment__meta a:hover,
-.comment__meta a:focus {
+.comment-meta a:hover,
+.comment-meta a:focus {
     text-decoration: underline;
 }
 
-.comment__avatar {
+/* Scoped to the header: Chassis's `.comment-list .comment-avatar` would
+   otherwise win on radius and margin (higher specificity) and square the
+   avatar. The theme's avatar stays round. */
+.comment-meta .comment-avatar {
     border: 4px solid #cccccc;
     border-radius: 50%;
     display: block;
@@ -71,63 +84,67 @@
     margin-right: 10px;
 }
 
-.comment__parent {
+.comment-parent {
     display: block;
     font-size: 13px;
     margin-bottom: 5px;
 }
 
-.comment__author {
+.comment-author {
     display: block;
     font-family: 'Fira Sans', sans-serif;
     font-size: 1rem;
     font-weight: bold;
 }
 
-.comment__metadata {
+.comment-metadata {
     color: #666666;
     display: block;
     font-size: 13px;
 }
 
-.comment__permalink,
-.comment__parent-link {
+.comment-permalink,
+.comment-parent-link {
     color: inherit;
 }
 
-.comment__metadata .sep {
+.comment-metadata .sep {
     color: #999999;
 }
 
 /* The Reply link is a small outlined button that inverts on hover/focus; the
    Edit link stays a plain link. */
-.comment__meta .comment__reply-link {
+.comment-meta .comment-reply-link {
     display: inline-block;
     padding: 0.2em 0.75em;
 }
 
-.comment__meta .comment__reply-link:hover,
-.comment__meta .comment__reply-link:focus {
+.comment-meta .comment-reply-link:hover,
+.comment-meta .comment-reply-link:focus {
     text-decoration: none;
 }
 
-.comment__content {
+.comment-content {
     clear: both;
     font-size: 14px;
 }
 
-.comment__content p {
+.comment-content p {
     margin: 1em 0;
 }
 
-.comment__moderation {
+.comment-awaiting-moderation {
     background: #84BD68;
+    /* Chassis's `.comment-awaiting-moderation` sets muted italic text; the
+       theme's notice keeps its dark upright text on the green badge. */
+    color: inherit;
     display: inline-block;
     font-size: 12px;
+    font-style: normal;
     padding: 3px 4px;
 }
 
-.comment__type {
+.comment-type {
     font-weight: bold;
     margin-right: 0.5em;
 }

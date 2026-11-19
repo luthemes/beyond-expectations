@@ -14,36 +14,36 @@
 ?>
 <li <?php Backdrop\Attr\display( 'comment' ); ?>>
 
-	<article id="div-comment-<?php comment_ID(); ?>" class="comment__body">
+	<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 
-		<header class="comment__meta">
+		<header class="comment-meta">
 			<?php Backdrop\Theme\Comment\display_parent_link( [
 				// Translators: %s is the name of the person being replied to.
 				'text'   => __( 'In reply to %s', 'beyond-expectations' ),
 				'depth'  => 3,
-				'class'  => 'comment__parent-link',
-				'before' => '<span class="comment__parent">',
+				'class'  => 'comment-parent-link',
+				'before' => '<span class="comment-parent">',
 				'after'  => '</span>',
 			] ); ?>
 
-			<?php echo get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar' ] ); ?>
+			<?php echo get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment-avatar' ] ); ?>
 
-			<span class="comment__author">
-				<?php Backdrop\Theme\Comment\display_author_link( [ 'class' => 'comment__author-link' ] ); ?>
+			<span class="comment-author">
+				<?php Backdrop\Theme\Comment\display_author_link( [ 'class' => 'comment-author-link' ] ); ?>
 			</span>
 
-			<span class="comment__metadata">
+			<span class="comment-metadata">
 				<?php Backdrop\Theme\Comment\display_permalink( [
-					'class' => 'comment__permalink',
+					'class' => 'comment-permalink',
 					'text'  => Backdrop\Theme\Comment\render_date(),
 				] ); ?>
 				<?php Backdrop\Theme\Comment\display_edit_link( [
-					'class'  => 'comment__edit-link',
+					'class'  => 'comment-edit-link',
 					'text'   => esc_html__( 'Edit', 'beyond-expectations' ),
 					'before' => BeyondExpectations\sep(),
 				] ); ?>
 				<?php Backdrop\Theme\Comment\display_reply_link( [
-					'class'     => 'comment__reply-link',
+					'class'     => 'comment-reply-link',
 					'add_below' => 'div-comment',
 					'depth'     => $data->depth,
 					'max_depth' => $data->args['max_depth'],
@@ -52,10 +52,10 @@
 			</span>
 		</header>
 
-		<div class="comment__content">
+		<div class="comment-content">
 
 			<?php if ( ! Backdrop\Theme\Comment\is_approved() ) : ?>
-				<p class="comment__moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'beyond-expectations' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'beyond-expectations' ); ?></p>
 			<?php endif; ?>
 
 			<?php comment_text(); ?>

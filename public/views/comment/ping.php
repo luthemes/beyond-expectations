@@ -14,16 +14,16 @@
 ?>
 <li <?php Backdrop\Attr\display( 'comment' ); ?>>
 
-	<article id="div-comment-<?php comment_ID(); ?>" class="comment__body comment__body--ping">
+	<article id="div-comment-<?php comment_ID(); ?>" class="comment-body comment-body--ping">
 
-		<header class="comment__meta">
-			<span class="comment__type"><?php echo 'trackback' === get_comment_type() ? esc_html__( 'Trackback', 'beyond-expectations' ) : esc_html__( 'Pingback', 'beyond-expectations' ); ?></span>
+		<header class="comment-meta">
+			<span class="comment-type"><?php echo 'trackback' === get_comment_type() ? esc_html__( 'Trackback', 'beyond-expectations' ) : esc_html__( 'Pingback', 'beyond-expectations' ); ?></span>
 
-			<span class="comment__author">
-				<?php Backdrop\Theme\Comment\display_author_link( [ 'class' => 'comment__author-link' ] ); ?>
+			<span class="comment-author">
+				<?php Backdrop\Theme\Comment\display_author_link( [ 'class' => 'comment-author-link' ] ); ?>
 			</span>
 
-			<?php Backdrop\Theme\Comment\display_edit_link( [ 'class' => 'comment__edit-link', 'text' => esc_html__( 'Edit', 'beyond-expectations' ), 'before' => BeyondExpectations\sep() ] ); ?>
+			<?php Backdrop\Theme\Comment\display_edit_link( [ 'class' => 'comment-edit-link', 'text' => esc_html__( 'Edit', 'beyond-expectations' ), 'before' => BeyondExpectations\sep() ] ); ?>
 		</header>
 
 	</article>

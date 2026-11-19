@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 
-		<h2 class="comments-area__title">
+		<h2 class="comments-area__title comments-title">
 			<?php
 			printf(
 				// Translators: %s is the number of comments.
@@ -30,7 +30,7 @@ if ( post_password_required() ) {
 			?>
 		</h2>
 
-		<ol class="comments-area__list">
+		<ol class="comments-area__list comment-list">
 			<?php
 			wp_list_comments( [
 				'style'       => 'ol',
