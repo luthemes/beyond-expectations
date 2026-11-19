@@ -10,8 +10,11 @@
  */
 ?>
 <article <?php Backdrop\Attr\display( 'entry', 'default' ); ?>>
+    <?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
+    <span class="badge"><?php esc_html_e( '★ Featured', 'beyond-expectations' ); ?></span>
+    <?php endif; ?>
     <header class="entry__header">
-        <?php the_title(sprintf('<h2 class="entry__title"><a href="%s">', esc_url(get_permalink())), '</a></h2>'); ?> 
+        <?php the_title(sprintf('<h2 class="entry__title"><a class="entry__title-anchor" href="%s">', esc_url(get_permalink())), '</a></h2>'); ?> 
     </header>
     <div class="entry__body cf">
         <div class="entry__metadata">
@@ -19,7 +22,7 @@
         </div>
         <div class="entry__content">
             <?php the_excerpt(); ?>
-            <div class="entry__footer">
+            <div class="entry__footer entry__terms">
                 <?php BeyondExpectations\entry_taxonomies(); ?>
             </div>
         </div>

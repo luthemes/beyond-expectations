@@ -16,7 +16,7 @@
     <div class="entry__content entry__content--full-width">
         <?php the_content(); ?>
         <?php wp_link_pages(); ?>
-        <div class="entry__footer">
+        <div class="entry__footer entry__terms">
             <?php BeyondExpectations\entry_taxonomies(); ?>
         </div>
     </div>
