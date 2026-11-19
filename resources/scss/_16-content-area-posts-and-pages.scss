@@ -124,8 +124,24 @@
     font-size: 12px;
 }
 
+/* Paginated posts and pages (wp_link_pages()): like the footer below,
+   these links sit directly after the_content(), so without a clear
+   they wrap beside a trailing floated image instead of sitting below
+   it. Seen on the Theme Unit Test "Clearing Floats" page, where
+   "Pages: 1 2" sat beside the left-floated thumbnail. */
+.post-nav-links {
+    clear: both;
+}
+
+/* The footer sits inside the floated .entry__content, directly after
+   the_content(), so without a clear it rides up beside a trailing
+   floated image instead of sitting below it — its top border then
+   stops short of the column right edge. Seen on the Theme Unit
+   Test "Markup: Image Alignment" post, whose last item is a
+   right-floated thumbnail. */
 .entry__footer {
     border-top: 1px solid #cccccc;
+    clear: both;
     margin-top: 1em;
     padding: 0.5em 0 0 0;
     text-align: left;
