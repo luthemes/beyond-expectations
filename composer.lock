@@ -766,16 +766,16 @@
         },
         {
             "name": "techkodeninja/chassis",
-            "version": "0.1.8",
+            "version": "0.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/techkodeninja/chassis.git",
-                "reference": "b676b320a5651aa9eb6ba947bd36bddf8474d077"
+                "reference": "17064ad67b6fedb9264fe09c24f9fc5dee745092"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/techkodeninja/chassis/zipball/b676b320a5651aa9eb6ba947bd36bddf8474d077",
-                "reference": "b676b320a5651aa9eb6ba947bd36bddf8474d077",
+                "url": "https://api.github.com/repos/techkodeninja/chassis/zipball/17064ad67b6fedb9264fe09c24f9fc5dee745092",
+                "reference": "17064ad67b6fedb9264fe09c24f9fc5dee745092",
                 "shasum": ""
             },
             "require": {
@@ -814,10 +814,9 @@
             ],
             "support": {
                 "issues": "https://github.com/techkodeninja/chassis/issues",
-                "source": "https://github.com/techkodeninja/chassis/tree/0.1.8"
+                "source": "https://github.com/techkodeninja/chassis/tree/0.1.9"
             },
-            "time": "2026-11-09T06:24:17+00:00",
-            "published-time": "2026-11-09T06:24:47+00:00"
+            "time": "2026-11-19T19:35:13+00:00"
         }
     ],
     "packages-dev": [],
@@ -830,5 +829,5 @@
         "php": ">=7.4"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.11.0"
+    "plugin-api-version": "2.9.0"
 }
