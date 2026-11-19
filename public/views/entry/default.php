@@ -18,7 +18,7 @@
             <?php BeyondExpectations\entry_posted_on(); ?>
         </div>
         <div class="entry__content">
-            <?php the_content(); ?>
+            <?php the_excerpt(); ?>
             <div class="entry__footer">
                 <?php BeyondExpectations\entry_taxonomies(); ?>
             </div>
