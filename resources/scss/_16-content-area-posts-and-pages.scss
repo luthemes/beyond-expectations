@@ -124,8 +124,15 @@
     font-size: 12px;
 }
 
+/* The footer sits inside the floated .entry__content, directly after
+   the_content(), so without a clear it rides up beside a trailing
+   floated image instead of sitting below it — its top border then
+   stops short of the column right edge. Seen on the Theme Unit
+   Test "Markup: Image Alignment" post, whose last item is a
+   right-floated thumbnail. */
 .entry__footer {
     border-top: 1px solid #cccccc;
+    clear: both;
     margin-top: 1em;
     padding: 0.5em 0 0 0;
     text-align: left;
