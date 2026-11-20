@@ -7,18 +7,9 @@
     background: #000000;
 }
 
-.top-bar__inner {
-    margin: 0 auto;
-    padding: 0 0.938em;
-    max-width: 74.375em;
-}
-
 .social-navigation {
     background: #000000;
-    clear: both;
-    display: block;
     position: relative;
-    width: 100%;
 }
 
 .social-navigation ul {
@@ -96,16 +87,6 @@
 }
 
 
-.primary-navigation__toggle {
-    display: none;
-}
-
-.social-navigation__menu {
-    float: right;
-    list-style: none;
-    text-decoration: none;
-}
-
 .social-navigation__menu ul li {
     display: inline-block;
     position: relative;
@@ -118,8 +99,4 @@
     stroke-width: 2;
     vertical-align: middle;
     width: 18px;
-}
-
-.social-navigation__menu .screen-reader-text {
-    display: none;
 }

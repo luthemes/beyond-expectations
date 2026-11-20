@@ -3,12 +3,6 @@
 16.0 - Content Area (Posts and Pages)
 ================================================================================================
 */
-.entry__content.entry__content--full-width,
-.content-area--full-width {
-    float: none;
-    width: 100%;
-}
-
 .post {
     margin: 0 0 5em 0;
 }
@@ -24,16 +18,21 @@
     padding: 0 0 0.5em 0;
 }
 
+/* The entry body is a two-column grid: the meta rail on the left, the
+   post content on the right. The 19.05% / 2% gap / 78.95% split is the
+   same geometry the old float layout had (rail 19.0476% + 2% leftover
+   + content 78.9524%), now expressed directly instead of via floats. */
 .entry__body {
+    display: grid;
+    grid-template-columns: 19.04761904761905% 1fr;
+    column-gap: 2%;
     margin: 1em 0;
 }
 
 .entry__metadata {
     border-right: 1px solid #cccccc;
-    float: left;
     padding-right: 1em;
     text-align: left;
-    width: 19.04761904761905%;
 }
 
 .entry__metadata .avatar {
@@ -97,11 +96,6 @@
     font-size: 0.875em;
 }
 
-.entry__content {
-    float: right;
-    width: 78.95238095238095%;
-}
-
 .entry__categories,
 .entry__tags {
     display: block;
@@ -158,10 +152,8 @@
 .sticky .badge {
     font-family: 'Fira Sans', sans-serif;
     font-weight: 600;
-    letter-spacing: 0.05em;
     line-height: 1;
     margin-bottom: 1em;
-    padding: 0.5em 0.75em;
 }
 
 .recent-posts,

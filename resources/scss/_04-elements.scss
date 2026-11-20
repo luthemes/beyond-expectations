@@ -3,16 +3,6 @@
  4.0 - Elements
 ================================================================================================
 */
-html {
-    box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after { 
-	box-sizing: inherit;
-}
-
 blockquote:before,
 blockquote:after,
 q:before,
@@ -32,6 +22,10 @@ blockquote {
     margin: 1.5em 2em 1.5em 2em;
     position: relative;
     text-align: center;
+    /* Chassis puts a left border + padding on blockquotes; the theme's
+       pull-quote design uses giant quote marks instead, so reset them. */
+    border-left: 0;
+    padding-left: 0;
 }
 
 blockquote::before {
@@ -62,18 +56,12 @@ blockquote cite {
 }
 
 input[type = "search"] {
-    box-sizing: border-box;
     width: 100%;
 }
 
 .search-submit {
     display: none;
 }
-
-img {
-    height: auto;
-    max-width: 100%;
-} 
 
 /* Inline SVG icons (Backdrop icons package, see BeyondExpectations\svg()). */
 .icon {
