@@ -2,53 +2,10 @@
 ================================================================================================
  5.0 - Forms
 ================================================================================================
+Chassis 0.2.1 owns the bare-`button` element base, its accent hover/focus/active,
+and the input `:focus` text color (`04.elements/05.forms`). The theme keeps only
+its two layout values below: the 99% text-input width and the tall textarea.
 */
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    border: 1px solid #000000;
-	border-radius: 0;
-	background: #fff;
-	color: #000000;
-	font-family: 'Fira Sans', sans-serif;
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: 0.6em;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	background: #000;
-	border-color: #000;
-	color: #fff;
-}
-
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-	background: #000;
-	border-color: #000;
-	color: #fff;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-	color: #111;
-}
-
 input[type="text"],
 input[type="email"],
 input[type="url"],

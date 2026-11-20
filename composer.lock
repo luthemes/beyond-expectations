@@ -766,16 +766,16 @@
         },
         {
             "name": "techkodeninja/chassis",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/techkodeninja/chassis.git",
-                "reference": "e92988bad157662c1688c008083420d75eb57dc5"
+                "reference": "79ef8072675121dd86c06db2d3a1ab96ae4b4f01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/techkodeninja/chassis/zipball/e92988bad157662c1688c008083420d75eb57dc5",
-                "reference": "e92988bad157662c1688c008083420d75eb57dc5",
+                "url": "https://api.github.com/repos/techkodeninja/chassis/zipball/79ef8072675121dd86c06db2d3a1ab96ae4b4f01",
+                "reference": "79ef8072675121dd86c06db2d3a1ab96ae4b4f01",
                 "shasum": ""
             },
             "require": {
@@ -814,10 +814,10 @@
             ],
             "support": {
                 "issues": "https://github.com/techkodeninja/chassis/issues",
-                "source": "https://github.com/techkodeninja/chassis/tree/0.2.0"
+                "source": "https://github.com/techkodeninja/chassis/tree/0.2.1"
             },
-            "time": "2026-11-19T22:26:04+00:00",
-            "published-time": "2026-11-19T22:26:28+00:00"
+            "time": "2026-11-20T01:13:18+00:00",
+            "published-time": "2026-11-20T01:14:05+00:00"
         }
     ],
     "packages-dev": [],

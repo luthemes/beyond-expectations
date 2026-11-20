@@ -2,6 +2,12 @@
 ================================================================================================
 11.0 - Navigation (Social Navigation)
 ================================================================================================
+Chassis 0.2.1 owns the social icon row (`07.components/07.social-menu`): the flex
+row, the icon size (via the `--social-icon-size` token, 18px in this theme's
+chassis.json), and the alignment (via `--social-menu-alignment`, flex-end here).
+The social nav markup uses Chassis's `.social-menu` class (see
+`app/functions-template.php: social_navigation()`). The theme keeps only its
+dark bar, the link padding that sets the bar height, and the current-item greys.
 */
 .top-bar {
     background: #000000;
@@ -9,59 +15,28 @@
 
 .social-navigation {
     background: #000000;
+    /* Chassis's `.search-toggle` and `.social-menu a` use `color: inherit`, so
+       the dark bar needs an explicit white text color — otherwise the search
+       icon and the social icons (both `currentColor`) render dark-on-black. */
+    color: #ffffff;
     position: relative;
 }
 
-.social-navigation ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-}
-
-.social-navigation li {
-    float: right;
-    position: relative;
-}
-
+/* The link padding is what makes the bar 43.6px tall (9px + 25.6px line +
+   9px), which the search toggle is sized to match. `display: block` is
+   Chassis's now. */
 .social-navigation a {
     color: #ffffff;
-    display: block;
     padding: 9px 15px;
     text-decoration: none;
 }
 
-.social-navigation ul ul {
-    background: #1c1c1c;
-    display: none;
-    float: left;
-    left: 0;
-    padding: 0;
-    position: absolute;
-    z-index: 99999;
+/* Chassis's `.social-menu ul` adds an 8px gap between items; the theme's
+   spacing is the link padding alone, so the gap is zeroed to keep the
+   icons exactly where they were. */
+.social-menu ul {
+    gap: 0;
 }
-
-.social-navigation ul ul ul {
-    left: 100%;
-    top: 0;
-}
-
-.social-navigation ul ul a { width: 200px; }
-
-.social-navigation ul ul li { }
-
-.social-navigation li:hover > a,
-.social-navigation li > a:focus {
-    background: #1c1c1c;
-    color: #fff;
-}
-
-.social-navigation ul ul a:hover,
-.social-navigation ul ul a:focus {
-    background: #313131;
-    background: hsl(0, 0%, 19%);
-}
-
-.social-navigation ul li:hover > ul { display: block; }
 
 .social-navigation .current_page_item > a,
 .social-navigation .current-menu-item > a,
@@ -76,27 +51,4 @@
 .social-navigation .current_page_ancestor {
     background: #4d4d4d;
     background: hsl(0, 0%, 30%);
-}
-
-.social-navigation ul ul .current_page_parent,
-.social-navigation .current_page_parent .current_page_item > a {
-    color: #fff;
-    color: hsl(0, 0%, 100%);
-    background: #313131;
-    background: hsl(0, 0%, 19%);
-}
-
-
-.social-navigation__menu ul li {
-    display: inline-block;
-    position: relative;
-}
-
-.social-navigation__menu li a .icon {
-    color: #ffffff;
-    display: inline-block;
-    height: 18px;
-    stroke-width: 2;
-    vertical-align: middle;
-    width: 18px;
 }

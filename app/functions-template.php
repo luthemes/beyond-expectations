@@ -105,7 +105,11 @@ function social_navigation() {
 		'theme_location'  => 'social-navigation',
 		'container'       => 'div',
 		'container_id'    => 'menu-social',
-		'container_class' => 'social-navigation__menu',
+		// Chassis's `.social-menu` class, so the social icon row, icon size,
+		// and alignment come from Chassis 0.2.1 (`07.components/07.social-menu`)
+		// instead of the theme's own rules. The `menu_class` stays the theme's
+		// own; Chassis's `.social-menu ul` matches any descendant `ul`.
+		'container_class' => 'social-menu',
 		'menu_id'         => 'menu-social-items',
 		'menu_class'      => 'social-navigation__items',
 		'depth'           => 1,

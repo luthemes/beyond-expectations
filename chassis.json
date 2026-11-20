@@ -73,6 +73,10 @@
 		"primary-menu": {
 			"link": { "spacing": { "padding": "0.5em 1em" } }
 		},
+		"social-menu": {
+			"icon": { "size": "18px" },
+			"alignment": "flex-end"
+		},
 		"menu-button": {
 			"position": "bottom-left",
 			"hide-on-scroll": false,

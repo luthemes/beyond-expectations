@@ -2,6 +2,9 @@
 ================================================================================================
  3.0 - Typography
 ================================================================================================
+Chassis 0.2.1 owns the element defaults (`04.elements/01.defaults`): `address`,
+`tt`/`var`, `abbr`/`acronym`, and `mark`/`ins`. The theme keeps only its
+ligature workaround, paragraph rhythm, and `pre` size.
 */
 body {
     /* The Fira Sans files in the Backdrop fonts package (used for the title, headings and
@@ -14,32 +17,9 @@ p {
 	margin-bottom: 1.5em;
 }
 
-address {
-	margin: 0 0 1.5em;
-}
-
 pre {
 	font-size: 15px;
 	font-size: 0.9375rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
-}
-
-tt,
-var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-}
-
-abbr,
-acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
-}
-
-mark,
-ins {
-	background: #fff9c0;
-	text-decoration: none;
 }
