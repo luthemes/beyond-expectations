@@ -3,11 +3,6 @@
 25.0 - Media Area (Captions)
 ================================================================================================
 */
-.wp-caption {
-    max-width: 100%;
-    margin-bottom: 1.5em;
-}
-
 .wp-caption img[class*="wp-image-"] {
     display: block;
     margin: 0 auto;
@@ -15,7 +10,6 @@
 }
 
 .wp-caption-text { 
-    margin-top: 4px;
     text-align: center; 
 }
 
@@ -24,9 +18,4 @@
     background: #cccccc;
     color: #000000;
     padding: 8px;
-}
-
-.wp-caption p {
-    margin: 0;
-    padding: 0;
 }

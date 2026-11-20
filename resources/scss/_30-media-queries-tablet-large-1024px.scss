@@ -4,39 +4,15 @@
 ================================================================================================
 */
 @media screen and (min-width: 768px) {
-    
-    .primary-navigation {
-        clear: none;
-    }
-	
-	/* Position the menu in the header */
-	.primary-navigation {
-        background: #000000;
-		position: relative;
-		max-width: 100%;
-		margin: 0 auto;
-		padding: 0;
-	}
-    
+
 	.primary-navigation__menu {
 		padding: .4em;
 		background-color: transparent;
         margin: 0;
     }
-    
-    .primary-navigation__menu a {
-        color: #ffffff;
-    }
-    
-    .primary-navigation__menu a:hover {
-        color: #ffffff;
-    }
-	
+
 	.primary-navigation ul {
-		max-height: none;
-		padding-left: 0;
 		text-align: center;
-        
 	}
 	
 	
@@ -53,7 +29,6 @@
 	
 	/* Left-align drop-down menu items */
 	.primary-navigation li li {
-		display: flex;
 		text-align: left;
 	}
 	
@@ -62,10 +37,6 @@
 		border-bottom: none;
 	}
     
-    .primary-navigation ul ul li a {
-        color: #ffffff;
-    }
-	
 	/* Add an outline on hovered and focused menu items */
 	.primary-navigation a:hover,
 	.primary-navigation a:focus {

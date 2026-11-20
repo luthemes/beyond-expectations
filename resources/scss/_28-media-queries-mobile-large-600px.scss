@@ -1,45 +1,26 @@
 /*
 ================================================================================================
-28.0 - Media Queries (Mobile Large 600px)
+28.0 - Media Queries (Mobile Large 640px)
 ================================================================================================
 */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
     .site-content {
         padding: 0.625em;
     }
-    
+
     .site-header {
         padding: 3em;
     }
-    
-    
-    
-    
-    
-    
-    
 
-    .content-area {
-        margin: 0;
-        width: 100%;
+    /* The meta rail stacks: a single column instead of the 19.05% / 1fr grid. */
+    .entry__body {
+        grid-template-columns: 1fr;
     }
-    
-    .widget-area {
-        float: none;
-        width: 100%;
-    }
-    
+
     .entry__metadata {
         background: #eeeeee;
         border-right: 0;
-        float: none;
         padding: 1em 0;
         text-align: center;
-        width: 100%;
-    }
-    
-    .entry__content {
-        float: none;
-        width: 100%;
     }
 }

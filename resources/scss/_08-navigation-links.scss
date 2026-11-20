@@ -4,19 +4,9 @@
 ================================================================================================
 */
 a {
-    color: #1d1d1d;
     /* Links are underlined so they are distinguishable from body text.
        #1d1d1d on the white body background is 16.86:1, well above the
        WCAG AA 4.5:1 minimum. The navigation partials loaded after this
        one keep their own `text-decoration: none` for menu links. */
     text-decoration: underline;
-}
-
-a:hover {
-    /* No accent color in this theme: the hover is the muted grey #666666
-       used for meta labels and other secondary text. #666666 on white is
-       about 5.7:1, still above the WCAG AA 4.5:1 minimum. The old blue
-       (#0099cc, then #0077a3 at 5.04:1) was dropped so the hover matches
-       the monochrome palette. */
-    color: #666666;
 }

@@ -3,45 +3,24 @@
 29.0 - Media Queries (Tablet Small 768px)
 ================================================================================================
 */
-@media screen and (min-width: 601px) and (max-width: 768px) {
+@media screen and (min-width: 641px) and (max-width: 768px) {
     .site-content {
         padding: 0.625em;
     }
-    
+
     .site-header {
         padding: 3em;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    .content-area {
-        float: none;
-        width: 100%;
+
+    /* The meta rail stacks: a single column instead of the 19.05% / 1fr grid. */
+    .entry__body {
+        grid-template-columns: 1fr;
     }
-    
-    .widget-area {
-        float: none;
-        width: 100%;
-    }
-    
+
     .entry__metadata {
         background: #eeeeee;
         border-right: 0;
-        float: none;
         padding: 1em 0;
         text-align: center;
-        width: 100%;
     }
-    
-    .entry__content {
-        float: none;
-        width: 100%;
-    }
-    
-
 }

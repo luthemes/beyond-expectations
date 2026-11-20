@@ -22,7 +22,7 @@
     <div class="app">
     <a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'beyond-expectations' ); ?></a>
     <div id="social-search" <?php Backdrop\Attr\display( 'top-bar' ); ?>>
-    <nav class="top-bar__inner">
+    <nav class="top-bar__inner container">
         <div class="social-navigation cf">
         <button type="button" class="search-toggle cf" aria-controls="search-container" aria-expanded="false">
             <?php BeyondExpectations\Tools\Svg::display( 'search' ); ?>

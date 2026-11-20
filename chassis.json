@@ -67,7 +67,7 @@
 		},
 		"header": {
 			"color": { "text": "#ffffff" },
-			"spacing": { "padding": "3.5em 0" },
+			"spacing": { "padding": "3.5em" },
 			"title": { "typography": { "size": "2em" } }
 		},
 		"primary-menu": {
@@ -82,7 +82,9 @@
 			},
 			"border": "2px solid #ffffff"
 		},
-		"content": {},
+		"content": {
+			"spacing": { "padding": "0.938em" }
+		},
 		"post": {
 			"color": { "background": "transparent" },
 			"border": { "color": "@divider", "style": "none" },

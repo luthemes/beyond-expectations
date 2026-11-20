@@ -4,38 +4,14 @@
 ================================================================================================
 */
 body {
-    font-family: 'Merriweather', serif;
     /* The Fira Sans files in the Backdrop fonts package (used for the title, headings and
        menus) are missing their ligature glyphs, so "fi", "fl" and "ffi" disappear unless
        ligatures are turned off. Set here so every element inherits it. */
     font-variant-ligatures: no-common-ligatures;
-    line-height: 1.6;
-    /* Long words and URLs wrap instead of running out of the content area. */
-    overflow-wrap: break-word;
-}
-
-h1,
-h2,
-h3,
-h4, 
-h5, 
-h6 {
-    font-family: 'Fira Sans', sans-serif;
 }
 
 p {
 	margin-bottom: 1.5em;
-}
-
-dfn,
-cite,
-em,
-i {
-	font-style: italic;
-}
-
-blockquote {
-	margin: 0 1.5em;
 }
 
 address {
@@ -43,19 +19,12 @@ address {
 }
 
 pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1em;
 }
 
-code,
-kbd,
 tt,
 var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -73,8 +42,4 @@ mark,
 ins {
 	background: #fff9c0;
 	text-decoration: none;
-}
-
-big {
-	font-size: 125%;
 }
