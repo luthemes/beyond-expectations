@@ -2,19 +2,9 @@
 ================================================================================================
  4.0 - Elements
 ================================================================================================
+Chassis 0.2.1 owns the `blockquote`/`q` quotes neutralization
+(`04.elements/01.defaults`). The theme keeps its pull-quote design below.
 */
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-}
-
-blockquote,
-q {
-	quotes: "" "";
-}
-
 blockquote {
     font-family: 'Fira Sans', sans-serif;
     font-size: 22px;

@@ -3,10 +3,12 @@
 23.0 - Widget Area
 ================================================================================================
 Chassis owns the `.widget` box (background, border, radius, shadow, padding,
-list reset) via `chassis.json` + Chassis 0.2.0. The theme keeps only the flat
+list reset) via `chassis.json` + Chassis 0.2.1. The theme keeps only the flat
 overrides below: the divider/padding/margin, the title underline, calendar,
-RSS, and search rules — plus the three content rules Chassis does not cover
-(nested-list indent, widget select, text widget margin).
+and search rules — plus the two content rules Chassis does not cover
+(widget select, text widget margin). The nested-list indent and the RSS
+widget rules moved to Chassis 0.2.1 (`07.components/06.widgets` and
+`platforms/classicpress/03.widgets`).
 */
 .widget-area .search-submit {
     display: none;
@@ -27,10 +29,6 @@ RSS, and search rules — plus the three content rules Chassis does not cover
     border-bottom: 0;
 }
 
-.widget li li {
-    margin-left: 18px;
-}
-
 .widget select {
     margin: 10px 0;
 }
@@ -42,17 +40,6 @@ RSS, and search rules — plus the three content rules Chassis does not cover
     font-weight: 600;
     margin: 0 0 1em 0;
     padding: 0 0 0.5em 0;
-}
-
-.rsswidget {
-    display: block;
-}
-
-.rss-date {
-    display: block;
-    font-weight: bold;
-    margin-top: 20px;
-    text-align: left;
 }
 
 #wp-calendar {

@@ -2,13 +2,9 @@
 ================================================================================================
 25.0 - Media Area (Captions)
 ================================================================================================
+Chassis 0.2.1 owns the caption-image rule (`platforms/classicpress/01.content`).
+The theme keeps only its centered caption text and grey caption bar.
 */
-.wp-caption img[class*="wp-image-"] {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-}
-
 .wp-caption-text { 
     text-align: center; 
 }
