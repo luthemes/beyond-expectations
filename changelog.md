@@ -2,7 +2,11 @@
 
 ## Unreleased
 
+### Added
+- Customize → Theme: Global → Theme Colors and Typography, from `backdrop-dev/customize`. Both write to Chassis, so the controls start at the design's current values and a change overrides `chassis.json` without editing it; a control left alone changes nothing. Theme Colors covers text, muted text, dividers, alternate background, accent, text on accent, links, links on hover, headings, and header background and footer colors; the header text color stays in core's Colors section, which the theme keeps. Typography has the body font, heading font, base font size and line height, with Fira Sans, Lato, Open Sans, Merriweather Sans, Merriweather and Alegreya to choose from. Both preview live.
+
 ### Changed
+- Requires `backdrop-dev/customize` `^1.0.6`, the release that loads the fonts Typography offers, and `techkodeninja/chassis` `^0.2.3`, which has the overrides the controls use.
 - The Layout, Feature Image size and Credit controls in the customizer come from `backdrop-dev/customize` `^1.0.4` instead of the theme's own `Layout`, `FeatureImage` and `Footer` customizable classes, which are removed along with `Customize\Customizable`. `BeyondExpectations\Customize\Defaults` turns the built-in components on and gives them the theme's layouts, image sizes, defaults and labels. The setting IDs (`theme_global_layout`, `theme_content_feature_image`, `theme_footer_powered_by`, `theme_footer_custom_credit`), the panels and the stored theme mods are unchanged, so nothing saved needs migrating. The Colors section still moves into Theme: Global, the custom footer text is still hidden while the random credit is on, and all three controls still refresh the preview. The Layout control is labelled "Layout" instead of "Global Layout" and no longer has a description line.
 
 ## 0.0.1 - 11.17.2026

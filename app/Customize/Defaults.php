@@ -2,8 +2,9 @@
 /**
  * Customize defaults.
  *
- * Turns on the Layout, Footer credit and Featured image size components that
- * `backdrop-dev/customize` includes, and gives them the theme's choices and defaults.
+ * Turns on the Layout, Footer credit, Featured image size, Colors and Typography
+ * components that `backdrop-dev/customize` includes, and gives them the theme's choices
+ * and defaults.
  *
  * @package   Beyond Expectations
  * @author    Benjamin Lu <benlumia007@gmail.com>
@@ -41,10 +42,14 @@ class Defaults implements Bootable {
 		add_filter( 'backdrop/customize/layout',         '__return_true' );
 		add_filter( 'backdrop/customize/footer_credit',  '__return_true' );
 		add_filter( 'backdrop/customize/featured_image', '__return_true' );
+		add_filter( 'backdrop/customize/colors',         '__return_true' );
+		add_filter( 'backdrop/customize/typography',     '__return_true' );
 
 		add_filter( 'backdrop/customize/layout_args',         [ $this, 'layout'        ] );
 		add_filter( 'backdrop/customize/footer_credit_args',  [ $this, 'footerCredit'  ] );
 		add_filter( 'backdrop/customize/featured_image_args', [ $this, 'featuredImage' ] );
+		add_filter( 'backdrop/customize/colors_args',         [ $this, 'colors'        ] );
+		add_filter( 'backdrop/customize/typography_args',     [ $this, 'typography'    ] );
 
 		// After the components have registered their sections and controls.
 		add_action( 'customize_register', [ $this, 'adjust' ], 20 );
@@ -118,6 +123,61 @@ class Defaults implements Bootable {
 			'choices'   => $choices,
 			'default'   => Mod::fallback( 'featured_image_size' ),
 			'transport' => 'refresh',
+		] );
+	}
+
+	/**
+	 * Colors: Customize -> Theme: Global -> Theme Colors.
+	 *
+	 * The theme keeps core's Colors section for the header text color and the background
+	 * color, so this one is titled differently, and it leaves out the header text color,
+	 * which core's setting already controls.
+	 *
+	 * @since  0.0.1
+	 * @access public
+	 * @param  array  $args
+	 * @return array
+	 */
+	public function colors( array $args ): array {
+
+		unset( $args['fields']['header_text'] );
+
+		return array_merge( $args, [
+			'title' => esc_html__( 'Theme Colors', 'beyond-expectations' ),
+		] );
+	}
+
+	/**
+	 * Typography: Customize -> Theme: Global -> Typography.
+	 *
+	 * The theme's fonts (`chassis.json`) are already enqueued, so the control shows them as
+	 * "Theme default". The others come from `backdrop-dev/fonts`: the Typography component
+	 * loads a font when it's picked, and all of them in the customizer preview. Each stack
+	 * ends in a generic family, which is what shows if a font hasn't loaded yet.
+	 *
+	 * @since  0.0.1
+	 * @access public
+	 * @param  array  $args
+	 * @return array
+	 */
+	public function typography( array $args ): array {
+
+		$fonts = [
+			"'Fira Sans', sans-serif"        => [ 'Fira Sans',        'fira-sans'        ],
+			"'Lato', sans-serif"             => [ 'Lato',             'lato'             ],
+			"'Open Sans', sans-serif"        => [ 'Open Sans',        'open-sans'        ],
+			"'Merriweather Sans', sans-serif" => [ 'Merriweather Sans', 'merriweather-sans' ],
+			"'Merriweather', serif"          => [ 'Merriweather',     'merriweather'     ],
+			"'Alegreya', serif"              => [ 'Alegreya',         'alegreya'         ],
+		];
+
+		foreach ( $fonts as $stack => [ $label, $handle ] ) {
+			$args['fonts'][ $stack ]   = $label;
+			$args['handles'][ $stack ] = $handle;
+		}
+
+		return array_merge( $args, [
+			'title' => esc_html__( 'Typography', 'beyond-expectations' ),
 		] );
 	}
 
