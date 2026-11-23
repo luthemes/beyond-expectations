@@ -1,5 +1,10 @@
 # Change Log
 
+## Unreleased
+
+### Changed
+- The Layout, Feature Image size and Credit controls in the customizer come from `backdrop-dev/customize` `^1.0.4` instead of the theme's own `Layout`, `FeatureImage` and `Footer` customizable classes, which are removed along with `Customize\Customizable`. `BeyondExpectations\Customize\Defaults` turns the built-in components on and gives them the theme's layouts, image sizes, defaults and labels. The setting IDs (`theme_global_layout`, `theme_content_feature_image`, `theme_footer_powered_by`, `theme_footer_custom_credit`), the panels and the stored theme mods are unchanged, so nothing saved needs migrating. The Colors section still moves into Theme: Global, the custom footer text is still hidden while the random credit is on, and all three controls still refresh the preview. The Layout control is labelled "Layout" instead of "Global Layout" and no longer has a description line.
+
 ## 0.0.1 - 11.17.2026
 The first release of Beyond Expectations for ClassicPress, rebuilt on the [Backdrop framework](https://github.com/backdrop-dev/framework) 2.0. The layout and look stay close to the original theme.
 
