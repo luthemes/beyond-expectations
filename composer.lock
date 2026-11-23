@@ -55,7 +55,8 @@
                 "issues": "https://github.com/backdrop-dev/attr/issues",
                 "source": "https://github.com/backdrop-dev/attr/tree/v1.0.0"
             },
-            "time": "2026-11-17T21:08:39+00:00"
+            "time": "2026-11-17T21:08:39+00:00",
+            "published-time": "2026-11-17T21:09:03+00:00"
         },
         {
             "name": "backdrop-dev/contracts",
@@ -102,20 +103,21 @@
                 "issues": "https://github.com/benlumia007/backdrop-contracts/issues",
                 "source": "https://github.com/backdrop-dev/contracts/tree/v1.0.0"
             },
-            "time": "2026-11-08T04:33:16+00:00"
+            "time": "2026-11-08T04:33:16+00:00",
+            "published-time": "2026-11-08T04:38:31+00:00"
         },
         {
             "name": "backdrop-dev/customize",
-            "version": "v1.0.3",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/backdrop-dev/customize.git",
-                "reference": "088ab103af38a3bd56131a44a474773efe9a5f8d"
+                "reference": "bf9ae61fef4cbd01dd855e4163c658c1192e7ccc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/backdrop-dev/customize/zipball/088ab103af38a3bd56131a44a474773efe9a5f8d",
-                "reference": "088ab103af38a3bd56131a44a474773efe9a5f8d",
+                "url": "https://api.github.com/repos/backdrop-dev/customize/zipball/bf9ae61fef4cbd01dd855e4163c658c1192e7ccc",
+                "reference": "bf9ae61fef4cbd01dd855e4163c658c1192e7ccc",
                 "shasum": ""
             },
             "require": {
@@ -150,9 +152,10 @@
             ],
             "support": {
                 "issues": "https://github.com/backdrop-dev/customize/issues",
-                "source": "https://github.com/backdrop-dev/customize/tree/v1.0.3"
+                "source": "https://github.com/backdrop-dev/customize/tree/v1.0.5"
             },
-            "time": "2026-11-17T22:30:40+00:00"
+            "time": "2026-11-23T19:30:13+00:00",
+            "published-time": "2026-11-23T19:30:36+00:00"
         },
         {
             "name": "backdrop-dev/fonts",
@@ -200,7 +203,8 @@
                 "issues": "https://github.com/backdrop-dev/fonts/issues",
                 "source": "https://github.com/backdrop-dev/fonts/tree/v1.0.3"
             },
-            "time": "2026-11-17T21:23:01+00:00"
+            "time": "2026-11-17T21:23:01+00:00",
+            "published-time": "2026-11-17T21:23:27+00:00"
         },
         {
             "name": "backdrop-dev/framework",
@@ -251,7 +255,8 @@
                 "issues": "https://github.com/backdrop-dev/framework/issues",
                 "source": "https://github.com/backdrop-dev/framework/tree/v2.0.0"
             },
-            "time": "2026-11-08T04:54:54+00:00"
+            "time": "2026-11-08T04:54:54+00:00",
+            "published-time": "2026-11-08T04:56:24+00:00"
         },
         {
             "name": "backdrop-dev/icons",
@@ -306,7 +311,8 @@
                 "issues": "https://github.com/backdrop-dev/icons/issues",
                 "source": "https://github.com/backdrop-dev/icons/tree/v1.0.0"
             },
-            "time": "2026-11-17T18:28:08+00:00"
+            "time": "2026-11-17T18:28:08+00:00",
+            "published-time": "2026-11-17T18:52:59+00:00"
         },
         {
             "name": "backdrop-dev/languages",
@@ -356,7 +362,8 @@
                 "issues": "https://github.com/backdrop-dev/languages/issues",
                 "source": "https://github.com/backdrop-dev/languages/tree/v1.0.2"
             },
-            "time": "2026-11-18T17:42:33+00:00"
+            "time": "2026-11-18T17:42:33+00:00",
+            "published-time": "2026-11-18T17:44:53+00:00"
         },
         {
             "name": "backdrop-dev/pagination",
@@ -406,7 +413,8 @@
                 "issues": "https://github.com/backdrop-dev/pagination/issues",
                 "source": "https://github.com/backdrop-dev/pagination/tree/v1.0.0"
             },
-            "time": "2026-11-17T20:14:25+00:00"
+            "time": "2026-11-17T20:14:25+00:00",
+            "published-time": "2026-11-17T20:14:50+00:00"
         },
         {
             "name": "backdrop-dev/resources",
@@ -459,7 +467,8 @@
                 "issues": "https://github.com/backdrop-dev/resources/issues",
                 "source": "https://github.com/backdrop-dev/resources/tree/v1.0.0"
             },
-            "time": "2026-11-18T01:33:05+00:00"
+            "time": "2026-11-18T01:33:05+00:00",
+            "published-time": "2026-11-18T15:33:29+00:00"
         },
         {
             "name": "backdrop-dev/template-helpers",
@@ -509,7 +518,8 @@
                 "issues": "https://github.com/backdrop-dev/template-helpers/issues",
                 "source": "https://github.com/backdrop-dev/template-helpers/tree/v1.0.1"
             },
-            "time": "2026-11-17T19:43:59+00:00"
+            "time": "2026-11-17T19:43:59+00:00",
+            "published-time": "2026-11-17T19:44:22+00:00"
         },
         {
             "name": "backdrop-dev/template-hierarchy",
@@ -561,7 +571,8 @@
                 "issues": "https://github.com/backdrop-dev/template-hierarchy/issues",
                 "source": "https://github.com/backdrop-dev/template-hierarchy/tree/v1.0.0"
             },
-            "time": "2026-11-17T19:49:28+00:00"
+            "time": "2026-11-17T19:49:28+00:00",
+            "published-time": "2026-11-17T19:49:50+00:00"
         },
         {
             "name": "backdrop-dev/template-manager",
@@ -610,20 +621,21 @@
                 "issues": "https://github.com/backdrop-dev/template-manager/issues",
                 "source": "https://github.com/backdrop-dev/template-manager/tree/v1.0.0"
             },
-            "time": "2026-11-17T21:51:46+00:00"
+            "time": "2026-11-17T21:51:46+00:00",
+            "published-time": "2026-11-17T21:52:13+00:00"
         },
         {
             "name": "backdrop-dev/theme",
-            "version": "v1.0.7",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/backdrop-dev/theme.git",
-                "reference": "582680f8e710d31175f09406d97b705367a13f24"
+                "reference": "b98d1b0019562fde176b1fccdee84e047449c0a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/backdrop-dev/theme/zipball/582680f8e710d31175f09406d97b705367a13f24",
-                "reference": "582680f8e710d31175f09406d97b705367a13f24",
+                "url": "https://api.github.com/repos/backdrop-dev/theme/zipball/b98d1b0019562fde176b1fccdee84e047449c0a0",
+                "reference": "b98d1b0019562fde176b1fccdee84e047449c0a0",
                 "shasum": ""
             },
             "require": {
@@ -660,9 +672,10 @@
             ],
             "support": {
                 "issues": "https://github.com/backdrop-dev/theme/issues",
-                "source": "https://github.com/backdrop-dev/theme/tree/v1.0.7"
+                "source": "https://github.com/backdrop-dev/theme/tree/v1.0.8"
             },
-            "time": "2026-11-18T00:38:34+00:00"
+            "time": "2026-11-23T18:28:05+00:00",
+            "published-time": "2026-11-23T18:29:21+00:00"
         },
         {
             "name": "backdrop-dev/tools",
@@ -763,20 +776,21 @@
                 "issues": "https://github.com/backdrop-dev/view/issues",
                 "source": "https://github.com/backdrop-dev/view/tree/v1.0.3"
             },
-            "time": "2026-11-17T19:44:31+00:00"
+            "time": "2026-11-17T19:44:31+00:00",
+            "published-time": "2026-11-17T19:44:55+00:00"
         },
         {
             "name": "techkodeninja/chassis",
-            "version": "0.2.1",
+            "version": "0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/techkodeninja/chassis.git",
-                "reference": "79ef8072675121dd86c06db2d3a1ab96ae4b4f01"
+                "reference": "9007e0f5248011fd1b1bbde52f400bd6326e832c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/techkodeninja/chassis/zipball/79ef8072675121dd86c06db2d3a1ab96ae4b4f01",
-                "reference": "79ef8072675121dd86c06db2d3a1ab96ae4b4f01",
+                "url": "https://api.github.com/repos/techkodeninja/chassis/zipball/9007e0f5248011fd1b1bbde52f400bd6326e832c",
+                "reference": "9007e0f5248011fd1b1bbde52f400bd6326e832c",
                 "shasum": ""
             },
             "require": {
@@ -815,10 +829,10 @@
             ],
             "support": {
                 "issues": "https://github.com/techkodeninja/chassis/issues",
-                "source": "https://github.com/techkodeninja/chassis/tree/0.2.1"
+                "source": "https://github.com/techkodeninja/chassis/tree/0.2.3"
             },
-            "time": "2026-11-20T01:13:18+00:00",
-            "published-time": "2026-11-20T01:14:05+00:00"
+            "time": "2026-11-23T19:29:37+00:00",
+            "published-time": "2026-11-23T19:30:04+00:00"
         }
     ],
     "packages-dev": [],
