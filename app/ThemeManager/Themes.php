@@ -13,7 +13,7 @@
 
 namespace BeyondExpectations\ThemeManager;
 
-use BeyondExpectations\Tools\Collection;
+use Backdrop\Tools\Collection;
 
 /**
  * Themes class.

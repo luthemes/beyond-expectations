@@ -15,7 +15,7 @@
 namespace BeyondExpectations\Customize;
 
 use WP_Customize_Manager;
-use BeyondExpectations\Tools\Collection;
+use Backdrop\Tools\Collection;
 
 /**
  * Customizable class.
