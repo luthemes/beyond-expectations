@@ -3,7 +3,7 @@
 namespace BeyondExpectations\Customize\Footer;
 use BeyondExpectations\Customize\Customizable;
 use WP_Customize_Manager;
-use BeyondExpectations\Tools\Collection;
+use Backdrop\Tools\Collection;
 use BeyondExpectations\Tools\Mod;
 use BeyondExpectations\Template\Footer;
 

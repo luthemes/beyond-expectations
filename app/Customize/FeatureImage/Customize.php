@@ -3,7 +3,7 @@
 namespace BeyondExpectations\Customize\FeatureImage;
 use BeyondExpectations\Customize\Customizable;
 use WP_Customize_Manager;
-use BeyondExpectations\Tools\Collection;
+use Backdrop\Tools\Collection;
 use BeyondExpectations\Tools\Config;
 use BeyondExpectations\Tools\Mod;
 

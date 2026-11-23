@@ -666,16 +666,16 @@
         },
         {
             "name": "backdrop-dev/tools",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/backdrop-dev/tools.git",
-                "reference": "99fff4ccaafd436dd7baac34806fb73f771ccd4c"
+                "reference": "6662462722883a2fb8913ac568e81011f7533c40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/backdrop-dev/tools/zipball/99fff4ccaafd436dd7baac34806fb73f771ccd4c",
-                "reference": "99fff4ccaafd436dd7baac34806fb73f771ccd4c",
+                "url": "https://api.github.com/repos/backdrop-dev/tools/zipball/6662462722883a2fb8913ac568e81011f7533c40",
+                "reference": "6662462722883a2fb8913ac568e81011f7533c40",
                 "shasum": ""
             },
             "require": {
@@ -707,9 +707,10 @@
             ],
             "support": {
                 "issues": "https://github.com/backdrop-dev/tools/issues",
-                "source": "https://github.com/backdrop-dev/tools/tree/v1.0.0"
+                "source": "https://github.com/backdrop-dev/tools/tree/v1.0.1"
             },
-            "time": "2026-11-17T19:42:19+00:00"
+            "time": "2026-11-23T17:22:49+00:00",
+            "published-time": "2026-11-23T17:24:15+00:00"
         },
         {
             "name": "backdrop-dev/view",
