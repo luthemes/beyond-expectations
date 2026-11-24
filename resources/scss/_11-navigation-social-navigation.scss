@@ -22,6 +22,17 @@ dark bar, the link padding that sets the bar height, and the current-item greys.
     position: relative;
 }
 
+/* Clear the floated search toggle. The toggle is the nav's only content
+   when no social menu is assigned, and the theme's `cf` clearfix class is
+   not defined in the loaded stylesheets — so without this the nav
+   collapses to zero height and the search panel, anchored with
+   `top: 100%`, opened over the toggle instead of below the bar. */
+.social-navigation::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
 /* The link padding is what makes the bar 43.6px tall (9px + 25.6px line +
    9px), which the search toggle is sized to match. `display: block` is
    Chassis's now. */
