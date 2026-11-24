@@ -33,9 +33,9 @@ dark bar, the link padding that sets the bar height, and the current-item greys.
     display: table;
 }
 
-/* The link padding is what makes the bar 43.6px tall (9px + 25.6px line +
-   9px), which the search toggle is sized to match. `display: block` is
-   Chassis's now. */
+/* The link padding is what sets the bar height: 9px + the 18px icon +
+   9px = 36px. The search toggle is padded to match (see _13), so the
+   magnifier sits on the same centre line as the social icons. */
 .social-navigation a {
     color: #ffffff;
     padding: 9px 15px;

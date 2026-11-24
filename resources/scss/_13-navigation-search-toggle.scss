@@ -6,6 +6,20 @@ Chassis 0.2.1 owns the search panel and toggle (`07.components/10.search-panel`)
 `.search-box`, `.search-box__inner`, `.search-toggle`, and `.search-toggle .icon`.
 The theme keeps only its field sizing and the hidden submit below.
 */
+/* The toggle icon must sit level with the social icons. Chassis leaves
+   it inline (`vertical-align: middle`) in a button sized by line-height,
+   which drops it a few pixels below the social icons (their SVGs are
+   `display: block`). A block icon in a button padded like the social
+   links makes both rows exactly 36px tall, with the icons on the same
+   centre line. */
+.search-toggle {
+    padding: 9px 15px;
+}
+
+.search-toggle .icon {
+    display: block;
+}
+
 /* The panel is a dropdown under the search icon, not a band across the
    page. Chassis centers it (`margin: 0 auto`), and the `.app` flex column
    shrink-wraps it, so it landed in the middle of the page. The panel now
