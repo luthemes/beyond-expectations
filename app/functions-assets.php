@@ -28,9 +28,6 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Rather than enqueue the main style.css stylesheet, we are going to enqueue screen.css.
 	enqueue_style( 'beyond-expectations-screen', 'resources/scss/screen.scss' );
 
-	// Search toggle.
-	enqueue_script( 'beyond-expectations-hide-search', 'resources/js/hide-search.js', [ 'jquery' ] );
-
 	// Enqueue Navigation.
 	enqueue_script( 'beyond-expectations-navigation', 'resources/js/navigation.js', [ 'jquery' ] );
 
