@@ -6,6 +6,20 @@ Chassis 0.2.1 owns the search panel and toggle (`07.components/10.search-panel`)
 `.search-box`, `.search-box__inner`, `.search-toggle`, and `.search-toggle .icon`.
 The theme keeps only its field sizing and the hidden submit below.
 */
+/* The panel is a dropdown under the search icon, not a band across the
+   page. Chassis centers it (`margin: 0 auto`), and the `.app` flex column
+   shrink-wraps it, so it landed in the middle of the page. The panel now
+   lives inside `.social-navigation` (which is `position: relative`), so it
+   hangs directly under the toggle, right-aligned with it. */
+.search-box {
+    margin: 0;
+    max-width: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 100;
+}
+
 .search-box__inner {
     /* Chassis gives the panel 8px of inner padding; the theme's field already
        carries its own 10px margin, so the padding is zeroed to keep the field
