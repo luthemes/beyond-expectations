@@ -13,7 +13,6 @@ export default defineConfig({
       input: {
         screen: path.resolve(__dirname, 'resources/scss/screen.scss'),
         navigation: path.resolve(__dirname, 'resources/js/navigation.js'),
-        'hide-search': path.resolve(__dirname, 'resources/js/hide-search.js'),
         'customize-controls': path.resolve(__dirname, 'resources/js/customize-controls.js'),
         admin: path.resolve(__dirname, 'resources/scss/admin.scss'),
       },
