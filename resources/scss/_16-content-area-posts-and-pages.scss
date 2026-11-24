@@ -3,8 +3,20 @@
 16.0 - Content Area (Posts and Pages)
 ================================================================================================
 */
+/* Entries are spaced by a top margin, not a bottom one: the old 5em bottom
+   margin on .post would collapse over the 3rem top margin and the 3rem
+   would never show. The first entry stays flush — the space above it
+   comes from the content area's own padding. */
 .post {
-    margin: 0 0 5em 0;
+    margin: 0;
+}
+
+.entry {
+    margin-top: 3rem;
+}
+
+.entry:first-child {
+    margin-top: 0;
 }
 
 .entry__header {
