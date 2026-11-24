@@ -53,13 +53,12 @@
 		border-bottom: none;
 	}
     
-	/* Add an outline on hovered and focused menu items */
+	/* Hovered and focused menu items underline only — no outline box. */
 	.primary-navigation a:hover,
 	.primary-navigation a:focus {
 		background: transparent;
 		color: #ffffff;
 		text-decoration: underline;
-		outline: solid 1px #b3b3b3;
 	}
 	
 	/* Drop-down items keep the same hover as top-level items
