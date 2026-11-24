@@ -20,7 +20,6 @@
 	.primary-navigation__menu > li {
 		display: inline-flex;
 		border: none;
-		position: static;
 	}
 
 	/* Drop-down items stack vertically, one per row. The rule above
@@ -31,22 +30,15 @@
 		border: none;
 	}
 
-	/* The drop-down spans the whole navigation bar, so long labels
-	   never wrap to a second line. Top-level items are static, so
-	   the drop-down anchors to the bar itself. */
-	.primary-navigation {
-		position: relative;
-	}
-
+	/* The drop-down is only as wide as its longest label, so text
+	   never wraps to a second line. It stays anchored under its
+	   parent menu item. */
 	.primary-navigation ul ul {
-		left: 0;
-		right: 0;
+		width: max-content;
 	}
 
-	/* Third level drops below its parent row instead of flying out
-	   to the side. */
-	.primary-navigation ul ul ul {
-		top: 100%;
+	.primary-navigation ul ul a {
+		white-space: nowrap;
 	}
 	
 	/* Add an outline to the drop-down menus */
