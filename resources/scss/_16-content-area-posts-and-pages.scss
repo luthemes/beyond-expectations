@@ -33,12 +33,30 @@
 /* The entry body is a two-column grid: the meta rail on the left, the
    post content on the right. The 19.05% / 2% gap / 78.95% split is the
    same geometry the old float layout had (rail 19.0476% + 2% leftover
-   + content 78.9524%), now expressed directly instead of via floats. */
+   + content 78.9524%), now expressed directly instead of via floats.
+   The content track is minmax(0, 1fr), not plain 1fr: a plain 1fr track
+   keeps an automatic minimum of its widest child's min-content, so a
+   wide table or a large image stretched the track past the entry and
+   the post body painted over the sidebar. */
 .entry__body {
     display: grid;
-    grid-template-columns: 19.04761904761905% 1fr;
+    grid-template-columns: 19.04761904761905% minmax(0, 1fr);
     column-gap: 2%;
     margin: 1em 0;
+}
+
+/* The content column must be allowed to shrink below its children's
+   min-content, and its children must fit it: images scale down instead
+   of overflowing, and long unbroken strings break instead of pushing
+   the column wide. (Pre blocks already scroll via Chassis.) */
+.entry__content {
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.entry__content img {
+    height: auto;
+    max-width: 100%;
 }
 
 .entry__metadata {
