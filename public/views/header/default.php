@@ -28,14 +28,14 @@
             <?php BeyondExpectations\Tools\Svg::display( 'search' ); ?>
             <span class="screen-reader-text"><?php esc_html_e( 'Search', 'beyond-expectations' ); ?></span>
         </button>
-            <?php BeyondExpectations\social_navigation(); ?>
-        </div>
-    </nav>
-    </div>
     <div <?php Backdrop\Attr\display( 'search-box', '', [ 'id' => 'search-container', 'class' => 'search-box cf' ] ); ?>>
         <div class="search-box__inner cf">
             <?php get_search_form(); ?>
         </div>
+    </div>
+            <?php BeyondExpectations\social_navigation(); ?>
+        </div>
+    </nav>
     </div>
     <?php
         $header_attr = [
