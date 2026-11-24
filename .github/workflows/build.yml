@@ -35,6 +35,6 @@ jobs:
 
             - name: Check the manifest
               run: |
-                  for entry in resources/scss/screen.scss resources/scss/admin.scss resources/js/navigation.js resources/js/hide-search.js resources/js/customize-controls.js; do
+                  for entry in resources/scss/screen.scss resources/scss/admin.scss resources/js/navigation.js resources/js/customize-controls.js; do
                       grep -q "\"$entry\"" public/assets/manifest.json || { echo "::error::$entry is missing from the manifest."; exit 1; }
                   done
