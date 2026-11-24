@@ -41,10 +41,7 @@
 		white-space: nowrap;
 	}
 	
-	/* Add an outline to the drop-down menus */
-	.primary-navigation ul ul {
-		outline: 1px solid #333;
-	}
+	/* No outline on the drop-down panel. */
 	
 	/* Left-align drop-down menu items */
 	.primary-navigation li li {
