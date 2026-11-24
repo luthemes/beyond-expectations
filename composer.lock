@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a611bae096ea2caa53bfa4d4fe91f55",
+    "content-hash": "d3262c7b598e577b5513251046ff847d",
     "packages": [
         {
             "name": "backdrop-dev/attr",
@@ -108,16 +108,16 @@
         },
         {
             "name": "backdrop-dev/customize",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/backdrop-dev/customize.git",
-                "reference": "bf9ae61fef4cbd01dd855e4163c658c1192e7ccc"
+                "reference": "231f1fcd3f36d79e124ebbed2c379e215dfca1f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/backdrop-dev/customize/zipball/bf9ae61fef4cbd01dd855e4163c658c1192e7ccc",
-                "reference": "bf9ae61fef4cbd01dd855e4163c658c1192e7ccc",
+                "url": "https://api.github.com/repos/backdrop-dev/customize/zipball/231f1fcd3f36d79e124ebbed2c379e215dfca1f3",
+                "reference": "231f1fcd3f36d79e124ebbed2c379e215dfca1f3",
                 "shasum": ""
             },
             "require": {
@@ -152,10 +152,10 @@
             ],
             "support": {
                 "issues": "https://github.com/backdrop-dev/customize/issues",
-                "source": "https://github.com/backdrop-dev/customize/tree/v1.0.5"
+                "source": "https://github.com/backdrop-dev/customize/tree/v1.0.6"
             },
-            "time": "2026-11-23T19:30:13+00:00",
-            "published-time": "2026-11-23T19:30:36+00:00"
+            "time": "2026-11-23T21:13:21+00:00",
+            "published-time": "2026-11-23T21:13:49+00:00"
         },
         {
             "name": "backdrop-dev/fonts",
@@ -781,16 +781,16 @@
         },
         {
             "name": "techkodeninja/chassis",
-            "version": "0.2.3",
+            "version": "0.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/techkodeninja/chassis.git",
-                "reference": "9007e0f5248011fd1b1bbde52f400bd6326e832c"
+                "reference": "3fad0d82e4c999053e5832814512dd4bbcd2651d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/techkodeninja/chassis/zipball/9007e0f5248011fd1b1bbde52f400bd6326e832c",
-                "reference": "9007e0f5248011fd1b1bbde52f400bd6326e832c",
+                "url": "https://api.github.com/repos/techkodeninja/chassis/zipball/3fad0d82e4c999053e5832814512dd4bbcd2651d",
+                "reference": "3fad0d82e4c999053e5832814512dd4bbcd2651d",
                 "shasum": ""
             },
             "require": {
@@ -829,10 +829,10 @@
             ],
             "support": {
                 "issues": "https://github.com/techkodeninja/chassis/issues",
-                "source": "https://github.com/techkodeninja/chassis/tree/0.2.3"
+                "source": "https://github.com/techkodeninja/chassis/tree/0.2.4"
             },
-            "time": "2026-11-23T19:29:37+00:00",
-            "published-time": "2026-11-23T19:30:04+00:00"
+            "time": "2026-11-24T16:47:53+00:00",
+            "published-time": "2026-11-24T16:48:05+00:00"
         }
     ],
     "packages-dev": [],
