@@ -4,7 +4,7 @@ Contributors: luthemes
 Tags: custom-background, custom-header, right-sidebar
 Requires at least: 6.2
 Tested up to: 6.2
-Stable tag: 0.0.1
+Stable tag: 0.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,16 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.0.2 - November 24, 2026
+- Rebuilt on Chassis: design tokens, layout, navigation, search panel, pagination, widgets and comments now come from techkodeninja/chassis; the theme keeps only its own look
+- Customizer: Theme Colors and Typography (13 color settings, 4 typography settings) with live preview, plus Layout, Feature Image and footer Credit from backdrop-dev/customize
+- Drop-down menus stack vertically, sit under their parent item and size to the longest label; no gray on hover
+- Search panel opens on first click and drops below the top bar; the search toggle lines up with the social icons
+- Entries spaced 3rem apart; post bodies stay inside their column and wide images scale down
+- LinkedIn and Instagram render as outline icons (Chassis 0.2.4); menu hover is underline only, no outline box
+- Requires backdrop-dev/customize ^1.0.6 and techkodeninja/chassis ^0.2.3
+- See changelog.md for the full list
+
 Version: 0.0.1 - November 17, 2026
 - Rebuilt for ClassicPress on the Backdrop framework 2.0 and its Composer packages; app/ and config/ follow Amicable's layout
 - Customizer panels (Theme: Global, Header, Content, Footer) with Layout (radio image), Feature Image and footer Credit sections
