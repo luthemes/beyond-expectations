@@ -2,12 +2,29 @@
 
 ## Unreleased
 
+## 0.0.2 - 11.24.2026
+
 ### Added
 - Customize → Theme: Global → Theme Colors and Typography, from `backdrop-dev/customize`. Both write to Chassis, so the controls start at the design's current values and a change overrides `chassis.json` without editing it; a control left alone changes nothing. Theme Colors covers text, muted text, dividers, alternate background, accent, text on accent, links, links on hover, headings, and header background and footer colors; the header text color stays in core's Colors section, which the theme keeps. Typography has the body font, heading font, base font size and line height, with Fira Sans, Lato, Open Sans, Merriweather Sans, Merriweather and Alegreya to choose from. Both preview live.
 
 ### Changed
 - Requires `backdrop-dev/customize` `^1.0.6`, the release that loads the fonts Typography offers, and `techkodeninja/chassis` `^0.2.3`, which has the overrides the controls use.
 - The Layout, Feature Image size and Credit controls in the customizer come from `backdrop-dev/customize` `^1.0.4` instead of the theme's own `Layout`, `FeatureImage` and `Footer` customizable classes, which are removed along with `Customize\Customizable`. `BeyondExpectations\Customize\Defaults` turns the built-in components on and gives them the theme's layouts, image sizes, defaults and labels. The setting IDs (`theme_global_layout`, `theme_content_feature_image`, `theme_footer_powered_by`, `theme_footer_custom_credit`), the panels and the stored theme mods are unchanged, so nothing saved needs migrating. The Colors section still moves into Theme: Global, the custom footer text is still hidden while the random credit is on, and all three controls still refresh the preview. The Layout control is labelled "Layout" instead of "Global Layout" and no longer has a description line.
+- The theme is built on Chassis (`techkodeninja/chassis`): the design tokens, layout grid, navigation, search panel, pagination, widgets and comments come from Chassis, and the theme keeps only the styles that make Beyond Expectations itself. The 36 generic patterns Chassis already provides are deleted from the theme, along with empty partials and dead rules.
+- `Backdrop\Tools\Collection` now comes from `backdrop-dev/tools` instead of the theme's own copy.
+- The theme's own search toggle script is gone; Chassis owns the search panel now.
+- Archive and blog listings use excerpts, and sticky posts are marked unmistakable.
+- Drop-down menus: items stack vertically, the panel sits under its parent item and sizes to its longest label so text never wraps, and there is no gray background on hover.
+- The search toggle lines up with the social icons in the top bar.
+- Entries are spaced with a 3rem top margin; the post body stays inside its column and wide images scale down to fit.
+- LinkedIn and Instagram render as outline icons, not solid squares (Chassis 0.2.4).
+
+### Fixed
+- The search panel opens on the first click and stays open.
+- The search panel drops below the top bar instead of covering the magnifier.
+- The post body no longer overflows into the sidebar.
+- The entry footer and page links clear below floated images.
+- The hover outline is gone from menu items; hover and focus underline only, and the drop-down panel has no outline.
 
 ## 0.0.1 - 11.17.2026
 The first release of Beyond Expectations for ClassicPress, rebuilt on the [Backdrop framework](https://github.com/backdrop-dev/framework) 2.0. The layout and look stay close to the original theme.
