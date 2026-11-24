@@ -146,7 +146,9 @@
     font-family: 'Fira Sans', sans-serif;
     font-weight: 600;
     line-height: 1;
-    margin-bottom: 1em;
+    /* 1.5em, not 1em: the em is the badge's own 0.75rem font-size, so
+       1em was only 12px against a 28px title. */
+    margin-bottom: 1.5em;
 }
 
 .recent-posts,
