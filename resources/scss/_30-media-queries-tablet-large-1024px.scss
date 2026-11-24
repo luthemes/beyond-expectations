@@ -16,9 +16,17 @@
 	}
 	
 	
-	/* Display the menu items in a horizontal order */
-	.primary-navigation li {
+	/* Display the top-level menu items in a horizontal order */
+	.primary-navigation__menu > li {
 		display: inline-flex;
+		border: none;
+	}
+
+	/* Drop-down items stack vertically, one per row. The rule above
+	   used to target every `li`, which laid the drop-down items out
+	   side by side like the top-level ones. */
+	.primary-navigation li li {
+		display: flex;
 		border: none;
 	}
 	
