@@ -1,5 +1,4 @@
-Beyond Expectations WordPress Theme
-================================================================================================
+=== Beyond Expectations ===
 Contributors: luthemes
 Tags: custom-background, custom-header, right-sidebar
 Requires at least: 6.2
@@ -8,21 +7,16 @@ Stable tag: 0.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Beyond Expectations WordPress Theme, Copyright (C) 2016-2026, Benjamin Lu
-Beyond Expectations is distributed under the terms of the GNU GPL
-
-Beyond Expectations is a standard design with responsive capability.
 
 
-Installation
-================================================================================================
+
+== Installation ==
 0. When installing from the repository instead of a release zip, run `composer install --no-dev`, `npm install` and `npm run prod` in the theme folder first.
 1. In your admin panel, go to Appearance -> Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's ZIP file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-Customizer
-================================================================================================
+== Customizer ==
 1. In your admin panel, go to Appearance -> Customize
 2. List of different types that you can modify such as
    - Site Title Tagline
@@ -50,14 +44,14 @@ Customizer
 == Description ==
 Beyond Expectations is a responsive theme for ClassicPress, built on the Backdrop framework 2.0.
 
+Beyond Expectations is a standard design with responsive capability.
 
-Frequently Asked Questions
-================================================================================================
+
+== Frequently Asked Questions ==
 Not Available At the Moment
 
 
-Changelog
-================================================================================================
+== Changelog ==
 Version: 0.0.2 - November 24, 2026
 - Rebuilt on Chassis: design tokens, layout, navigation, search panel, pagination, widgets and comments now come from techkodeninja/chassis; the theme keeps only its own look
 - Customizer: Theme Colors and Typography (13 color settings, 4 typography settings) with live preview, plus Layout, Feature Image and footer Credit from backdrop-dev/customize
@@ -150,12 +144,8 @@ Version: 0.0.1
 Initial Release
 
 
-Upgrade Notice
-================================================================================================
-
-
-Resources
-================================================================================================
+== Upgrade Notice ==
+== Resources ==
 Header image (resources/images/header-image.jpg) and screenshot
 "Silhouette photography of person" by Greg Rakozy (https://unsplash.com/@grakozy)
 https://unsplash.com/photos/oMpAz-DN-9I
@@ -172,3 +162,7 @@ Bundled in vendor/backdrop-dev/icons/assets (Backdrop Icons, https://github.com/
 
 Brand icons without an Iconoir version (public/svg/social-icons): Font Awesome Free 5 brand icons by Fonticons, Inc. - https://fontawesome.com
 Licensed under CC BY 4.0 - https://creativecommons.org/licenses/by/4.0/ (used as inline SVG, no icon font is loaded)
+
+== Copyright ==
+Beyond Expectations WordPress Theme, Copyright (C) 2016-2026, Benjamin Lu
+Beyond Expectations is distributed under the terms of the GNU GPL
