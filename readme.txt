@@ -47,8 +47,7 @@ Customizer
    - Blog
 
 
-Description
-================================================================================================
+== Description ==
 Beyond Expectations is a responsive theme for ClassicPress, built on the Backdrop framework 2.0.
 
 
