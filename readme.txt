@@ -3,7 +3,7 @@ Contributors: luthemes
 Tags: custom-background, custom-header, right-sidebar
 Requires at least: 6.2
 Tested up to: 6.2
-Stable tag: 0.0.2
+Stable tag: 0.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,11 @@ Not Available At the Moment
 
 
 == Changelog ==
+Version: 0.0.3 - November 24, 2026
+- readme.txt rewritten in Amicable's format: `=== Beyond Expectations ===` title and `== ==` headings throughout, plus a Copyright section — the directory update check now finds the theme description
+- Removed the legacy 0.0.1-0.2.2 changelog entries; the Changelog lists only the current versions
+- See changelog.md for the full list
+
 Version: 0.0.2 - November 24, 2026
 - Rebuilt on Chassis: design tokens, layout, navigation, search panel, pagination, widgets and comments now come from techkodeninja/chassis; the theme keeps only its own look
 - Customizer: Theme Colors and Typography (13 color settings, 4 typography settings) with live preview, plus Layout, Feature Image and footer Credit from backdrop-dev/customize

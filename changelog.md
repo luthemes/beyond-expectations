@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.0.3 - 11.24.2026
+
+### Changed
+- `readme.txt` is rewritten in Amicable's format: a `=== Beyond Expectations ===` title and `== ==` headings throughout, with a `== Copyright ==` section at the end. The ClassicPress Directory update check finds the theme description now, so the directory picks up new versions.
+- The legacy 0.0.1-0.2.2 changelog entries are removed from `readme.txt`; the Changelog lists only the current versions.
+
 ## 0.0.2 - 11.24.2026
 
 ### Added
